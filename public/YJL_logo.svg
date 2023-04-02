@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="1597"
+   height="1597"
+   viewBox="0 0 1597 1597"
+   sodipodi:docname="YJL_logo.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.20296224"
+     inkscape:cx="1157.8508"
+     inkscape:cy="-113.32157"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g8">
+    <g
+       id="g352"
+       transform="matrix(1.2742074,0,0,1.1336418,-1121.808,-112.36809)">
+      <path
+         style="fill:#000000"
+         d="m 1272.4042,1067.9326 13.5493,77.6007 c 19.0359,104.5111 125.2903,221.6055 295.7519,209.7165 186.4894,-15.7539 261.55,-205.2274 263.5471,-303.7724 l 1.2318,-657.79301 -114.9698,3.48394 1.742,656.72127 c -2.403,115.5404 -57.2772,189.0507 -170.8749,194.4953 -101.039,1.4967 -167.3889,-68.9366 -175.9941,-180.7773 z"
+         id="path217"
+         sodipodi:nodetypes="cccccccccc" />
+      <path
+         style="fill:#000000"
+         d="m 1144.3015,584.46832 105.3152,-0.61587 0.6159,825.27665 h 407.7113 v 99.7723 h -513.6424"
+         id="path268" />
+      <path
+         style="fill:#000000"
+         d="m 1154.7715,103.46752 h 136.7249 l 217.097,479.30714 217.7129,-479.30714 136.725,1.23176 -295.3136,596.32397 -2.4635,353.51405 -112.3977,1.0778 -0.9239,-355.8236 z"
+         id="path272"
+         sodipodi:nodetypes="cccccccccc" />
+    </g>
+  </g>
+</svg>
