@@ -1,0 +1,78 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[2].oneOf[13].use[3]!./src/app/styles/Logo.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.icon {
+    position: absolute;
+    top:0px;
+    left:0px;
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 80px;
+    padding: 25px 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+    transform: translateZ(0);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 2px 8px -1px #0000001a;
+  }
+  
+  .icon::before,
+  .icon::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+  }
+  
+  /* Conic Gradient Animation */
+  .icon::before {
+    animation: 6s rotate linear infinite;
+    width: 200%;
+    height: 200%;
+    background: var(--tile-border);
+  }
+  
+  /* Inner Square */
+  .icon::after {
+    inset: 0;
+    padding: 1px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(
+      to bottom right,
+      rgba(var(--tile-start-rgb), 1),
+      rgba(var(--tile-end-rgb), 1)
+    );
+    background-clip: content-box;
+  }
+/*mobile*/
+@media (max-width: 1023px) {
+    .icon {
+      margin-left: 3vw;
+      margin-top: 2vh;
+    }
+}
+/*reduced motion*/
+@media (prefers-reduced-motion) {
+    .icon::before {
+      animation: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .icon img {
+        filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+}
+
+@keyframes rotate {
+from {
+    transform: rotate(360deg);
+}
+to {
+    transform: rotate(0deg);
+}
+}
