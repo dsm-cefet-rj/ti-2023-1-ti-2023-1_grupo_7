@@ -14,7 +14,7 @@
     padding: 5px;
 }
 body{
-    background-color: rgb(1, 31, 71);
+    background-image: linear-gradient(rgb(1, 31, 71), black);
 }
 h1{
     color: white;

@@ -1,6 +1,7 @@
 
 .grid {
     position: fixed;
+    padding-left: 85px;
     bottom: 1vh;
     align-items: center;
     align-self: center;
