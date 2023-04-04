@@ -173,8 +173,8 @@
     "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\src\\app\\page": [
       "static/css/_app-client_src_app_styles_NavBar_css.css",
       "static/css/_app-client_node_modules_next_font_google_target_css_path_src_app_components_NavBar_js_import-d1614a.css",
-      "static/css/_app-client_src_app_styles_Logo_css.css",
-      "static/css/_app-client_src_app_Pages_Home_css.css"
+      "static/css/_app-client_src_app_Pages_Home_css.css",
+      "static/css/_app-client_src_app_styles_Logo_css.css"
     ]
   },
   "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\node_modules\\next\\dist\\client\\components\\app-router.js": {
@@ -456,18 +456,18 @@
       "static/css/_app-client_src_app_globals_css.css"
     ]
   },
-  "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\src\\app\\Pages\\Home.css#": {
-    "id": "null",
-    "name": "",
-    "chunks": [
-      "static/css/_app-client_src_app_Pages_Home_css.css"
-    ]
-  },
   "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\src\\app\\styles\\Logo.css#": {
     "id": "null",
     "name": "",
     "chunks": [
       "static/css/_app-client_src_app_styles_Logo_css.css"
+    ]
+  },
+  "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\src\\app\\Pages\\Home.css#": {
+    "id": "null",
+    "name": "",
+    "chunks": [
+      "static/css/_app-client_src_app_Pages_Home_css.css"
     ]
   },
   "D:\\João Pedro\\CEFET-RJ\\ Período atual\\Prog Web\\Git\\ti-2023-1-ti-2023-1_grupo_7\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\components\\\\NavBar.js\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
