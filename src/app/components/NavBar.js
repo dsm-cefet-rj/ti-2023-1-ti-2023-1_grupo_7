@@ -5,31 +5,31 @@ const inter = Inter({ subsets: ['latin'] })
 function NavBar(){
     return(
         <div className="grid">
-        <a>
+        <a className='card'>
           <h2 className={inter.className}>
             Início
           </h2>
         </a>
 
-        <a>
+        <a className='card'>
           <h2 className={inter.className}>
             Ações
           </h2>
         </a>
 
-        <a>
+        <a className='card'>
           <h2 className={inter.className}>
             Fundos Imobiliários
           </h2>
         </a>
 
-        <a>
+        <a className='card'>
           <h2 className={inter.className}>
             Renda Fixa
           </h2>
         </a>
 
-        <a>
+        <a className='card'>
           <h2 className={inter.className}>
             Proventos
           </h2>

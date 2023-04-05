@@ -1,7 +1,6 @@
 
 .grid {
     position: fixed;
-    padding-left: 85px;
     bottom: 1vh;
     align-items: center;
     align-self: center;
@@ -9,6 +8,7 @@
     flex-wrap: nowrap;
     width: var(--max-width);
     max-width: 37vw;
+    left:40vw;
 }
 
 .card {
@@ -67,7 +67,7 @@
       margin-bottom: 0px;
       max-width: 100vw;
       text-align: center;
-      position: absolute;
+      position: fixed;
       bottom: 1vh;
       right: 0px;
       left: 0px;

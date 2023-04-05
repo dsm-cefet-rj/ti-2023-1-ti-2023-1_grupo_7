@@ -1,15 +1,12 @@
-import Logo from '../components/Logo'
 import '../styles/Acoes.css'
-import NavBar from "../components/NavBar"
-//import Doughnut from "../components/Doghnut"
+import Doughnut from "../components/Doghnut"
+import ListaAtivos from '../components/ListaAtivos'
 
 export default function Acoes() {
   return (
-    <main className="main">
-      <Logo/>
-      <div style={{height:170}}/>
-      
-      <NavBar/>
-    </main>
+    <div>
+      <Doughnut/>
+      <ListaAtivos/>
+    </div>
   )
 }

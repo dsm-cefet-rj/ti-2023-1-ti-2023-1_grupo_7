@@ -4,6 +4,8 @@ import './Home.css'
 import NavBar from "../components/NavBar"
 import Doughnut from "../components/Doghnut"
 import ListaAtivos from '../components/ListaAtivos'
+import Router from '../routes'
+import Acoes from './Acoes'
 
 
 export default function Home() {
@@ -11,8 +13,10 @@ export default function Home() {
     <main className="main">
       <Logo/>
       <div style={{height:170}}/>
-      <Doughnut/>
-      <ListaAtivos/>
+
+      {/*<Router/>*/}
+      <Acoes/>
+
       <NavBar/>
     </main>
   )
