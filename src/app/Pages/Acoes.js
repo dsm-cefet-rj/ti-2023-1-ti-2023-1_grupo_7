@@ -4,8 +4,8 @@ import ListaAtivos from '../components/ListaAtivos'
 
 export default function Acoes() {
   return (
-    <div>
-      <Doughnut/>
+    <div className="main">
+      <Doughnut />
       <ListaAtivos/>
     </div>
   )

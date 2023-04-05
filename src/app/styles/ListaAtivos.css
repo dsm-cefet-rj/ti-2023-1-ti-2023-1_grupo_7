@@ -31,7 +31,19 @@
     
  }
 
-
+/* Mobile and Tablet */
+@media (max-width: 1023px) {  
+   .ativo{
+      width: 80vw;
+   }
+   .estrutura{
+      height: 5vh;
+   }
+   .logo{
+      height: 10vh;
+      width: 10vw;
+   }
+}
   
 
   

@@ -63,15 +63,14 @@
 /* Mobile and Tablet */
 @media (max-width: 1023px) {  
     .grid {
-      grid-template-columns: 1fr;
-      margin-bottom: 0px;
-      max-width: 100vw;
-      text-align: center;
-      position: fixed;
-      bottom: 1vh;
-      right: 0px;
-      left: 0px;
-    }
+        grid-template-columns: 1fr;
+        margin-bottom: 0px;
+        max-width: 100vw;
+        text-align: center;
+        position: fixed;
+        bottom: 1vh;
+        left: 0vw;
+      }
   
     .card {
       padding: 0.5rem;
