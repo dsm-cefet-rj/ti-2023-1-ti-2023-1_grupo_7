@@ -14,12 +14,12 @@ const ListaAtivos = () => {
 
     return(
         <div>
-        <h2 class="titulo" className={inter.className}>
+        <h2  className={inter.className}>
             Lista de {nome} <button onClick={trocar} style={{width: 20, height: 20, position: "absolute", right: 45}}/>
         </h2>
         
-        <div class="ativo">
-            <div class="estrutura">
+        <div className="ativo">
+            <div className="estrutura">
                 <BsFillBarChartLineFill className="logo"/>
             </div>
         <div>
