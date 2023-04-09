@@ -1,3 +1,4 @@
+
 import {React, useState} from "react";
 import '../styles/ListaAtivos.css'
 import { Inter } from 'next/font/google'

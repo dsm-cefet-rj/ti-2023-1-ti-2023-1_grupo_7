@@ -32,7 +32,7 @@ export const data = {
   ],
 };
 
-export default function App() {
+export default function Aplication() {
   return( 
   <div style={{width: 300}}>
     <Doughnut data={data} style={{display: "flow"}}/>
