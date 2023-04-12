@@ -16,7 +16,7 @@ export default function Home() {
 
       <Doughnut/>
       <ListaAtivos/>
-      <ListaAtivos/> 
+ 
       <NavBar/>
       
       

@@ -8,7 +8,7 @@ function NavBar(){
     return(
         <div className="grid">
         
-          <Link to="/" className='card'><h2 className={inter.className}>Início</h2></Link>         
+          <Link to="/inicio" className='card'><h2 className={inter.className}>Início</h2></Link>         
         
         
         
