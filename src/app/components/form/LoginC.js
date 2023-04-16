@@ -3,6 +3,7 @@ import Input from "./Input";
 import Button from "./Button";
 import "./LoginC.css"
 import { Link } from 'react-router-dom';
+import Logo from "../Logo";
 
 const Login = () => {
   return (
@@ -10,6 +11,7 @@ const Login = () => {
    <div className="effect-background"></div>
     <div className="login">
       <form>
+        <Logo ID='login'/>
         <Input id="email" label="Email:   " />
         <Input id="senha" label="Senha:   " type="password" />
         <Link to="/inicio"><Button label="Entrar" /></Link><br/><br/>

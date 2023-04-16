@@ -1,7 +1,7 @@
 .icon {
-    position: absolute;
-    top:0px;
-    left:0px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
   }
   
   .icon {
@@ -72,4 +72,9 @@ from {
 to {
     transform: rotate(0deg);
 }
+}
+#login{
+    margin: auto;
+    margin-bottom: 60px;
+    align-self: center;
 }

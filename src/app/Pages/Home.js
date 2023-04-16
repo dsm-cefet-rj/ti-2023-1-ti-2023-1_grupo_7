@@ -6,20 +6,18 @@ import Doughnut from "../components/Doghnut"
 import ListaAtivos from '../components/ListaAtivos'
 import Rotas from '../components/routes'
 import Acoes from './Acoes'
+import DropdownMenu from '../components/Dropdown'
 
 
 export default function Home() {
   return (
     <main className="main">
       <Logo/>
-      <div style={{height:170}}/>
-
+      <DropdownMenu/>
       <Doughnut/>
       <ListaAtivos/>
  
       <NavBar/>
-      
-      
     </main>
   )
 }

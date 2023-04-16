@@ -3,7 +3,7 @@
     margin: 0px;
     background-color:  rgb(1, 31, 71);
     background-image: linear-gradient(rgb(1, 31, 71), black);
-    border: 1px solid #e7e7e7;
+    border: 1px solid #e7e7e742;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

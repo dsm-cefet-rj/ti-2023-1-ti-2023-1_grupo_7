@@ -1,0 +1,23 @@
+ul{
+    padding: 5px;
+    padding-bottom: 0;
+    border: 1px solid rgba(0,0,0, 0.541);
+    border-radius: 3px;
+    background-image: linear-gradient(to left bottom,#0066A2, black);
+    text-align: right;
+}
+li{
+    margin-bottom: 5px;
+}
+.dropdown{
+    position: fixed;
+    right: 15px;
+    top: 15px
+}
+#menuButton{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 5px;
+    background-image: linear-gradient(to left bottom,#0066A2, black);
+}
