@@ -21,3 +21,13 @@ li{
     margin-bottom: 5px;
     background-image: linear-gradient(to left bottom,#0066A2, black);
 }
+
+/* Mobile and Tablet */
+@media (max-width: 1023px) {  
+    ul{
+        padding-top: 1.3vh;
+    }
+    li{
+        margin-bottom: 1.3vh;
+    }
+}
