@@ -10,10 +10,10 @@ function getAtivos(array){
     const lista = []
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        lista.push(<Ativo/>)
+        lista.push(<Ativo key={i}/>)
     }
     return (
-        <div style={{'overflow-y': 'auto','height':'37vh',paddingRight:'10px'}}>
+        <div style={{overflowY: 'auto', height:'35vh',paddingRight:'10px'}}>
             {lista}
         </div>
     )

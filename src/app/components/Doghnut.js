@@ -34,7 +34,7 @@ export const data = {
 
 export default function Aplication() {
   return( 
-  <div style={{width: 300,'margin-top':50,'margin-bottom':50 }}>
+  <div style={{width: 300,marginTop:50,marginBottom:50 }}>
     <Doughnut data={data} style={{display: "flow"}}/>
   </div>
   );

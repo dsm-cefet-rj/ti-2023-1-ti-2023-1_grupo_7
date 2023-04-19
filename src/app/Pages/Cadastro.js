@@ -1,5 +1,5 @@
 "use client"
-import './Home.css'
+import '../styles/Home.css'
 import CadastroC from "../components/form/CadastroC";
 
 export default function Cadastro(){
