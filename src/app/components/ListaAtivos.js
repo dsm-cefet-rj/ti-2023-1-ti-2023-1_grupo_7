@@ -13,7 +13,7 @@ function getAtivos(array){
         lista.push(<Ativo key={i}/>)
     }
     return (
-        <div style={{overflowY: 'auto', height:'35vh',paddingRight:'10px'}}>
+        <div style={{overflowY: 'auto', height:'50vh',paddingRight:'10px'}}>
             {lista}
         </div>
     )
