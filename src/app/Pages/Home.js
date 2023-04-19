@@ -15,7 +15,7 @@ export default function Home() {
       <Logo/>
       <DropdownMenu/>
       <Doughnut/>
-      <ListaAtivos/>
+      <ListaAtivos Carteira={[9,1,4,34,15,41,25,1]}/>
  
       <NavBar/>
     </main>

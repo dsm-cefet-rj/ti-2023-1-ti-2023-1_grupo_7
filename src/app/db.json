@@ -1,0 +1,24 @@
+{
+    "carteira":[
+        {
+            "nome":"Vale",
+            "valor":100,
+            "qnt":5
+        },
+        {
+            "nome":"BrMalls",
+            "valor":12,
+            "qnt":30
+        },
+        {
+            "nome":"B2W",
+            "valor":45,
+            "qnt":200
+        },
+        {
+            "nome":"IBOVESPA",
+            "valor":1000,
+            "qnt":1
+        }
+    ]
+}

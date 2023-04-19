@@ -1,6 +1,6 @@
 .ativo {
     padding: 60px;
-    margin: 0px;
+    margin-bottom: 20px;
     background-color:  rgb(1, 31, 71);
     background-image: linear-gradient(rgb(1, 31, 71), black);
     border: 1px solid #e7e7e742;
@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
-    width: 600px;
+    width: 70vw;
   }
 
   .titulo {
@@ -32,10 +32,7 @@
  }
 
 /* Mobile and Tablet */
-@media (max-width: 1023px) {  
-   .ativo{
-      width: 80vw;
-   }
+@media (max-width: 1023px) {
    .estrutura{
       height: 5vh;
    }

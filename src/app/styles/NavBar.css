@@ -6,9 +6,9 @@
     align-self: center;
     display: flex;
     flex-wrap: nowrap;
-    width: var(--max-width);
-    max-width: 37vw;
-    left:40vw;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card {
@@ -29,7 +29,7 @@
 
 .card h2 {
     font-weight: 600;
-    font-size: small;
+    font-size: medium;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     align-items: center;
@@ -65,18 +65,16 @@
     .grid {
         grid-template-columns: 1fr;
         margin-bottom: 0px;
-        max-width: 100vw;
         text-align: center;
-        position: fixed;
         bottom: 1vh;
-        left: 0vw;
       }
   
     .card {
-      padding: 0.5rem;
+      padding: 1vw;
     }
   
     .card h2 {
-      margin-bottom: 0.5rem;
+      margin: 0;
+      font-size: min(3vw,20px);
     }
 }

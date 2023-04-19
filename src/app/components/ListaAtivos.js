@@ -1,43 +1,34 @@
 
 import {React, useState} from "react";
-import '../styles/ListaAtivos.css'
-import { Inter } from 'next/font/google'
-import { BsFillBarChartLineFill } from "react-icons/bs";
+import '../styles/ListaAtivos.css';
+import { Inter } from 'next/font/google';
+import Ativo from "./Ativo";
 
 const inter = Inter({ subsets: ['latin'] })
-const ListaAtivos = () => {
 
-    const [nome,setNome] = useState("Ativos");
-    
-    function trocar(){
-        setNome("Outra Coisa")
+function getAtivos(array){
+    const lista = []
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        lista.push(<Ativo/>)
     }
-
-    return(
-        <div>
-        <h2  className={inter.className}>
-            Lista de {nome} <button onClick={trocar} style={{width: 20, height: 20, position: "absolute", right: 45}}/>
-        </h2>
-        
-        <div className="ativo">
-            <div className="estrutura">
-                <BsFillBarChartLineFill className="logo"/>
-            </div>
-        <div>
-               
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
+    return (
+        <div style={{'overflow-y': 'auto','height':'37vh',paddingRight:'10px'}}>
+            {lista}
         </div>
-    </div>
+    )
+}
 
+const ListaAtivos = (props) => {
+
+    
+    return(
+        <>
+            <h2 className={inter.className} style={{marginBottom:'10px',width:'60vw'}}>
+                Lista de Ativos
+            </h2>
+            {getAtivos(props.Carteira)}
+        </>
     )
 }
 
