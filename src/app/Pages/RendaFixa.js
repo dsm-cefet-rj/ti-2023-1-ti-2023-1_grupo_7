@@ -1,14 +1,9 @@
-import Logo from '../components/Logo'
-import '../styles/RendaFixa.css'
-import NavBar from "../components/NavBar"
-//import Doughnut from "../components/Doghnut"
+import Home from './Home'
 
-export default function RendaFixa() {
+export default function Acoes() {
   return (
-    <main className="main">
-      <Logo/>
-      <div style={{height:170}}/>
-      <NavBar/>
-    </main>
+    <>
+      <Home pagina='Renda Fixa'/>
+    </>
   )
 }

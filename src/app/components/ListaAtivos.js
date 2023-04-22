@@ -6,28 +6,44 @@ import Ativo from "./Ativo";
 
 const inter = Inter({ subsets: ['latin'] })
 
-function getAtivos(array){
+function getAtivos(array,tipo){
     const lista = []
+    if(typeof tipo === typeof undefined){
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            lista.push(<Ativo key={i} data={element}/>)
+        }
+        return (
+            <div className="lista">
+                {lista}
+            </div>
+        )
+    }
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        lista.push(<Ativo key={i}/>)
+        if (element.tipo===tipo){
+            lista.push(<Ativo key={i} data={element}/>)
+        }
     }
     return (
-        <div style={{overflowY: 'auto', height:'50vh',paddingRight:'10px'}}>
+        <div className="lista">
             {lista}
         </div>
     )
 }
 
 const ListaAtivos = (props) => {
-
-    
     return(
         <>
-            <h2 className={inter.className} style={{marginBottom:'10px',width:'60vw'}}>
-                Lista de Ativos
+            <h2 className={inter.className} id='nomeLista'>
+                Lista de {typeof props.tipo===typeof undefined?'Ativos':props.tipo}
             </h2>
-            {getAtivos(props.Carteira)}
+            <div className="titulo">
+                <h3 className={inter.className}>Nome</h3>
+                <h3 className={inter.className} id="preco">Valor</h3>
+                <h3 className={inter.className} id="quantidade">Quantidade</h3>
+            </div>
+            {getAtivos(props.Carteira,props.tipo)}
         </>
     )
 }

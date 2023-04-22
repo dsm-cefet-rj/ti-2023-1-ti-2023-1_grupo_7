@@ -1,5 +1,5 @@
 .ativo {
-    padding: 60px;
+    padding: 5%;
     margin-bottom: 20px;
     background-color:  rgb(1, 31, 71);
     background-image: linear-gradient(rgb(1, 31, 71), black);
@@ -7,38 +7,53 @@
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     width: 70vw;
+    align-items: center;
   }
 
   .titulo {
     margin: 0px;
     padding-bottom: 20px;
-    padding-top: 80px;
-    margin-left: 20px;
+    padding-top: 1vh;
+    padding-left: 3%;
+    padding-right: 3%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    width: 70vw;
+    font-size: min(4vw,40px);
   }
 
  .logo{
     height: 50px;
     width: 50px;
  }
-
- .estrutura{
-    padding-top: 20px;
-    height: 50px;
-    
+ .lista{
+   overflow-y: auto;
+   height: 31vh;
+   padding-right: 10px;
  }
-
+.__className_ccafe3{
+   font-size: min(3vw,30px);
+ }
+#quantidade{
+   margin-left: auto;
+   margin-right: 0;
+}
+#preco{
+   margin: auto;
+}
+#nomeLista{
+   margin-bottom:10px;
+   width:60vw;
+   text-align: center;
+   font-size: min(4vw,40px);
+}
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
-   .estrutura{
-      height: 5vh;
-   }
-   .logo{
-      height: 10vh;
-      width: 10vw;
+   .lista{
+      height: 35vh;
    }
 }
   

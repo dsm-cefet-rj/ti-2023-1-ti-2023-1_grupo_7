@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 
 
-export default function Home() {
+export default function Home(props) {
   const [db, setDB] = useState([]);
   
   useEffect(() => {
@@ -18,14 +18,12 @@ export default function Home() {
     .then(T => T.json())
     .then(data=>{setDB(data);});},[]);
 
-  console.log(db)
-
   return (
     <main className="main">
       <Logo/>
       <DropdownMenu/>
       <Doughnut/>
-      <ListaAtivos Carteira={db}/>
+      <ListaAtivos Carteira={db} tipo={props.pagina}/>
       <NavBar/>
     </main>
   )

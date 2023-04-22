@@ -2,6 +2,7 @@ import React from "react";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { Inter } from 'next/font/google';
 
+const inter = Inter({ subsets: ['latin'] });
 const data = (
   label,
   valor_atual,
@@ -17,9 +18,9 @@ const data = (
 function Ativo (props){
     return(
       <div className="ativo">
-          <div className="estrutura">
-              <BsFillBarChartLineFill className="logo"/>
-          </div>
+        <h2 className={inter.className}>{props.data.nome}</h2>
+        <h2 className={inter.className} id='preco'>R${props.data.valor}</h2>
+        <h2 className={inter.className} id='quantidade'>{props.data.qnt}</h2>
       </div>
     )
 }
