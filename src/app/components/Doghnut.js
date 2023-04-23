@@ -31,7 +31,7 @@ export const data = {
 export default function Aplication() {
   const size = 300;
   return( 
-  <div style={{width: 'auto',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
+  <div style={{width: 'auto',height:'30vh',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
     <Doughnut data={data} updateMode='resize' redraw={true}/>
   </div>
   );
