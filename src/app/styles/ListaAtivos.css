@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    width: min(70vw,500px);
+    width: min(70vw,527px);
     font-size: min(4vw,15px);
   }
 
@@ -31,7 +31,7 @@
  }
  .lista{
    overflow-y: auto;
-   height: 37vh;
+   height: 40vh;
    padding-right: 10px;
  }
 .__className_ccafe3{
