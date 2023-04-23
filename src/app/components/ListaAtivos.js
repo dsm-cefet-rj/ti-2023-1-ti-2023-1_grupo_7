@@ -6,7 +6,7 @@ import Ativo from "./Ativo";
 
 const inter = Inter({ subsets: ['latin'] })
 
-function getAtivos(array,tipo){
+function __getAtivos(array,tipo){
     const lista = []
     if(typeof tipo === typeof undefined){
         for (let i = 0; i < array.length; i++) {
@@ -43,7 +43,7 @@ const ListaAtivos = (props) => {
                 <h3 className={inter.className} id="preco">Valor</h3>
                 <h3 className={inter.className} id="quantidade">Quantidade</h3>
             </div>
-            {getAtivos(props.Carteira,props.tipo)}
+            {__getAtivos(props.Carteira,props.tipo)}
         </>
     )
 }

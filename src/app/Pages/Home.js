@@ -22,7 +22,7 @@ export default function Home(props) {
     <main className="main">
       <Logo/>
       <DropdownMenu/>
-      <Doughnut/>
+      <Doughnut data={db}/>
       <ListaAtivos Carteira={db} tipo={props.pagina}/>
       <NavBar/>
     </main>
