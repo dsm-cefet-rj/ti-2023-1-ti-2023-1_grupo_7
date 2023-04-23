@@ -22,7 +22,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     width: min(70vw,500px);
-    font-size: min(4vw,40px);
+    font-size: min(4vw,15px);
   }
 
  .logo{
@@ -35,7 +35,7 @@
    padding-right: 10px;
  }
 .__className_ccafe3{
-   font-size: min(3vw,25px);
+   font-size: min(3vw,20px);
  }
 #quantidade{
    margin-left: auto;
@@ -48,7 +48,7 @@
    margin-bottom:10px;
    width:60vw;
    text-align: center;
-   font-size: min(4vw,35px);
+   font-size: min(4vw,25px);
 }
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
