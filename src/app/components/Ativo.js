@@ -15,9 +15,20 @@ const data = (
   const arr = [];
   return <React.Fragment></React.Fragment>;
 };
+function getId(tipo){
+  switch(tipo){
+    case "Renda Fixa":
+      return("rendaFixa");
+    case "Fundo Imobiliário":
+      return ("fundoImobiliario");
+    case "Provento":
+      return ("provento");
+  }
+  return null;
+}
 function Ativo (props){
     return(
-      <div className="ativo">
+      <div className="ativo" id={getId(props.data.tipo)}>
         <h2 className={inter.className}>{props.data.nome}</h2>
         <h2 className={inter.className} id='preco'>R${props.data.valor}</h2>
         <h2 className={inter.className} id='quantidade'>{props.data.qnt}</h2>

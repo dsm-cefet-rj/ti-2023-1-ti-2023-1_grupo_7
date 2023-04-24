@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react'
 export default function Home(props) {
   //esse use state é temporário e deve ser substituído pela informação do usuário logado
   //essa informação deve ser resgatada da variável de estado "email" em ambos CadastroC.js e LoginC.js
-  const [usuario,setUsuario] = useState("jason@gmail.com");
+  const [usuario,setUsuario] = useState("joker@hotmail.com");
   const [db, setDB] = useState({});
   
   useEffect(() => {

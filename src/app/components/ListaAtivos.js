@@ -33,6 +33,14 @@ function __getAtivos(array,tipo){
 }
 
 const ListaAtivos = (props) => {
+    //isso só é mostrado qnd a carteira está vazia
+    if (typeof props.Carteira[0]===typeof undefined){
+        return(
+        <>
+            <h2 className={inter.className} id="placeHolder">Não encontramos nenhum ativo na sua carteira, tente adicionar algum</h2>
+        </>)
+    }
+    //curso normal para uma carteira com pelo menos algo
     return(
         <>
             <h2 className={inter.className} id='nomeLista'>

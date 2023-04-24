@@ -1,7 +1,6 @@
 .ativo {
     padding: 5%;
     margin-bottom: 20px;
-    background-color:  rgb(1, 31, 71);
     background-image: linear-gradient(rgb(1, 31, 71), black);
     border: 1px solid #e7e7e742;
     border-radius: 10px;
@@ -49,6 +48,18 @@
    width:60vw;
    text-align: center;
    font-size: min(4vw,25px);
+}
+#rendaFixa{
+   background-image: linear-gradient(rgb(148, 3, 3), black);
+}
+#fundoImobiliario{
+   background-image: linear-gradient(rgb(228, 206, 12), black);
+}
+#provento{
+   background-image: linear-gradient(rgb(2, 83, 42), black);
+}
+#placeHolder{
+   font-size: min(5vw,50px);
 }
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
