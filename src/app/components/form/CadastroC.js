@@ -23,7 +23,6 @@ const CadastroC = () => {
   const [senha1, setSenha1] = useState('');
   const [senha2, setSenha2] = useState('');
   const [db, setDB]= useState([]);
-  const [body,setBody] = useState({});
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
   
@@ -32,7 +31,11 @@ const CadastroC = () => {
       method: 'PATCH',
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({
-        [email]:body
+        [email]:{
+          "nome":nome,
+          "senha":senha1,
+          "carteira":[]
+        }
       })
     }
 
@@ -44,11 +47,6 @@ const CadastroC = () => {
     e.preventDefault();
     if(typeof db[email] === typeof undefined){
       if(senha1===senha2){
-        setBody({
-            "nome":nome,
-            "senha":senha1,
-            "carteira":[]
-          })
         cadastraUsuario();
         navegar("/inicio");
       }else{

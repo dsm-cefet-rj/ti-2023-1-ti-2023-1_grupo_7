@@ -74,6 +74,10 @@
       "senha": "123",
       "carteira": []
     },
-    "eu@cefet": {}
+    "1@1": {
+      "nome": "1@1",
+      "senha": "1",
+      "carteira": []
+    }
   }
 }
