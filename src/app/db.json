@@ -1,60 +1,79 @@
 {
-    "carteira":[
+  "usuarios": {
+    "jason@gmail.com": {
+      "nome": "Jason",
+      "senha": "1234",
+      "carteira": [
         {
-            "id":1,
-            "tipo":"Ação",
-            "nome":"Vale",
-            "valor":100,
-            "qnt":5
+          "tipo": "Ação",
+          "nome": "Vale",
+          "valor": 100,
+          "qnt": 5
         },
         {
-            "id":2,
-            "tipo":"Ação",
-            "nome":"BrMalls",
-            "valor":12,
-            "qnt":30
+          "tipo": "Ação",
+          "nome": "BrMalls",
+          "valor": 12,
+          "qnt": 30
         },
         {
-            "id":3,
-            "tipo":"Ação",
-            "nome":"B2W",
-            "valor":45,
-            "qnt":200
+          "tipo": "Ação",
+          "nome": "B2W",
+          "valor": 45,
+          "qnt": 200
         },
         {
-            "id":4,
-            "tipo":"Ação",
-            "nome":"IBOVESPA",
-            "valor":1000,
-            "qnt":1
+          "tipo": "Ação",
+          "nome": "IBOVESPA",
+          "valor": 1000,
+          "qnt": 1
         },
         {
-            "id":5,
-            "tipo":"Renda Fixa",
-            "nome":"CDB 180 dias",
-            "valor":100,
-            "qnt":5
+          "tipo": "Renda Fixa",
+          "nome": "CDB 180 dias",
+          "valor": 100,
+          "qnt": 5
         },
         {
-            "id":6,
-            "tipo":"Renda Fixa",
-            "nome":"CDB de liquidez diária",
-            "valor":10,
-            "qnt":1000
+          "tipo": "Renda Fixa",
+          "nome": "CDB de liquidez diária",
+          "valor": 10,
+          "qnt": 1000
         },
         {
-            "id":7,
-            "tipo":"Fundo Imobiliário",
-            "nome":"XP Crédito Imobiliário",
-            "valor": 300,
-            "qnt":7
+          "tipo": "Fundo Imobiliário",
+          "nome": "XP Crédito Imobiliário",
+          "valor": 300,
+          "qnt": 7
         },
         {
-            "id":8,
-            "tipo":"Provento",
-            "nome":"Dividendo - Vale",
-            "valor":500,
-            "qnt":10
+          "tipo": "Provento",
+          "nome": "Dividendo - Vale",
+          "valor": 500,
+          "qnt": 10
         }
-    ]
+      ]
+    },
+    "arthur@hotmail.com": {
+      "senha": "193849",
+      "nome": "Arthur",
+      "carteira": []
+    },
+    "art@hotmail.com": {
+      "nome": "Artur",
+      "senha": "193849",
+      "carteira": []
+    },
+    "joker@hotmail.com": {
+      "nome": "joker",
+      "senha": "batman",
+      "carteira": []
+    },
+    "teste@teste": {
+      "nome": "batata",
+      "senha": "123",
+      "carteira": []
+    },
+    "eu@cefet": {}
+  }
 }
