@@ -3,15 +3,47 @@ import {React, useState} from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
+import { useLocation } from "react-router-dom";
 
 const inter = Inter({ subsets: ['latin'] })
 
-function __getAtivos(array,tipo){
-    const lista = []
-    if(typeof tipo === typeof undefined){
+
+const ListaAtivos = (props) => {
+    const usuario = useLocation().state;
+    function atualizaCarteira () {
+        const options = {
+            method: 'PATCH',
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({[usuario]:[props.data]})
+        }
+        return fetch('http://localhost:1000/usuarios', options)
+        .then(T => T.json)
+    }
+    const handleAtivo=(key)=>{
+        props.data.carteira.splice(key,key);
+        console.log(props.data.carteira);
+        atualizaCarteira();
+    }
+
+    function __getAtivos(array,tipo){
+    
+        const lista = []
+        if(typeof tipo === typeof undefined){
+            for (let i = 0; i < array.length; i++) {
+                const element = array[i];
+                lista.push(<Ativo key={i} ID={i} data={element} onData={handleAtivo}/>)
+            }
+            return (
+                <div className="lista">
+                    {lista}
+                </div>
+            )
+        }
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
-            lista.push(<Ativo key={i} data={element}/>)
+            if (element.tipo===tipo){
+                lista.push(<Ativo key={i} ID={i} data={element} onData={handleAtivo}/>)
+            }
         }
         return (
             <div className="lista">
@@ -19,20 +51,7 @@ function __getAtivos(array,tipo){
             </div>
         )
     }
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (element.tipo===tipo){
-            lista.push(<Ativo key={i} data={element}/>)
-        }
-    }
-    return (
-        <div className="lista">
-            {lista}
-        </div>
-    )
-}
 
-const ListaAtivos = (props) => {
     //isso só é mostrado qnd a carteira está vazia
     if (typeof props.data.carteira[0]===typeof undefined){
         return(

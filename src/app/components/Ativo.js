@@ -1,6 +1,7 @@
 import React from "react";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { Inter } from 'next/font/google';
+import { useState } from "react";
 
 const inter = Inter({ subsets: ['latin'] });
 const data = (
@@ -26,9 +27,15 @@ function getId(tipo){
   }
   return null;
 }
+
+
 function Ativo (props){
+  const [isDeleted,setDeleted]=useState(false);
+    const sendDataToParent = () => {
+      props.onData(props.ID);
+    }
     return(
-      <div className="ativo" id={getId(props.data.tipo)}>
+      <div className="ativo" id={getId(props.data.tipo)} onClick={sendDataToParent}>
         <h2 className={inter.className}>{props.data.nome}</h2>
         <h2 className={inter.className} id='preco'>R${props.data.valor}</h2>
         <h2 className={inter.className} id='quantidade'>{props.data.qnt}</h2>
