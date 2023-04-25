@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try{
       if(db[email].senha===senha){
-        navegar("/inicio");
+        navegar("/inicio",{state:email});
       }else{
         setIncorreto(true);
       }

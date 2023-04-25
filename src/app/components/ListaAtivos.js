@@ -34,10 +34,11 @@ function __getAtivos(array,tipo){
 
 const ListaAtivos = (props) => {
     //isso só é mostrado qnd a carteira está vazia
-    if (typeof props.Carteira[0]===typeof undefined){
+    if (typeof props.data.carteira[0]===typeof undefined){
         return(
         <>
             <h2 className={inter.className} id="placeHolder">Não encontramos nenhum ativo na sua carteira, tente adicionar algum</h2>
+            {/*insira aqui um botão para adicionar ativos*/}
         </>)
     }
     //curso normal para uma carteira com pelo menos algo
@@ -51,7 +52,7 @@ const ListaAtivos = (props) => {
                 <h3 className={inter.className} id="preco">Valor</h3>
                 <h3 className={inter.className} id="quantidade">Quantidade</h3>
             </div>
-            {__getAtivos(props.Carteira,props.tipo)}
+            {__getAtivos(props.data.carteira,props.tipo)}
         </>
     )
 }

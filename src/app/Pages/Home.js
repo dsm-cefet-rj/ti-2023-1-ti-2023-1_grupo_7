@@ -8,13 +8,15 @@ import DropdownMenu from '../components/Dropdown'
 import { CreateSlice, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 
 export default function Home(props) {
   //esse use state é temporário e deve ser substituído pela informação do usuário logado
   //essa informação deve ser resgatada da variável de estado "email" em ambos CadastroC.js e LoginC.js
-  const [usuario,setUsuario] = useState("joker@hotmail.com");
+  const usuario = useLocation().state;
   const [db, setDB] = useState({});
+  const placeHolder = {"carteira":[]};
   
   useEffect(() => {
     fetch('http://localhost:1000/usuarios')
@@ -26,7 +28,7 @@ export default function Home(props) {
       <Logo/>
       <DropdownMenu/>
       <Doughnut data={typeof db[usuario]===typeof undefined ? []:db[usuario].carteira}/>
-      <ListaAtivos Carteira={typeof db[usuario]===typeof undefined ? []:db[usuario].carteira} tipo={props.pagina}/>
+      <ListaAtivos data={typeof db[usuario]===typeof undefined ? placeHolder:db[usuario]} tipo={props.pagina}/>
       <NavBar/>
     </main>
   )

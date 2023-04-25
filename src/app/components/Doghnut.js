@@ -26,6 +26,7 @@ function __getData(array){
 }
 
 export default function Aplication(props) {
+  if (typeof props.data[0]===typeof undefined) {return null;}
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [

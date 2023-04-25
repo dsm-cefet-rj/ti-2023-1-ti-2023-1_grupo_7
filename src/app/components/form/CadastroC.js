@@ -48,7 +48,7 @@ const CadastroC = () => {
     if(typeof db[email] === typeof undefined){
       if(senha1===senha2){
         cadastraUsuario();
-        navegar("/inicio");
+        navegar("/inicio",{state:email});
       }else{
       setExiste(false);
       setDiferente(true);

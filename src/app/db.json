@@ -67,7 +67,14 @@
     "joker@hotmail.com": {
       "nome": "joker",
       "senha": "batman",
-      "carteira": []
+      "carteira": [
+        {
+          "tipo": "Ação",
+          "nome": "Vale",
+          "valor": 100,
+          "qnt": 2
+        }
+      ]
     },
     "teste@teste": {
       "nome": "batata",

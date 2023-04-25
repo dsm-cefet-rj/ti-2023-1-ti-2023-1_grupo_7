@@ -1,8 +1,9 @@
 import React, {useState} from 'react'; 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Dropdown.css';
 
 function DropdownMenu() {
+    const usuario = useLocation().state;
     const [isOpen,setIsOpen]=useState(false);
     function toggle(){
         setIsOpen(!isOpen);
@@ -11,9 +12,9 @@ function DropdownMenu() {
         if(isOpen){
             return(
             <ul>
-                <Link to = '/conta'><li>Minha conta</li></Link>
-                <Link to = '/relatorio'><li>Relatórios</li></Link>
-                <Link to = '/listaCarteiras'><li>Carteiras</li></Link>
+                <Link to = '/conta' state={usuario}><li>Minha conta</li></Link>
+                <Link to = '/relatorio' state={usuario}><li>Relatórios</li></Link>
+                <Link to = '/listaCarteiras' state={usuario}><li>Carteiras</li></Link>
                 <Link to='/'><li style={{color:'#A50F00'}}>Sair</li></Link>
             </ul>
             )

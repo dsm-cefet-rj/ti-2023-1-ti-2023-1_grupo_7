@@ -60,6 +60,8 @@
 }
 #placeHolder{
    font-size: min(5vw,50px);
+   text-align: center;
+   margin: auto;
 }
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
