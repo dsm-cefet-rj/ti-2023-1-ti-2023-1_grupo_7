@@ -1,1 +1,0 @@
-json-server --watch src/app/db.json -p 1000

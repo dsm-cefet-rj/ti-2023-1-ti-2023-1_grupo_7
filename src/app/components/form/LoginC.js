@@ -5,19 +5,18 @@ import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
 import { useState , useEffect } from "react";
 
-const Login = () => {
+const Login = (props) => {
 
   const navegar = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [db, setDB] = useState([]);
   const [erro, setErro] = useState(false);
   const [incorreto,setIncorreto] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     try{
-      if(db[email].senha===senha){
+      if(props.db[email].senha===senha){
         navegar("/inicio",{state:email});
       }else{
         setIncorreto(true);
@@ -28,10 +27,6 @@ const Login = () => {
       setIncorreto(false);
     }
   };
-  useEffect(() => {
-    fetch('http://localhost:1000/usuarios')
-      .then(T => T.json())
-      .then(data=>{setDB(data);});},[]);
   return (
   <>
    <div className="effect-background"></div>
@@ -43,6 +38,7 @@ const Login = () => {
         Email:
         <input
           type="email"
+          autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -54,6 +50,7 @@ const Login = () => {
         Senha:
         <input
           type="password"
+          autoComplete="current-password"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
           required

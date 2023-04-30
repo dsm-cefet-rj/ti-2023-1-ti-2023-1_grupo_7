@@ -16,17 +16,19 @@ import Logo from "../Logo";
   </form>
 */
 
-const CadastroC = () => {
+const CadastroC = (props) => {
   const navegar = useNavigate();
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha1, setSenha1] = useState('');
   const [senha2, setSenha2] = useState('');
-  const [db, setDB]= useState([]);
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
   
   function cadastraUsuario () {
+
+    
+    /*aqui entrará o código de uso do dispatcher*/
     const options = {
       method: 'PATCH',
       headers: {"Content-Type":"application/json"},
@@ -34,18 +36,19 @@ const CadastroC = () => {
         [email]:{
           "nome":nome,
           "senha":senha1,
-          "carteira":[]
+          "carteiras":[]
         }
       })
     }
-
-    return fetch('http://localhost:1000/usuarios', options)
+    return fetch('http://localhost:5000/usuarios', options)
       .then(T => T.json)
+
+
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(typeof db[email] === typeof undefined){
+    if(typeof props.db[email] === typeof undefined){
       if(senha1===senha2){
         cadastraUsuario();
         navegar("/inicio",{state:email});
@@ -58,10 +61,6 @@ const CadastroC = () => {
         setDiferente(false);
     }
   };
-  useEffect(() => {
-    fetch('http://localhost:1000/usuarios')
-      .then(T => T.json())
-      .then(data=>{setDB(data);});},[]);
 
     return (
     <>
@@ -73,6 +72,7 @@ const CadastroC = () => {
         Nome:
         <input
           value={nome}
+          autoComplete="name"
           onChange={(e) => setNome(e.target.value)}
           required
           placeholder="Digite seu nome"
@@ -84,6 +84,7 @@ const CadastroC = () => {
         Email:
         <input
           type="email"
+          autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -95,6 +96,7 @@ const CadastroC = () => {
         Senha:
         <input
           type="password"
+          autoComplete="new-password"
           value={senha1}
           onChange={(e) => setSenha1(e.target.value)}
           required
@@ -107,6 +109,7 @@ const CadastroC = () => {
         Senha:
         <input
           type="password"
+          autoComplete="new-password"
           value={senha2}
           onChange={(e) => setSenha2(e.target.value)}
           required

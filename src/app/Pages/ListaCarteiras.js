@@ -4,20 +4,15 @@ import {Link,useLocation} from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
 
-export default function ListaCarteiras() {
-  const usuario = useLocation().state;
-  const [db, setDB] = useState({});
+export default function ListaCarteiras(props) {
+
   const placeHolder = {"carteira":[]};
-  useEffect(() => {
-    fetch('http://localhost:1000/usuarios')
-      .then(T => T.json())
-      .then(data=>{setDB(data);});},[]);
 
   return (
     <main className="main">
       <Link to = '/inicio' state={usuario}><div>Voltar</div></Link>
       <Logo/>
-      <ListaAtivos data={typeof db[usuario]===typeof undefined ? placeHolder:db[usuario]}/>
+      <ListaAtivos data={typeof props.db[usuario]===typeof undefined ? placeHolder:props.db[usuario]}/>
     </main>
   )
 }

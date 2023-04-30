@@ -2,10 +2,10 @@
 import Login from "../components/form/LoginC";
 import '../styles/Home.css'
 
-export default function LogIn(){
+export default function LogIn(props){
     return(
        <main className="main">
-        <Login/>
+        <Login db={props.db} setDB={props.setDB}/>
 
        </main>
     )

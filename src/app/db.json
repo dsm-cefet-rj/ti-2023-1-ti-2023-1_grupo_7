@@ -1,90 +1,113 @@
 {
+  "ativos": [
+    {
+      "id": 1,
+      "tipo": "Ação",
+      "nome": "Vale",
+      "valor": 100
+    },
+    {
+      "id": 2,
+      "tipo": "Ação",
+      "nome": "BrMalls",
+      "valor": 12
+    },
+    {
+      "id": 3,
+      "tipo": "Ação",
+      "nome": "B2W",
+      "valor": 45
+    },
+    {
+      "id": 4,
+      "tipo": "Ação",
+      "nome": "IBOVESPA",
+      "valor": 1000
+    },
+    {
+      "id": 5,
+      "tipo": "Renda Fixa",
+      "nome": "CDB 180 dias",
+      "valor": 100
+    },
+    {
+      "id": 6,
+      "tipo": "Renda Fixa",
+      "nome": "CDB de liquidez diária",
+      "valor": 10
+    },
+    {
+      "id": 7,
+      "tipo": "Fundo Imobiliário",
+      "nome": "XP Crédito Imobiliário",
+      "valor": 300
+    },
+    {
+      "id": 8,
+      "tipo": "Provento",
+      "nome": "Dividendo - Vale",
+      "valor": 500
+    }
+  ],
+  "carteiras": [
+    {
+      "id": 1,
+      "ativos": []
+    },
+    {
+      "id": 2,
+      "ativos": []
+    },
+    {
+      "id": 3,
+      "ativos": []
+    },
+    {
+      "id": 4,
+      "ativos": []
+    }
+  ],
   "usuarios": {
     "jason@gmail.com": {
       "nome": "Jason",
       "senha": "1234",
-      "carteira": [
-        {
-          "tipo": "Ação",
-          "nome": "Vale",
-          "valor": 100,
-          "qnt": 5
-        },
-        {
-          "tipo": "Ação",
-          "nome": "BrMalls",
-          "valor": 12,
-          "qnt": 30
-        },
-        {
-          "tipo": "Ação",
-          "nome": "B2W",
-          "valor": 45,
-          "qnt": 200
-        },
-        {
-          "tipo": "Ação",
-          "nome": "IBOVESPA",
-          "valor": 1000,
-          "qnt": 1
-        },
-        {
-          "tipo": "Renda Fixa",
-          "nome": "CDB 180 dias",
-          "valor": 100,
-          "qnt": 5
-        },
-        {
-          "tipo": "Renda Fixa",
-          "nome": "CDB de liquidez diária",
-          "valor": 10,
-          "qnt": 1000
-        },
-        {
-          "tipo": "Fundo Imobiliário",
-          "nome": "XP Crédito Imobiliário",
-          "valor": 300,
-          "qnt": 7
-        },
-        {
-          "tipo": "Provento",
-          "nome": "Dividendo - Vale",
-          "valor": 500,
-          "qnt": 10
-        }
+      "carteiras": [
+        1,
+        2,
+        3
       ]
     },
     "arthur@hotmail.com": {
       "senha": "193849",
       "nome": "Arthur",
-      "carteira": []
+      "carteiras": []
     },
     "art@hotmail.com": {
       "nome": "Artur",
       "senha": "193849",
-      "carteira": []
+      "carteiras": []
     },
     "joker@hotmail.com": {
       "nome": "joker",
       "senha": "batman",
-      "carteira": [
-        {
-          "tipo": "Ação",
-          "nome": "Vale",
-          "valor": 100,
-          "qnt": 2
-        }
+      "carteiras": [
+        4
       ]
     },
     "teste@teste": {
       "nome": "batata",
       "senha": "123",
-      "carteira": []
+      "carteiras": []
     },
     "1@1": {
-      "nome": "1@1",
+      "nome": "1",
       "senha": "1",
-      "carteira": []
+      "carteiras": []
+    },
+    "1@2": {
+      "nome": "1",
+      "senha": "12",
+      "carteiras": []
     }
   }
 }
