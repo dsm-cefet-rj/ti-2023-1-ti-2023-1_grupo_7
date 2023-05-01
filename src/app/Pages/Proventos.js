@@ -1,9 +1,9 @@
 import Home from './Home'
 
-export default function Acoes(props) {
+export default function Acoes() {
   return (
     <>
-      <Home pagina='Provento'db={props.db} setDB={props.setDB} ativos={props.ativos}/>
+      <Home pagina='Provento'/>
     </>
   )
 }

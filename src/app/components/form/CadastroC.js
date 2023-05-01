@@ -1,12 +1,15 @@
 import React from "react";
 import Button from "./Button";
 import "../../styles/LoginC.css"
-import { Link , useNavigate } from 'react-router-dom';
-import { useState , useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import Logo from "../Logo";
+import { useDispatch, useSelector } from "react-redux";
 
-const CadastroC = (props) => {
+const CadastroC = () => {
   const navegar = useNavigate();
+  const dispatch = useDispatch();
+  const usuarios = useSelector(state=>state.usuarios);
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha1, setSenha1] = useState('');
@@ -16,31 +19,36 @@ const CadastroC = (props) => {
   
   function cadastraUsuario () {
 
-    
-    /*aqui entrará o código de uso do dispatcher*/
+    dispatch({type:"add_usuario",payload:{
+                                          "id":email,
+                                          "nome":nome,
+                                          "senha":senha1,
+                                          "carteiras":[]
+                                         }
+    });
+
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({
-        [email]:{
+          "id":email,
           "nome":nome,
           "senha":senha1,
           "carteiras":[]
-        }
-      })
+        })
     }
+
     return fetch('http://localhost:5000/usuarios', options)
       .then(T => T.json)
-
-
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(typeof props.db[email] === typeof undefined){
+    if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
+        console.log('cadastrado');
         cadastraUsuario();
-        navegar("/inicio",{state:email});
+        navegar("/inicio");
       }else{
       setExiste(false);
       setDiferente(true);

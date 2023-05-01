@@ -11,12 +11,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 const ListaAtivos = (props) => {
 
-    const ativos = useSelector(state=>state.ativos);
-    const dispatch=useDispatch();
+    const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.includes(a.id)});
+    const dispatch = useDispatch();
     useEffect(() => {
         fetch('http://localhost:5000/ativos')
           .then(T => T.json())
-          .then(data=>{dispatch({type:"load_ativo",payload:data});});},[]);
+          .then(data=>{dispatch({type:"load_ativo",payload:data});});},[useLocation]);
     const CRUDativos={
         "delete":deleteAtivo
         /*aqui entrará o código de dispatch*/
@@ -24,10 +24,10 @@ const ListaAtivos = (props) => {
     function deleteAtivo(id){
         dispatch({type:"delete_ativo",payload:id});
     }
-    function __getAtivos(array,tipo){
-        return typeof tipo===typeof undefined?
-        (<div className="lista">{array.map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
-        (<div className="lista">{array.filter((element)=>{return element.tipo===tipo}).map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
+    function __getAtivos(){
+        return typeof props.tipo===typeof undefined?
+        (<div className="lista">{ativos.map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
+        (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
     }
 
     
@@ -53,7 +53,7 @@ const ListaAtivos = (props) => {
                 <h3 className={inter.className} id="preco">Valor</h3>
                 <h3 className={inter.className} id="quantidade">Quantidade</h3>
             </div>
-            {__getAtivos(ativos,props.tipo)}
+            {__getAtivos()}
         </>
     )
 }

@@ -28,44 +28,24 @@ Links:
   -https://github.com/diogosmendonca/pragmapm/commit/0b4753ed65df058977df633aafa9d728745aa85e <--esse link em específico é o de adição do Redux
 */
 
-function App(){
+//ativos será a lista de ativos disponíveis no mercado
+//carteiras será a lista de todas as carteiras existentes
 
-
-
-  const [db, setDB] = useState([]);//db serão os usuários
-  //ativos será a lista de ativos disponíveis no mercado
-  const [carteiras,setCarteiras] = useState([]);//carteiras será a lista de todas as carteiras existentes
-  
-/*aqui vai entrar o const store=configureStore({reducer:{ativos:ativosReducer,carteiras:carteirasReducer,usuarios:usuariosReducer}})
-mas pfv não esquce de fazer os novos reducers dps de testar com o 1 q tá funcionando*/
-
-/*vamos ter que cortar as variáveis de estado pra fora do componente, então logo aqui a gnt põe function App(){*/
-
-  useEffect(() => {
-    fetch('http://localhost:5000/usuarios')
-      .then(T => T.json())
-      .then(data=>{setDB(data);});},[]);
-  
-  useEffect(() => {
-      fetch('http://localhost:5000/carteiras')
-        .then(T => T.json())
-        .then(data=>{setCarteiras(data);});},[]);
-
-  
+function App(){  
     return(
       <Provider store={store}>
         <Router>
             <Routes>
-              <Route path="/" element={<Login db={db} setDB={setDB}/>}/>
-              <Route path="/cadastro" element={<Cadastro db={db} setDB={setDB}/>}/>
-              <Route path="/inicio" element={<Home db={db} setDB={setDB}/>}/>
-              <Route path="/acoes" element={<Acoes db={db} setDB={setDB}/>}/>
-              <Route path="/fi" element={<Fi db={db} setDB={setDB}/>}/>
-              <Route path="/rendafixa" element={<RendaFixa db={db} setDB={setDB}/>}/>
-              <Route path="/proventos" element={<Proventos db={db} setDB={setDB}/>}/>
-              <Route path="/conta" element={<Conta db={db} setDB={setDB}/>}/>
-              <Route path="/relatorio" element={<Relatorio db={db} setDB={setDB}/>}/>
-              <Route path="/listaCarteiras" element={<ListaCarteiras db={db} setDB={setDB}/>}/>
+              <Route path="/" element={<Login/>}/>
+              <Route path="/cadastro" element={<Cadastro/>}/>
+              <Route path="/inicio" element={<Home/>}/>
+              <Route path="/acoes" element={<Acoes/>}/>
+              <Route path="/fi" element={<Fi/>}/>
+              <Route path="/rendafixa" element={<RendaFixa/>}/>
+              <Route path="/proventos" element={<Proventos/>}/>
+              <Route path="/conta" element={<Conta/>}/>
+              <Route path="/relatorio" element={<Relatorio/>}/>
+              <Route path="/listaCarteiras" element={<ListaCarteiras/>}/>
             </Routes>
         </Router>
       </Provider>

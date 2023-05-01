@@ -4,26 +4,27 @@ import "../../styles/LoginC.css"
 import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
 import { useState , useEffect } from "react";
+import { useSelector } from "react-redux";
 
-const Login = (props) => {
-
+const Login = () => {
+  const usuarios = useSelector(state=>state.usuarios);
   const navegar = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [erro, setErro] = useState(false);
+  const [inexistente, setInexistente] = useState(false);
   const [incorreto,setIncorreto] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    try{
-      if(props.db[email].senha===senha){
-        navegar("/inicio",{state:email});
+    if(usuarios.map((u)=>u.id).includes(email)){
+      if(usuarios.filter((u)=>u.id===email)[0].senha===senha){
+        navegar("/inicio");
       }else{
+        setInexistente(false);
         setIncorreto(true);
       }
-      setErro(false);
-    }catch(error){
-      setErro(true);
+    }else{
+      setInexistente(true);
       setIncorreto(false);
     }
   };
@@ -57,7 +58,7 @@ const Login = (props) => {
           placeholder="Digite sua senha"
         />
       </label>
-      {erro?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>email inexistente</p>:<br/>}
+      {inexistente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>email inexistente</p>:<br/>}
       {incorreto?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>senha incorreta</p>:null}
       <br/>
       <Button type='submit' label="Entrar" />

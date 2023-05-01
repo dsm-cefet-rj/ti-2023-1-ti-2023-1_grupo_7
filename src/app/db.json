@@ -67,8 +67,9 @@
       "ativos": []
     }
   ],
-  "usuarios": {
-    "jason@gmail.com": {
+  "usuarios": [
+    {
+      "id": "jason@gmail.com",
       "nome": "Jason",
       "senha": "1234",
       "carteiras": [
@@ -77,37 +78,49 @@
         3
       ]
     },
-    "arthur@hotmail.com": {
+    {
+      "id": "arthur@hotmail.com",
       "senha": "193849",
       "nome": "Arthur",
       "carteiras": []
     },
-    "art@hotmail.com": {
+    {
+      "id": "art@hotmail.com",
       "nome": "Artur",
       "senha": "193849",
       "carteiras": []
     },
-    "joker@hotmail.com": {
+    {
+      "id": "joker@hotmail.com",
       "nome": "joker",
       "senha": "batman",
       "carteiras": [
         4
       ]
     },
-    "teste@teste": {
+    {
+      "id": "teste@teste",
       "nome": "batata",
       "senha": "123",
       "carteiras": []
     },
-    "1@1": {
+    {
+      "id": "1@1",
       "nome": "1",
       "senha": "1",
       "carteiras": []
     },
-    "1@2": {
+    {
+      "id": "1@2",
       "nome": "1",
       "senha": "12",
       "carteiras": []
+    },
+    {
+      "id": "admin@admin",
+      "nome": "admin",
+      "senha": "admin",
+      "carteiras": []
     }
-  }
+  ]
 }

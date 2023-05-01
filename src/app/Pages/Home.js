@@ -8,15 +8,20 @@ import DropdownMenu from '../components/Dropdown'
 import { CreateSlice, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 export default function Home(props) {
-  //esse use state é temporário e deve ser substituído pela informação do usuário logado
-  //essa informação deve ser resgatada da variável de estado "email" em ambos CadastroC.js e LoginC.js
-  const placeHolder = {"carteiras":[]};
+  const carteiraAtual={id:3,"ativos":[1,3,7]}
+  const dispatch = useDispatch();
+  useEffect(() => {
+    fetch('http://localhost:5000/carteiras')
+      .then(T => T.json())
+      .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);
+  
   return(
   <main className="main">
-    <ListaAtivos tipo={props.pagina} ativos={props.ativos} setAtivos={props.setAtivos}/>
+    <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
   </main>
   )
   return (
