@@ -1,7 +1,6 @@
 import '../styles/NavBar.css'
 import { Inter } from 'next/font/google'
 import { Link } from 'react-router-dom';
-import Rotas from './routes';
 import { useLocation } from 'react-router-dom';
 
 const inter = Inter({ subsets: ['latin'] })

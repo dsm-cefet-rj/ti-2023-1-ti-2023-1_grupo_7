@@ -1,20 +1,28 @@
 
-import {React, useState} from "react";
+import {React, useEffect} from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 const ListaAtivos = (props) => {
 
-    const CRUDativo=(key)=>{
+    const ativos = useSelector(state=>state.ativos);
+    const dispatch=useDispatch();
+    useEffect(() => {
+        fetch('http://localhost:5000/ativos')
+          .then(T => T.json())
+          .then(data=>{dispatch({type:"load_ativo",payload:data});});},[]);
+    const CRUDativos={
+        "delete":deleteAtivo
         /*aqui entrará o código de dispatch*/
     }
     function deleteAtivo(id){
-        props.setAtivos({type:"delete_ativo",payload:id});
+        dispatch({type:"delete_ativo",payload:id});
     }
     function __getAtivos(array,tipo){
         return typeof tipo===typeof undefined?
@@ -45,7 +53,7 @@ const ListaAtivos = (props) => {
                 <h3 className={inter.className} id="preco">Valor</h3>
                 <h3 className={inter.className} id="quantidade">Quantidade</h3>
             </div>
-            {__getAtivos(props.ativos,props.tipo)}
+            {__getAtivos(ativos,props.tipo)}
         </>
     )
 }

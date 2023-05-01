@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import "./LoginC.css"
+import "../../styles/LoginC.css"
 import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
 import { useState , useEffect } from "react";

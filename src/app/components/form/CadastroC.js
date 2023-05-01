@@ -1,20 +1,9 @@
 import React from "react";
 import Button from "./Button";
-import "./LoginC.css"
+import "../../styles/LoginC.css"
 import { Link , useNavigate } from 'react-router-dom';
 import { useState , useEffect } from "react";
 import Logo from "../Logo";
-
-/*
-  <form>
-    <Logo ID='login'/>
-    <Input id="nomer" label="Nome:   " placeholder="Digite seu nome" />
-    <Input id="email" label="Email:  " placeholder="Digite seu email"/>
-    <Input id="senha" label="Senha   " placeholder="Crie sua senha"/>
-    <Input id="senha2" label="Senha   " placeholder="Digite de novo"/>
-    <Link to = '/inicio'><Button label="Cadastrar" /></Link>
-  </form>
-*/
 
 const CadastroC = (props) => {
   const navegar = useNavigate();
