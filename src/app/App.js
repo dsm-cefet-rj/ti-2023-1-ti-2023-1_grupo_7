@@ -13,22 +13,21 @@ import ListaCarteiras from './Pages/ListaCarteiras';
 import { useState, useEffect, useReducer} from 'react';
 
 /*
-Como eu sei q eu vou esquecer oq eu tenho pra fzr,
-olá futuro eu vc se fudeu, kkk rimas à parte vc
-vai ter q adicionar uma função de reducer aqui
-no App.js pra db dps se tudo correr bem mudar
-pro redux e aí adicionar as carteiras e ativos
-nesse redux pra ter um CRUD pronto, daí é só
-se virar com a UI disso td, toma aqui uma listinha:
-  -Reducer
+Vai ter q mudar pro redux e aí adicionar as carteiras e ativos
+nesse redux pra ter um CRUD pronto, daí é só se virar com a UI
+disso td, e refatorar o código pra acomodar o redux sendo global,
+toma aqui uma listinha:
   -Redux
+  -Refatorar código pra Redux
+  -Testar se ainda funciona
   -Carteiras e Ativos com Redux
-  -Interfaces (tela principal com ativos pra ver, tirar e botar a carteira, tela pra alternar, criar e apagar carteiras, login do admin com ferramenta de CRUD dos ativos no mercado)
+  -Interfaces (tela principal com ativos pra ver, tirar e botar na carteira, tela pra alternar, criar e apagar carteiras, login do admin com ferramenta de CRUD dos ativos no mercado)
   -Relatórios
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
-  -https://www.youtube.com/watch?v=7-JZ7IkgUKo&list=PLijZucELEeolGZnrK9kddbUi8YilwHnwO&index=20&ab_channel=DiogoSilveiraMendon%C3%A7a
+  -https://www.youtube.com/watch?v=7-JZ7IkgUKo&list=PLijZucELEeolGZnrK9kddbUi8YilwHnwO&index=20 <-- vídeo passando para Redux
+  -https://github.com/diogosmendonca/pragmapm/commit/0b4753ed65df058977df633aafa9d728745aa85e <--esse link em específico é o de adição do Redux
 */
 
 function App(){
@@ -62,6 +61,11 @@ function App(){
   const [ativos,dispatch] = useReducer(ativosReducer,[]);//ativos será a lidta de ativos disponíveis no mercado
   const [carteiras,setCarteiras] = useState([]);//carteiras será a lista de todas as carteiras existentes
   
+/*aqui vai entrar o const store=configureStore({reducer:{ativos:ativosReducer,carteiras:carteirasReducer,usuarios:usuariosReducer}})
+mas pfv não esquce de fazer os novos reducers dps de testar com o 1 q tá funcionando*/
+
+/*vamos ter que cortar as variáveis de estado pra fora do componente, então logo aqui a gnt põe function App(){*/
+
   useEffect(() => {
     fetch('http://localhost:5000/usuarios')
       .then(T => T.json())
@@ -79,6 +83,8 @@ function App(){
   
 
     return(
+      /*vamos envolver isso num <Provider store={store}>
+      além disso tbm vamos parar de passar atributos por props*/
 <Router>
       <Routes>
         <Route path="/" element={<Login db={db} setDB={setDB}/>}/>
