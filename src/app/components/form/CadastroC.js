@@ -46,7 +46,6 @@ const CadastroC = () => {
     e.preventDefault();
     if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
-        console.log('cadastrado');
         cadastraUsuario();
         navegar("/inicio");
       }else{

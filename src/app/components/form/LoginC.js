@@ -4,10 +4,12 @@ import "../../styles/LoginC.css"
 import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
 import { useState , useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
   const usuarios = useSelector(state=>state.usuarios);
+  const usuarioAtual  = useSelector(state=>state.usuarioAtual);
+  const dispatch = useDispatch();
   const navegar = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -18,7 +20,8 @@ const Login = () => {
     e.preventDefault();
     if(usuarios.map((u)=>u.id).includes(email)){
       if(usuarios.filter((u)=>u.id===email)[0].senha===senha){
-        navegar("/inicio");
+        dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
+        navegar("/listaCarteiras");
       }else{
         setInexistente(false);
         setIncorreto(true);

@@ -3,35 +3,37 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Arapey } from 'next/font/google';
+import { useSelector } from 'react-redux';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function __getTotal(array,tipo){
+function __getTotal(array,quantidades,tipo){
   let accumulator = 0;
   for (let i = 0; i < array.length; i++) {
       const element = array[i];
       if (element.tipo===tipo){
-          accumulator+=element.valor*element.qnt;
+          accumulator+=element.valor*quantidades.filter((q)=>q.id===element.id).map((x)=>x.qnt)[0];
       }
   }
-  return accumulator
+  return accumulator;
 }
-function __getData(array){
+function __getData(array,quantidades){
   const valores = [];
-  valores.push(__getTotal(array,"Renda Fixa"));
-  valores.push(__getTotal(array,"Ação"));
-  valores.push(__getTotal(array,"Fundo Imobiliário"));
-  valores.push(__getTotal(array,"Provento"));
+  valores.push(__getTotal(array,quantidades,"Renda Fixa"));
+  valores.push(__getTotal(array,quantidades,"Ação"));
+  valores.push(__getTotal(array,quantidades,"Fundo Imobiliário"));
+  valores.push(__getTotal(array,quantidades,"Provento"));
   return valores;
 }
 
 export default function Aplication(props) {
+  const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [
       {
         label: 'Valor',
-        data: __getData(props.data),
+        data: __getData(ativos,props.filtro),
         backgroundColor: [
           'rgba(255, 30, 50, 1)',
           'rgba(54, 162, 235, 1)',

@@ -1,4 +1,3 @@
-
 import {React, useEffect} from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
@@ -11,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 const ListaAtivos = (props) => {
 
-    const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.includes(a.id)});
+    const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
     useEffect(() => {
         fetch('http://localhost:5000/ativos')
@@ -26,8 +25,8 @@ const ListaAtivos = (props) => {
     }
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?
-        (<div className="lista">{ativos.map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
-        (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={element} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
+        (<div className="lista">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
+        (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
     }
 
     

@@ -12,24 +12,19 @@ import { useEffect } from 'react'
 
 
 export default function Home(props) {
-  const carteiraAtual={id:3,"ativos":[1,3,7]}
+  const carteiraAtual=useSelector(state=>state.carteiraAtual);
   const dispatch = useDispatch();
   useEffect(() => {
     fetch('http://localhost:5000/carteiras')
       .then(T => T.json())
       .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);
   
-  return(
-  <main className="main">
-    <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
-  </main>
-  )
   return (
     <main className="main">
       <Logo/>
       <DropdownMenu/>
-      <Doughnut/>
-      <ListaAtivos tipo={props.pagina}/>
+      <Doughnut filtro={carteiraAtual.ativos}/>
+      <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
       <NavBar/>
     </main>
   )
