@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Button from "./form/Button";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,16 +18,24 @@ const ListaAtivos = (props) => {
           .then(T => T.json())
           .then(data=>{dispatch({type:"load_ativo",payload:data});});},[useLocation]);
     const CRUDativos={
-        "delete":deleteAtivo
+        "delete":deleteAtivo,
+        "add":addAtivo
         /*aqui entrará o código de dispatch*/
     }
     function deleteAtivo(id){
         dispatch({type:"delete_ativo",payload:id});
     }
+    function addAtivo(id){
+        dispatch({type:"add_ativo", payload:id});
+    }
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?
         (<div className="lista">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
         (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
+    }
+
+    function botao(id){
+        return(<div className="botao"><button onClick={addAtivo(id)}></button></div>)
     }
 
     

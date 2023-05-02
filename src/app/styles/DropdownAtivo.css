@@ -1,0 +1,59 @@
+
+
+ul{
+    padding: 5px;
+    padding-bottom: 0;
+    border: 1px solid rgba(0,0,0, 0.541);
+    border-radius: 3px;
+    background-image: linear-gradient(to left bottom,#0066A2, black);
+    text-align: right;
+}
+li{
+    margin-bottom: 5px;
+}
+.dropdownAtivo{
+    position: fixed;
+    right: 15px;
+    top: 60px
+}
+#menuButton{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 5px;
+    background-image: linear-gradient(to left bottom,#0066A2, black);
+}
+
+.salvar{
+    background: #0066A2;
+    cursor: pointer;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 25px;
+	width: 60px;
+	font: 15px arial,sans-serif;
+	text-shadow: none;
+    border-radius: 20px;
+    margin-top: 10px
+}
+
+.formulario{
+    margin-left: 5px;
+    background: #0066A2;
+    font: 15px arial,sans-serif;
+    text-shadow: none;
+    border-style: outset;
+    border-color: #0066A2;
+    margin-top: 8px
+}
+
+/* Mobile and Tablet */
+@media (max-width: 1023px) {  
+    ul{
+        padding-top: 1.3vh;
+    }
+    li{
+        margin-bottom: 1.3vh;
+    }
+}

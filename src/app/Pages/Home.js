@@ -9,6 +9,7 @@ import { CreateSlice, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import DropdownAtivo from '../components/DropdownAtivo'
 
 
 export default function Home(props) {
@@ -25,6 +26,7 @@ export default function Home(props) {
       <DropdownMenu/>
       <Doughnut filtro={carteiraAtual.ativos}/>
       <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
+      <DropdownAtivo filtro={carteiraAtual.ativos}/>
       <NavBar/>
     </main>
   )
