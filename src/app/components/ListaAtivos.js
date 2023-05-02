@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import {React, useEffect, useState} from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
@@ -13,6 +13,9 @@ const ListaAtivos = (props) => {
 
     const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
+    const [ativo,setAtivo] = useState({tipo: "Ação",nome: "Embraer",valor: 4});
+    const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
+    nextID.sort().reverse();
     useEffect(() => {
         fetch('http://localhost:5000/ativos')
           .then(T => T.json())
@@ -25,8 +28,9 @@ const ListaAtivos = (props) => {
     function deleteAtivo(id){
         dispatch({type:"delete_ativo",payload:id});
     }
-    function addAtivo(id){
-        dispatch({type:"add_ativo", payload:id});
+    function addAtivo(){
+        props.filtro.concat([{id:nextID[0]+1,qnt:1}]);
+        dispatch({type:"add_ativo", payload:{...ativo}});
     }
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?
@@ -34,8 +38,8 @@ const ListaAtivos = (props) => {
         (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
     }
 
-    function botao(id){
-        return(<div className="botao"><button onClick={addAtivo(id)}></button></div>)
+    function botao(){
+        return(<div className="botao"><button onClick={addAtivo}></button></div>)
     }
 
     

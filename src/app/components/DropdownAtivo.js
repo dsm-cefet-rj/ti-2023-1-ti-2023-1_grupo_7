@@ -10,23 +10,33 @@ function DropdownAtivo(props) {
 
     const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
+    const carteiraAtual = useSelector(state=>state.carteiraAtual);
 
     const [valor, setValor] = useState('');
     const [tipo, setTipo] = useState('');
     const [nome, setNome] = useState('');
     const [quantidade, setQtd] = useState('');
 
+    const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
+    nextID.sort().reverse();
+
     function toggle(){
         setIsOpen(!isOpen);
     }
 
-    function addAtivo(id){
-        dispatch({type:"add_ativo", payload:id});
+    function addAtivo(){
+        carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:quantidade}]);
+        dispatch({type:"add_ativo", payload:{tipo:tipo,nome:nome,valor:valor}});
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({type:"add_ativo",payload:(ativos[ativos.map((u)=>u.id)])})
+        addAtivo();
+        setIsOpen(!isOpen);
+        setNome('');
+        setQtd('');
+        setTipo('');
+        setValor('');
     };
 
     function renderMenu(){
