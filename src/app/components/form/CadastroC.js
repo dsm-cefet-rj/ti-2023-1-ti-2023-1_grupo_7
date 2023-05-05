@@ -47,7 +47,8 @@ const CadastroC = () => {
     if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
         cadastraUsuario();
-        navegar("/inicio");
+        dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
+        navegar("/carteiras");
       }else{
       setExiste(false);
       setDiferente(true);

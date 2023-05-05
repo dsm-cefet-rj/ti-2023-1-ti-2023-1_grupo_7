@@ -9,8 +9,8 @@ function Carteira(props){
     const navegar = useNavigate();
     const dispatch = useDispatch();
     const handleSelection = ()=>{
-        navegar("/inicio");
-        dispatch({type:"atualizar_carteiraAtual",payload:props.data});
+      dispatch({type:"atualizar_carteiraAtual",payload:props.data});
+      navegar("/inicio");
     }
     return(
       <div className="ativo">

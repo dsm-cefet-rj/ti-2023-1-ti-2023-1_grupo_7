@@ -23,10 +23,10 @@ export default function Home(props) {
   return (
     <main className="main">
       <Logo/>
+      <DropdownAtivo filtro={carteiraAtual.ativos}/>
       <DropdownMenu/>
       <Doughnut filtro={carteiraAtual.ativos}/>
       <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
-      <DropdownAtivo filtro={carteiraAtual.ativos}/>
       <NavBar/>
     </main>
   )

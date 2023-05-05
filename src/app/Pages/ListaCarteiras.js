@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function ListaCarteiras() {
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
-  const carteiras = useSelector(state=>state.carteiras).filter((c)=>{return usuarioAtual.carteiras.includes(c.id)});
+  const carteiras = useSelector(state=>state.carteiras).filter((c)=>{return c.email===usuarioAtual.id});
   const dispatch = useDispatch();
   useEffect(() => {
     fetch('http://localhost:5000/carteiras')
@@ -22,7 +22,7 @@ export default function ListaCarteiras() {
     dispatch({type:"delete_carteira",payload:id});
   }
   function __getCarteiras(){
-    return(<div className="lista">{carteiras.map((element,i)=><Carteira key={i} data={element} deleteCarteira={event=>deleteCarteira(element.id)}/>)}</div>)
+    return(<div className="lista" id='carteiras'>{carteiras.map((element,i)=><Carteira key={i} data={element} deleteCarteira={event=>deleteCarteira(element.id)}/>)}</div>)
   }
   return (
     <main className="main">

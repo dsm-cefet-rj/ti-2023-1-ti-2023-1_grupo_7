@@ -21,7 +21,7 @@ const Login = () => {
     if(usuarios.map((u)=>u.id).includes(email)){
       if(usuarios.filter((u)=>u.id===email)[0].senha===senha){
         dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
-        navegar("/listaCarteiras");
+        navegar("/carteiras");
       }else{
         setInexistente(false);
         setIncorreto(true);

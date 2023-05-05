@@ -52,12 +52,14 @@
   "carteiras": [
     {
       "id": 1,
-      "nome":"pobre",
+      "nome":"vazia",
+      "email":"jason@gmail.com",
       "ativos": []
     },
     {
       "id": 2,
       "nome":"esperanças",
+      "email":"jason@gmail.com",
       "ativos": [
         {
           "id":3,
@@ -76,6 +78,7 @@
     {
       "id": 3,
       "nome":"meus investimentos",
+      "email":"jason@gmail.com",
       "ativos": [
         {
           "id":1,
@@ -98,6 +101,7 @@
     {
       "id": 4,
       "nome":"rico",
+      "email":"joker@hotmail.com",
       "ativos": [
         {
           "id":1,
@@ -138,56 +142,42 @@
     {
       "id": "jason@gmail.com",
       "nome": "Jason",
-      "senha": "1234",
-      "carteiras": [
-        1,
-        2,
-        3
-      ]
+      "senha": "1234"
     },
     {
       "id": "arthur@hotmail.com",
       "senha": "193849",
-      "nome": "Arthur",
-      "carteiras": []
+      "nome": "Arthur"
     },
     {
       "id": "art@hotmail.com",
       "nome": "Artur",
-      "senha": "193849",
-      "carteiras": []
+      "senha": "193849"
     },
     {
       "id": "joker@hotmail.com",
       "nome": "joker",
-      "senha": "batman",
-      "carteiras": [
-        4
-      ]
+      "senha": "batman"
     },
     {
       "id": "teste@teste",
       "nome": "batata",
-      "senha": "123",
-      "carteiras": []
+      "senha": "123"
     },
     {
       "id": "1@1",
       "nome": "1",
-      "senha": "1",
-      "carteiras": []
+      "senha": "1"
     },
     {
       "id": "1@2",
       "nome": "1",
-      "senha": "12",
-      "carteiras": []
+      "senha": "12"
     },
     {
       "id": "admin@admin",
       "nome": "admin",
-      "senha": "admin",
-      "carteiras": []
+      "senha": "admin"
     }
   ]
 }

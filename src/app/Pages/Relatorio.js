@@ -9,7 +9,6 @@ export default function Relatorio(props) {
     <main className="main">
         <Link to = '/inicio' state={usuario}><div>Voltar</div></Link>
       <Logo/>
-      <Doughnut data={typeof props.db[usuario]===typeof undefined ? []:props.db[usuario].carteira}/>
     </main>
   )
 }

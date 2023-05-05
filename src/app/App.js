@@ -15,13 +15,17 @@ import {store} from './store';
 import { Provider } from 'react-redux';
 
 /*
-É só se virar com a UI de td toma aqui uma listinha:
-  -Testar se ainda funciona
+Listinha do que fazer:
+  -Sinalização mais clara que o usuário foi registrado
+  -Interagir com o banco de dados usando Redux
+  -Detalhes de UI(menu em todas as telas, não regarregar o gráfico ao trocar estados da lista pela NavBar)
   -Interfaces (tela principal com ativos pra ver, tirar e botar na carteira, tela pra alternar, criar e apagar carteiras, login do admin com ferramenta de CRUD dos ativos no mercado)
   -Relatórios
+  -Corrigir o erro 404
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
+  -https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually <--possível solução pro erro 404
 */
 
 //ativos será a lista de ativos disponíveis no mercado
@@ -41,7 +45,7 @@ function App(){
               <Route path="/proventos" element={<Proventos/>}/>
               <Route path="/conta" element={<Conta/>}/>
               <Route path="/relatorio" element={<Relatorio/>}/>
-              <Route path="/listaCarteiras" element={<ListaCarteiras/>}/>
+              <Route path="/carteiras" element={<ListaCarteiras/>}/>
             </Routes>
         </Router>
       </Provider>
