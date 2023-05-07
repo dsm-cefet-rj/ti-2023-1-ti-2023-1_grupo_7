@@ -42,6 +42,7 @@
 }
 #preco{
    margin: auto;
+   cursor: pointer;
 }
 #nomeLista{
    margin-bottom:10px;
