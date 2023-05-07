@@ -18,7 +18,9 @@ export default function Home(props) {
     fetch('http://localhost:5000/carteiras')
       .then(T => T.json())
       .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);
-  
+  const addAtivo = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
+    dispatch({action:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
+  }
   return (
     <main className="main">
       <Logo/>
