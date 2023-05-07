@@ -27,7 +27,7 @@ function Carteira(props){
         {edit?
         (<form onSubmit={submission}><input required value={nome} onChange={(e)=>{setNome(e.target.value)}}></input><button type="submit">OK</button></form>):
         (<h2 className={inter.className} onClick={handleSelection}>{props.data.nome}</h2>)}
-        <h2 className={inter.className} id='preco'onClick={alternate}>{props.data.nome==""?null:(edit?"cancelar":"editar")}</h2>
+        <h2 className={inter.className} id='preco'onClick={alternate}>{props.data.nome==""?null:(edit?"Cancelar":"Editar")}</h2>
         <button className={inter.className} id='quantidade'onClick={deleteCarteira}>Excluir</button>
       </div>
     )
