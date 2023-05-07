@@ -14,7 +14,7 @@ function DropdownMenu() {
             <ul>
                 <Link to = '/conta' state={usuario}><li>Minha conta</li></Link>
                 <Link to = '/relatorio' state={usuario}><li>Relatórios</li></Link>
-                <Link to = '/listaCarteiras' state={usuario}><li>Carteiras</li></Link>
+                <Link to = '/carteiras' state={usuario}><li>Carteiras</li></Link>
                 <Link to='/'><li style={{color:'#A50F00'}}>Sair</li></Link>
             </ul>
             )

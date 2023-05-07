@@ -1,4 +1,3 @@
-"use client"
 import '../styles/Home.css'
 import CadastroC from "../components/form/CadastroC";
 

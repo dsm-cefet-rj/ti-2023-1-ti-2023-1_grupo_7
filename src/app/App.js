@@ -10,7 +10,6 @@ import Cadastro from './Pages/Cadastro';
 import Conta from './Pages/Conta';
 import Relatorio from './Pages/Relatorio';
 import ListaCarteiras from './Pages/ListaCarteiras';
-import { useState, useEffect, useReducer} from 'react';
 import {store} from './store';
 import { Provider } from 'react-redux';
 
@@ -30,6 +29,7 @@ Links:
 
 //ativos será a lista de ativos disponíveis no mercado
 //carteiras será a lista de todas as carteiras existentes
+//usuários será a listagem de usuários cadastrados
 
 function App(){  
     return(

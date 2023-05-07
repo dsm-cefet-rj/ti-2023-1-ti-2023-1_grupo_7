@@ -1,4 +1,3 @@
-"use client"
 import Logo from '../components/Logo'
 import '../styles/Home.css'
 import NavBar from "../components/NavBar"

@@ -1,4 +1,3 @@
-"use client"
 import { useLocation } from "react-router-dom";
 import Login from "../components/form/LoginC";
 import '../styles/Home.css'
