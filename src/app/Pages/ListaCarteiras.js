@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from 'react-redux';
 import Carteira from '../components/Carteira';
 import { useEffect, useState } from 'react';
+import DropdownMenu from '../components/Dropdown';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +26,8 @@ export default function ListaCarteiras() {
   return (
     <main className="main">
       <Logo/>
-      <div style={{position:"absolute",right:"5vw",top:"5vh"}}><button onClick={handleclick}>+</button></div>
+      <div style={{position:"fixed",right:15,top:55,display:"block"}}><button onClick={handleclick}>+</button></div>
+      <DropdownMenu/>
       <h2 className={inter.className} id='nomeLista'>
           Minhas Carteiras
       </h2>

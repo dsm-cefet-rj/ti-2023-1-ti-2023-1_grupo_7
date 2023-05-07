@@ -64,7 +64,7 @@
    margin: auto;
 }
 #carteiras{
-   height: 80vh;
+   height: calc(100vh - 150px - min(4vw,25px));
 }
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
