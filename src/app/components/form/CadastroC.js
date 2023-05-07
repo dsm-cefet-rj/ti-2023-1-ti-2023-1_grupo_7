@@ -22,8 +22,7 @@ const CadastroC = () => {
     dispatch({type:"add_usuario",payload:{
                                           "id":email,
                                           "nome":nome,
-                                          "senha":senha1,
-                                          "carteiras":[]
+                                          "senha":senha1
                                          }
     });
 
@@ -33,11 +32,9 @@ const CadastroC = () => {
       body: JSON.stringify({
           "id":email,
           "nome":nome,
-          "senha":senha1,
-          "carteiras":[]
+          "senha":senha1
         })
     }
-
     return fetch('http://localhost:5000/usuarios', options)
       .then(T => T.json)
   }
@@ -47,7 +44,7 @@ const CadastroC = () => {
     if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
         cadastraUsuario();
-        dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
+        dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":senha1}});
         navegar("/carteiras");
       }else{
       setExiste(false);
