@@ -1,5 +1,6 @@
 *{
     overflow: hidden;
+    
 }
 
 .login{
@@ -20,6 +21,7 @@ form{
     width: 100%;
     max-width: 400px;
     text-align: center;
+    
 }
 
 button{
@@ -33,6 +35,10 @@ button{
 	font: 15px arial,sans-serif;
 	text-shadow: none;
     border-radius: 20px;
+}
+
+label{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .effect-background{
@@ -50,6 +56,12 @@ button{
     background-size: cover;
     animation: background-animation 15s alternate infinite;
 }
+
+.swal-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+  }
+
 
 @keyframes background-animation {
     0%,

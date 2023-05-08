@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import Logo from "../Logo";
 import { useDispatch, useSelector } from "react-redux";
+import swal from 'sweetalert';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 const CadastroC = () => {
   const navegar = useNavigate();
@@ -16,7 +20,7 @@ const CadastroC = () => {
   const [senha2, setSenha2] = useState('');
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
-  
+
   function cadastraUsuario () {
 
     dispatch({type:"add_usuario",payload:{
@@ -40,19 +44,26 @@ const CadastroC = () => {
   }
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
     if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
         cadastraUsuario();
         dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":senha1}});
         navegar("/carteiras");
+        swal({
+          title:"Usuário cadastrado!",
+          text: "",
+          icon:"success"})
       }else{
       setExiste(false);
       setDiferente(true);
+     
       }
     }else{
         setExiste(true);
         setDiferente(false);
+       
     }
   };
 
@@ -113,8 +124,11 @@ const CadastroC = () => {
       {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
       {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
       <br/>
-      <Button type='submit' label="Cadastrar" />
+      
+      <Button type="submit" label="Cadastrar"></Button>
+
     </form>
+    
       </div>
     </>  
       
