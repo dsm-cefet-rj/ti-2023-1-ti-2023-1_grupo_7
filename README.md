@@ -35,6 +35,8 @@ Inicie o JSON SERVER
 
 - Fazer melhorias conforme o feedback da equipe de gerência e do professor
 
+- Implementar relatórios
+
 
 ## Autores
 
@@ -49,5 +51,5 @@ Inicie o JSON SERVER
 
 **Front-end:** React, Redux
 
-**Back-end:** —
+**Back-end:** Node.js
 
