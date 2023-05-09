@@ -1,7 +1,7 @@
 import React, {useState} from 'react'; 
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import '../styles/DropdownAtivo.css';
+//import '../styles/DropdownAtivo.css';
 import Button from './form/Button';
 import carteiraAtualReducer from '../slices/CarteiraAtualSlice';
 

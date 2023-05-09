@@ -24,6 +24,7 @@ const reducerMap={
     novaCarteira.ativos.concat([payload.ativo]);
     //substitui 1 carteira no index pelo conteúdo recebido
     carteirasUpdated.splice(index, 1, novaCarteira);
+    return carteirasUpdated;
   }
 }
 export default function carteirasReducer(carteiras=[] /*state*/, action ){

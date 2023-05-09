@@ -15,20 +15,20 @@ import NovoAtivo from './NovoAtivo'
 export default function Home(props) {
   const carteiraAtual=useSelector(state=>state.carteiraAtual);
   const dispatch = useDispatch();
-  useEffect(() => {
+  /*useEffect(() => {
     fetch('http://localhost:5000/carteiras')
       .then(T => T.json())
-      .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);
+      .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);*/
   const addAtivo = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
     dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
   }
   return (
     <main className="main">
       <Logo/>
-      <DropdownAtivo filtro={carteiraAtual.ativos}/>
+      <NovoAtivo/>
       <DropdownMenu/>
-      <Doughnut filtro={carteiraAtual.ativos}/>
-      <ListaAtivos tipo={props.pagina} filtro={carteiraAtual.ativos}/>
+      <Doughnut/>
+      <ListaAtivos tipo={props.pagina}/>
       <NavBar/>
     </main>
   )
