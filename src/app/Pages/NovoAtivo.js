@@ -54,7 +54,7 @@ export default function NovoAtivo(props){
                 <>
                 <form id="formulario2"onSubmit={handleSubmit}>
             <label>
-                id: 
+                Id: 
                 <input type="number" className="input_" name="id" min={1} max={8} value={id} onChange={(e) => setId(e.target.value)}   />
             </label>
             <br/>
@@ -77,6 +77,7 @@ export default function NovoAtivo(props){
             </label>
             <br/>
     <br/>*/}
+            <br/>
             <label>
                 Quantidade: 
                 <input type="number" className="input_" name="valor" min={1} value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
