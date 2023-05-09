@@ -32,6 +32,9 @@ const ListaAtivos = (props) => {
         props.filtro.concat([{id:nextID[0]+1,qnt:1}]);
         dispatch({type:"add_ativo", payload:{...ativo}});
     }
+    const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
+    dispatch({action:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
+  }
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?
         (<div className="lista">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:props.filtro[props.filtro.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
@@ -42,7 +45,6 @@ const ListaAtivos = (props) => {
         return(<div className="botao"><button onClick={addAtivo}></button></div>)
     }
 
-    
 
     //isso só é mostrado qnd a carteira está vazia
     
@@ -66,6 +68,7 @@ const ListaAtivos = (props) => {
                 <h3 className={inter.className} id="quantidade">Quantidade</h3>
             </div>
             {__getAtivos()}
+            
         </>
     )
 }

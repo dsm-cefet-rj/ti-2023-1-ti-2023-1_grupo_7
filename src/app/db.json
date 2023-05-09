@@ -52,88 +52,88 @@
   "carteiras": [
     {
       "id": 1,
-      "nome":"vazia",
-      "email":"jason@gmail.com",
+      "nome": "vazia",
+      "email": "jason@gmail.com",
       "ativos": []
     },
     {
       "id": 2,
-      "nome":"esperanças",
-      "email":"jason@gmail.com",
+      "nome": "esperanças",
+      "email": "jason@gmail.com",
       "ativos": [
         {
-          "id":3,
-          "qnt":14
+          "id": 3,
+          "qnt": 14
         },
         {
-          "id":4,
-          "qnt":11
+          "id": 4,
+          "qnt": 11
         },
         {
-          "id":7,
-          "qnt":22
+          "id": 7,
+          "qnt": 22
         }
       ]
     },
     {
       "id": 3,
-      "nome":"meus investimentos",
-      "email":"jason@gmail.com",
+      "nome": "meus investimentos",
+      "email": "jason@gmail.com",
       "ativos": [
         {
-          "id":1,
-          "qnt":1
+          "id": 1,
+          "qnt": 1
         },
         {
-          "id":2,
-          "qnt":10
+          "id": 2,
+          "qnt": 10
         },
         {
-          "id":5,
-          "qnt":5
+          "id": 5,
+          "qnt": 5
         },
         {
-          "id":6,
-          "qnt":3
+          "id": 6,
+          "qnt": 3
         }
       ]
     },
     {
       "id": 4,
-      "nome":"rico",
-      "email":"joker@hotmail.com",
+      "nome": "rico",
+      "email": "joker@hotmail.com",
       "ativos": [
         {
-          "id":1,
-          "qnt":10
+          "id": 1,
+          "qnt": 10
         },
         {
-          "id":2,
-          "qnt":3
+          "id": 2,
+          "qnt": 3
         },
         {
-          "id":3,
-          "qnt":28
+          "id": 3,
+          "qnt": 28
         },
         {
-          "id":4,
-          "qnt":100
+          "id": 4,
+          "qnt": 100
         },
         {
-          "id":5,
-          "qnt":45
+          "id": 5,
+          "qnt": 45
         },
         {
-          "id":6,
-          "qnt":13
+          "id": 6,
+          "qnt": 13
         },
         {
-          "id":7,
-          "qnt":15
+          "id": 7,
+          "qnt": 15
         },
         {
-          "id":8,
-          "qnt":2
+          "id": 8,
+          "qnt": 2
         }
       ]
     }
@@ -178,6 +178,91 @@
       "id": "admin@admin",
       "nome": "admin",
       "senha": "admin"
+    },
+    {
+      "id": "123213@122",
+      "nome": "123",
+      "senha": "123"
+    },
+    {
+      "id": "chumb@26",
+      "nome": "123123",
+      "senha": "12"
+    },
+    {
+      "id": "chumb@261",
+      "nome": "123",
+      "senha": "12"
+    },
+    {
+      "id": "123@1",
+      "nome": "123",
+      "senha": "1"
+    },
+    {
+      "id": "1221@22",
+      "nome": "123123",
+      "senha": "1"
+    },
+    {
+      "id": "123@12",
+      "nome": "12321",
+      "senha": "1"
+    },
+    {
+      "id": "lucas@12",
+      "nome": "gfsajhdfjas",
+      "senha": "12"
+    },
+    {
+      "id": "dads@dadf",
+      "nome": "asdasd",
+      "senha": "12"
+    },
+    {
+      "id": "add@gfdgf",
+      "nome": "asdads",
+      "senha": "12"
+    },
+    {
+      "id": "dajisdji@da",
+      "nome": "12312",
+      "senha": "12"
+    },
+    {
+      "id": "3123@11",
+      "nome": "123123",
+      "senha": "123"
+    },
+    {
+      "id": "123123@11",
+      "nome": "adsda",
+      "senha": "11"
+    },
+    {
+      "id": "asjdas@dhajd",
+      "nome": "jdisajdk",
+      "senha": "123"
+    },
+    {
+      "id": "dasd@ada",
+      "nome": "asdasd",
+      "senha": "123"
+    },
+    {
+      "id": "lucas@26",
+      "nome": "bnasdbas@dbansd",
+      "senha": "12"
+    },
+    {
+      "id": "chumb@262",
+      "nome": "asdhasd",
+      "senha": "12"
+    },
+    {
+      "id": "tgftgf@FGFGFVG",
+      "nome": "hujhujhu",
+      "senha": "123"
     }
   ]
 }

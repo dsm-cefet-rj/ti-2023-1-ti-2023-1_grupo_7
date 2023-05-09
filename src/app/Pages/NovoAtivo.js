@@ -1,13 +1,13 @@
-import React, {useState} from 'react'; 
-import { Link, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector} from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import '../styles/DropdownAtivo.css';
-import Button from './form/Button';
-import carteiraAtualReducer from '../slices/CarteiraAtualSlice';
 
-function DropdownAtivo(props) {
+export default function NovoAtivo(props){
+
     const usuario = useLocation().state;
-    const [isOpen,setIsOpen]=useState(false);
 
     const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
@@ -21,14 +21,6 @@ function DropdownAtivo(props) {
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
 
-    const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({action:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
-  }
-
-    function toggle(){
-        setIsOpen(!isOpen);
-    }
-
     function addAtivo(){
         carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:quantidade}]);
         dispatch({type:"add_ativo", payload:{tipo:tipo,nome:nome,valor:valor}});
@@ -37,17 +29,14 @@ function DropdownAtivo(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addAtivo();
-        setIsOpen(!isOpen);
         setNome('');
         setQtd('');
         setTipo('');
         setValor('');
-        addAtivo_(e.id, e.quantidade);
-    };
+    }
 
-    function renderMenu(){
-        if(isOpen){
-            return(
+    function renderForm(){
+        return(
             <ul>
                 <form onSubmit={handleSubmit}>
             <label>
@@ -76,20 +65,17 @@ function DropdownAtivo(props) {
                 <input type="text" className="formulario" name="valor" value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
             </label>
             <br/>
-            <input type="submit" className="salvar" value="Salvar" />
+            <Link to="/inicio"><input type="submit" className="salvar" value="Salvar" /></Link>
             </form>
-            </ul>
-            )
-        }else{
-            return(<div></div>)
-        }
+        </ul>
+        )
     }
+
+
     return(
         <div className='dropdownAtivo'>
-            <button onClick={toggle} id='menuButton'>Novo Ativo</button>
-            {renderMenu()}
+            <Link to="/inicio/novoativo"><button onClick={renderForm} id='menuButton'>Novo Ativo</button></Link>
+            
         </div>
-    );
+    )
 }
-
-export default DropdownAtivo;

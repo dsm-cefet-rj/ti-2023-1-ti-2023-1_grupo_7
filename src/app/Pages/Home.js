@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import DropdownAtivo from '../components/DropdownAtivo'
+import NovoAtivo from './NovoAtivo'
 
 
 export default function Home(props) {

@@ -12,6 +12,7 @@ import Relatorio from './Pages/Relatorio';
 import ListaCarteiras from './Pages/ListaCarteiras';
 import {store} from './store';
 import { Provider } from 'react-redux';
+import NovoAtivo from './Pages/NovoAtivo';
 
 /*
 Listinha do que fazer:
@@ -39,6 +40,7 @@ function App(){
               <Route path="/" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
               <Route path="/inicio" element={<Home/>}/>
+              <Route path="/inicio/novoativo" element={<NovoAtivo/>}/>
               <Route path="/acoes" element={<Acoes/>}/>
               <Route path="/fi" element={<Fi/>}/>
               <Route path="/rendafixa" element={<RendaFixa/>}/>
