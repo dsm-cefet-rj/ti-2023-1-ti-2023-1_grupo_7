@@ -8,7 +8,6 @@ import { CreateSlice, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import DropdownAtivo from '../components/DropdownAtivo'
 import NovoAtivo from './NovoAtivo'
 
 
