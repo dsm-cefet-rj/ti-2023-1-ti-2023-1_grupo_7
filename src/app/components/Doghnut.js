@@ -25,14 +25,15 @@ function __getData(array,quantidades){
   return valores;
 }
 
-export default function Aplication(props) {
-  const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
+export default function Aplication() {
+  const carteiraAtual = useSelector(state=>state.carteiraAtual);
+  const ativos = useSelector(state=>state.ativos);
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [
       {
         label: 'Valor',
-        data: __getData(ativos,props.filtro),
+        data: __getData(ativos,carteiraAtual.ativos),
         backgroundColor: [
           'rgba(255, 30, 50, 1)',
           'rgba(54, 162, 235, 1)',

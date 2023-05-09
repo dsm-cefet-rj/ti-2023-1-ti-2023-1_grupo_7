@@ -9,13 +9,13 @@ function DropdownAtivo(props) {
     const usuario = useLocation().state;
     const [isOpen,setIsOpen]=useState(false);
 
-    const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
+    //const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
 
     const [valor, setValor] = useState('');
     const [tipo, setTipo] = useState('');
-    const [nome, setNome] = useState('');
+    const [id, setId] = useState('');
     const [quantidade, setQtd] = useState('');
 
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
@@ -36,13 +36,13 @@ function DropdownAtivo(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addAtivo();
+        //addAtivo();
         setIsOpen(!isOpen);
-        setNome('');
+        setId('');
         setQtd('');
-        setTipo('');
-        setValor('');
-        addAtivo_(e.id, e.quantidade);
+        //setTipo('');
+        //setValor('');
+        addAtivo_(+id, +quantidade);
     };
 
     function renderMenu(){
@@ -51,10 +51,11 @@ function DropdownAtivo(props) {
             <ul>
                 <form onSubmit={handleSubmit}>
             <label>
-                Nome: 
-                <input type="text" className="formulario" name="nome" value={nome} onChange={(e) => setNome(e.target.value)}   />
+                id: 
+                <input type="number" className="formulario" name="id" min={1} max={8} value={id} onChange={(e) => setId(e.target.value)}   />
             </label>
             <br/>
+            {/*<br/>
             <label>
                 Tipo: 
                 <select className='formulario' name="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} >
@@ -70,10 +71,10 @@ function DropdownAtivo(props) {
                 Valor: 
                 <input type="text" className="formulario" name="valor" value={valor} onChange={(e) => setValor(e.target.value) }   />
             </label>
-            <br/>
+            <br/>*/}
             <label>
                 Quantidade: 
-                <input type="text" className="formulario" name="valor" value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
+                <input type="number" className="formulario" name="valor" min={1} value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
             </label>
             <br/>
             <input type="submit" className="salvar" value="Salvar" />
