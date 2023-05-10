@@ -92,5 +92,3 @@ function DropdownAtivo(props) {
         </div>
     );
 }
-
-export default DropdownAtivo;

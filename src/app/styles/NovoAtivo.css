@@ -1,13 +1,12 @@
-
-
-ul{
-    padding: 5px;
-    padding-bottom: 0;
-    border: 1px solid rgba(0,0,0, 0.541);
-    border-radius: 3px;
-    background-image: linear-gradient(to left bottom,#0066A2, black);
-    text-align: right;
+.input_{
+    background-color: #0066A2;
+    color: white;
 }
+
+#formulario2{
+    color: white;
+}
+
 li{
     margin-bottom: 5px;
 }
@@ -16,6 +15,7 @@ li{
     right: 15px;
     top: 60px
 }
+
 #menuButton{
     display: block;
     margin-left: auto;
@@ -38,15 +38,7 @@ li{
     margin-top: 10px
 }
 
-.formulario{
-    margin-left: 5px;
-    background: #0066A2;
-    font: 15px arial,sans-serif;
-    text-shadow: none;
-    border-style: outset;
-    border-color: #0066A2;
-    margin-top: 8px
-}
+
 
 /* Mobile and Tablet */
 @media (max-width: 1023px) {  
