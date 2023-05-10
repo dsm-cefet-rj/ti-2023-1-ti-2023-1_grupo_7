@@ -1,9 +1,9 @@
 import React, {useState} from 'react'; 
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Dropdown.css';
+import { useDispatch } from 'react-redux';
 
 function DropdownMenu() {
-    const usuario = useLocation().state;
     const [isOpen,setIsOpen]=useState(false);
     function toggle(){
         setIsOpen(!isOpen);
@@ -12,9 +12,9 @@ function DropdownMenu() {
         if(isOpen){
             return(
             <ul>
-                <Link to = '/conta' state={usuario}><li>Minha conta</li></Link>
-                <Link to = '/relatorio' state={usuario}><li>Relatórios</li></Link>
-                <Link to = '/carteiras' state={usuario}><li>Carteiras</li></Link>
+                <Link to = '/conta'><li>Minha conta</li></Link>
+                <Link to = '/relatorio'><li>Relatórios</li></Link>
+                <Link to = '/carteiras' onClick={()=>{useDispatch({type:"atualizar_carteiraAtual",payload:[]})}}><li>Carteiras</li></Link>
                 <Link to='/'><li style={{color:'#A50F00'}}>Sair</li></Link>
             </ul>
             )

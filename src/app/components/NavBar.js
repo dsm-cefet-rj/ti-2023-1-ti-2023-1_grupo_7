@@ -1,31 +1,28 @@
 import '../styles/NavBar.css'
 import { Inter } from 'next/font/google'
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 
-const inter = Inter({ subsets: ['latin'] })
-function NavBar(){
-  const usuario = useLocation().state;
+const inter = Inter({ subsets: ['latin'] });
+function NavBar(props){
     return(
         <div className="grid">
         
-          <Link to="/inicio" className='card' state={usuario}><h2 className={inter.className}>Início</h2></Link>         
+          <div className='card' onClick={()=>{props.troca(undefined)}}><h2 className={inter.className}>Início</h2></div>         
         
         
         
-          <Link to="/acoes" className='card' state={usuario}><h2 className={inter.className}>Ações</h2></Link>
-        
-
-        
-          <Link to="/fi" className='card' state={usuario}><h2 className={inter.className}>Fundos Imobiliários</h2></Link>
+          <div className='card' onClick={()=>{props.troca("Ação")}}><h2 className={inter.className}>Ações</h2></div>
         
 
         
-          <Link to="/rendafixa" className='card' state={usuario}><h2 className={inter.className}>Renda Fixa</h2></Link>
+          <div className='card' onClick={()=>{props.troca("Fundo Imobiliário")}}><h2 className={inter.className}>Fundos Imobiliários</h2></div>
         
 
         
-          <Link to="/proventos" className='card' state={usuario}><h2 className={inter.className}>Proventos</h2></Link>
+          <div className='card' onClick={()=>{props.troca("Renda Fixa")}}><h2 className={inter.className}>Renda Fixa</h2></div>
+        
+
+        
+          <div className='card' onClick={()=>{props.troca("Provento")}}><h2 className={inter.className}>Proventos</h2></div>
         
       </div>
     )

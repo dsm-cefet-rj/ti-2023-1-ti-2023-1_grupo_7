@@ -12,7 +12,7 @@ function Carteira(props){
     const [nome,setNome] = useState(props.data.nome);
     const handleSelection = ()=>{
       dispatch({type:"atualizar_carteiraAtual",payload:props.data});
-      navegar("/inicio");
+      navegar("/ativo");
     }
     function submission(){
       dispatch({type:"update_carteira",payload:{id:props.data.id,nome:nome,email:props.data.email,ativos:props.data.ativos}});

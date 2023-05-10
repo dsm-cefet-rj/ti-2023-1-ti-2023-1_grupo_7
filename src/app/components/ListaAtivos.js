@@ -1,49 +1,31 @@
-import {React, useEffect, useState} from "react";
+import {React, useEffect} from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "./form/Button";
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 const ListaAtivos = (props) => {
 
-    const carteiraAtual=useSelector(state=>state.carteiraAtual);
+    const carteiraAtual = useSelector(state=>state.carteiraAtual);
     const ativos = useSelector(state=>state.ativos);
     const dispatch = useDispatch();
-    const [ativo,setAtivo] = useState({tipo: "Ação",nome: "Embraer",valor: 4});
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
     useEffect(() => {
         fetch('http://localhost:5000/ativos')
           .then(T => T.json())
           .then(data=>{dispatch({type:"load_ativo",payload:{array:data,carteiraAtual:carteiraAtual}});});},[carteiraAtual]);
-    const CRUDativos={
-        "delete":deleteAtivo,
-        "add":addAtivo
-        /*aqui entrará o código de dispatch*/
-    }
     function deleteAtivo(id){
         dispatch({type:"delete_ativo",payload:id});
     }
-    function addAtivo(){
-        carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:1}]);
-        dispatch({type:"add_ativo", payload:{...ativo}});
-    }
-    const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
-  }
     function __getAtivos(){
+        console.log(ativos.map((element)=>{return carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)]}));
         return typeof props.tipo===typeof undefined?
         (<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
         (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
-    }
-
-    function botao(){
-        return(<div className="botao"><button onClick={addAtivo}></button></div>)
     }
 
 
