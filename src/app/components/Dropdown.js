@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 function DropdownMenu() {
     const [isOpen,setIsOpen]=useState(false);
+    const dispatch = useDispatch();
     function toggle(){
         setIsOpen(!isOpen);
     }
@@ -14,7 +15,7 @@ function DropdownMenu() {
             <ul>
                 <Link to = '/conta'><li>Minha conta</li></Link>
                 <Link to = '/relatorio'><li>Relatórios</li></Link>
-                <Link to = '/carteiras' onClick={()=>{useDispatch({type:"atualizar_carteiraAtual",payload:[]})}}><li>Carteiras</li></Link>
+                <Link to = '/carteiras' onClick={()=>{dispatch({type:"atualizar_carteiraAtual",payload:[]})}}><li>Carteiras</li></Link>
                 <Link to='/'><li style={{color:'#A50F00'}}>Sair</li></Link>
             </ul>
             )

@@ -14,7 +14,7 @@ const reducerMap={
     'delete_ativo':(ativos,id)=>{
         //filtra o ativo q tem o id igual ao payload
         return ativos.filter((a) => a.id !== id);},
-    'load_ativo':(ativos,payload)=>{return payload.array.filter((a)=>{return payload.carteiraAtual.ativos.map(c=>c.id).includes(a.id)})},
+    'load_ativo':(ativos,payload)=>{return payload.array;},//.filter((a)=>{return payload.carteiraAtual.ativos.map(c=>c.id).includes(a.id)})},
     'coloca_ativo_na_carteira':(ativos,payload)=>{return ativos}
 }
 export default function ativosReducer(ativos=[] /*state*/, action ){

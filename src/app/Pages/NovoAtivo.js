@@ -83,25 +83,11 @@ export default function NovoAtivo(props){
                 <input type="number" className="input_" name="valor" min={1} value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
             </label>
             <br/>
-<<<<<<< Updated upstream
             <br/>
             <input type="submit" className="salvar" value="Salvar"/>
             </form>
             </>
             </Modal>
-=======
-            <Link to="/ativo"><input type="submit" className="salvar" value="Salvar" /></Link>
-            </form>
-        </ul>
-        )
-    }
-
-
-    return(
-        <div className='dropdownAtivo'>
-            <Link to="/ativo/novoativo"><button onClick={renderForm} id='menuButton'>Novo Ativo</button></Link>
-            
->>>>>>> Stashed changes
         </div>
     )
 }

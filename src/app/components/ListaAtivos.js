@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 const ListaAtivos = (props) => {
 
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
-    const ativos = useSelector(state=>state.ativos);
+    const ativos = useSelector(state=>state.ativos).filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
@@ -22,7 +22,7 @@ const ListaAtivos = (props) => {
         dispatch({type:"delete_ativo",payload:id});
     }
     function __getAtivos(){
-        console.log(ativos.map((element)=>{return carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)]}));
+        console.log(ativos);//.map((element)=>{return carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)]}));
         return typeof props.tipo===typeof undefined?
         (<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
         (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
