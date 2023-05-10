@@ -34,17 +34,11 @@
     width: 50px;
  }
 
- .lista{
-   overflow-y: auto;
-   height: 40vh;
-   padding-right: 10px;
- }
 
  .lista_ativo{
    overflow-y: auto;
-   height: 40vh;
+   height: calc(58vh - min(3vw,20px) - 130px - min(4vw,25px));
    padding-right: 10px;
-   cursor: url(https://www.imagensanimadas.com/data/media/576/lixeira-imagem-animada-0004.gif), default;
  }
 
 .__className_ccafe3{

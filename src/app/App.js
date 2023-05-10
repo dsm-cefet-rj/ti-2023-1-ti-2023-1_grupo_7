@@ -35,8 +35,8 @@ function App(){
             <Routes>
               <Route path="/" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
-              <Route path="/ativo" element={<Home/>}/>
-              <Route path="/ativo/novoativo" element={<NovoAtivo/>}/>
+              <Route path="/ativos" element={<Home/>}/>
+              <Route path="/ativos/novoativo" element={<NovoAtivo/>}/>
               <Route path="/conta" element={<Conta/>}/>
               <Route path="/relatorio" element={<Relatorio/>}/>
               <Route path="/carteiras" element={<ListaCarteiras/>}/>

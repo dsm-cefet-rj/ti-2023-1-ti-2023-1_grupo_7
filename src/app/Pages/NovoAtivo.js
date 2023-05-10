@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import '../styles/NovoAtivo.css';
 import Modal from "../components/Modal";
 
-export default function NovoAtivo(props){
+export default function NovoAtivo(){
 
     const usuario = useLocation().state;
 
@@ -48,7 +48,7 @@ export default function NovoAtivo(props){
 
     return(
         <div className='dropdownAtivo'>
-            <button onClick={() => setOpenModal(true)}>Novo Ativo</button>
+            <button style={{backgroundImage: "linear-gradient(to left bottom,#0066A2, black)"}} onClick={() => setOpenModal(true)}>Novo Ativo</button>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
                 {/* children */}
                 <>

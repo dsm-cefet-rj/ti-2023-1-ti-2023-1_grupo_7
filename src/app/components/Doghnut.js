@@ -51,7 +51,7 @@ export default function Aplication() {
     ],
   };
   return( 
-  <div style={{width: 'auto',height:'30vh',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
+  <div style={{width: 'auto',height:'auto',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
     <Doughnut data={data} updateMode='resize' redraw={false}/>
   </div>
   );
