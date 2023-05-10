@@ -4,14 +4,19 @@ import NavBar from "../components/NavBar"
 import Doughnut from "../components/Doghnut"
 import ListaAtivos from '../components/ListaAtivos'
 import DropdownMenu from '../components/Dropdown'
-import { CreateSlice, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch } from 'react-redux'
+<<<<<<< Updated upstream
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import NovoAtivo from './NovoAtivo'
+=======
+import { useEffect, useState } from 'react'
+import DropdownAtivo from '../components/DropdownAtivo'
+>>>>>>> Stashed changes
 
 
-export default function Home(props) {
+export default function Home() {
+  const[tipo,setTipo]=useState(undefined);
   const carteiraAtual=useSelector(state=>state.carteiraAtual);
   const dispatch = useDispatch();
   /*useEffect(() => {
@@ -21,14 +26,15 @@ export default function Home(props) {
   const addAtivo = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
     dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
   }
+  console.log(tipo);
   return (
     <main className="main">
       <Logo/>
       <NovoAtivo/>
       <DropdownMenu/>
       <Doughnut/>
-      <ListaAtivos tipo={props.pagina}/>
-      <NavBar/>
+      <ListaAtivos tipo={tipo}/>
+      <NavBar troca={setTipo}/>
     </main>
   )
 }
