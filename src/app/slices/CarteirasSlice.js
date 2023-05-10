@@ -20,8 +20,17 @@ const reducerMap={
     let index = carteiras.map(c => c.id).indexOf(payload.id);
     //copia carteiras
     let carteirasUpdated = carteiras.slice();
-    let novaCarteira = carteiras[index];
-    novaCarteira.ativos.concat([payload.ativo]);
+    let novaCarteira = {id:carteiras[index].id,nome:carteiras[index].nome,email:carteiras[index].email,ativos:carteiras[index].ativos.concat([payload.ativo])};
+    //substitui 1 carteira no index pelo conteúdo recebido
+    carteirasUpdated.splice(index, 1, novaCarteira);
+    return carteirasUpdated;
+  },
+  'remove_ativo_da_carteira':(carteiras,id)=>{
+    //cria um novo array com os ids das carteiras e nele busca a posição do id
+    let index = carteiras.map(c => c.id).indexOf(id.carteira);
+    //copia carteiras
+    let carteirasUpdated = carteiras.slice();
+    let novaCarteira = {id:carteiras[index].id,nome:carteiras[index].nome,email:carteiras[index].email,ativos:carteiras[index].ativos.filter((a)=>a.id!==id.ativo)};
     //substitui 1 carteira no index pelo conteúdo recebido
     carteirasUpdated.splice(index, 1, novaCarteira);
     return carteirasUpdated;

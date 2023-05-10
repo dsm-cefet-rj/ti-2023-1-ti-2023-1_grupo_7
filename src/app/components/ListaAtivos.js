@@ -18,14 +18,11 @@ const ListaAtivos = (props) => {
         fetch('http://localhost:5000/ativos')
           .then(T => T.json())
           .then(data=>{dispatch({type:"load_ativo",payload:{array:data,carteiraAtual:carteiraAtual}});});},[carteiraAtual]);
-    function deleteAtivo(id){
-        dispatch({type:"delete_ativo",payload:id});
-    }
+    
     function __getAtivos(){
-        console.log(ativos);//.map((element)=>{return carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)]}));
         return typeof props.tipo===typeof undefined?
-        (<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>):
-        (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}} deleteAtivo={event=>deleteAtivo(element.id)}/>)}</div>);
+        (<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}}/>)}</div>):
+        (<div className="lista">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}}/>)}</div>);
     }
 
 

@@ -21,6 +21,7 @@ export default function Home() {
   const addAtivo = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
     dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
   }
+  console.log(carteiraAtual);
   return (
     <main className="main">
       <Logo/>
