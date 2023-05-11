@@ -7,6 +7,7 @@ import Logo from "../Logo";
 import { useDispatch, useSelector } from "react-redux";
 import swal from 'sweetalert';
 import { Inter } from 'next/font/google';
+import CryptoJS from "crypto-js";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,12 +22,12 @@ const CadastroC = () => {
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
 
-  function cadastraUsuario () {
+  function cadastraUsuario (hash) {
 
-    dispatch({type:"add_usuario",payload:{
+    ({type:"add_usuario",payload:{
                                           "id":email,
                                           "nome":nome,
-                                          "senha":senha1
+                                          "senha":{...hash}
                                          }
     });
 
@@ -36,7 +37,7 @@ const CadastroC = () => {
       body: JSON.stringify({
           "id":email,
           "nome":nome,
-          "senha":senha1
+          "senha":{...hash}
         })
     }
     return fetch('http://localhost:5000/usuarios', options)
@@ -44,13 +45,13 @@ const CadastroC = () => {
   }
 
   const handleSubmit = (e) => {
-    
     e.preventDefault();
     if(!(usuarios.map((u)=>u.id).includes(email))){
       if(senha1===senha2){
-        cadastraUsuario();
-        dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":senha1}});
-        navegar("/carteiras");
+        const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
+        cadastraUsuario(hash);
+        dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":{...hash}}});
+        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
         swal({
           title:"Usuário cadastrado!",
           text: "",

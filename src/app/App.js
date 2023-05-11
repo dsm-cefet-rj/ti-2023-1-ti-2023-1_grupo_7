@@ -12,21 +12,21 @@ import NovoAtivo from './Pages/NovoAtivo';
 
 /*
 Listinha do que fazer:
-  -Sinalização mais clara que o usuário foi registrado
-  -Interagir com o banco de dados usando Redux
-  -Detalhes de UI(menu em todas as telas, não regarregar o gráfico ao trocar estados da lista pela NavBar)
-  -Interfaces (tela principal com ativos pra ver, tirar e botar na carteira, tela pra alternar, criar e apagar carteiras, login do admin com ferramenta de CRUD dos ativos no mercado)
+  -Interagir com o banco de dados usando Redux async thunk
+  -Interfaces (login do admin com ferramenta de CRUD dos ativos no mercado)
+  -Perfil de investimento
   -Relatórios
-  -Corrigir o erro 404
+  -Corrigir o erro 404 (requer backend)
+  -fazer o backend
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
   -https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually <--possível solução pro erro 404
 */
 
-//ativos será a lista de ativos disponíveis no mercado
-//carteiras será a lista de todas as carteiras existentes
-//usuários será a listagem de usuários cadastrados
+//ativos é a lista de ativos disponíveis no mercado
+//carteiras é a lista de todas as carteiras existentes
+//usuários é a listagem de usuários cadastrados
 
 function App(){  
     return(

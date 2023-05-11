@@ -140,129 +140,82 @@
   ],
   "usuarios": [
     {
-      "id": "jason@gmail.com",
-      "nome": "Jason",
-      "senha": "1234"
+      "id": "cobaia@cobaia",
+      "nome": "cobaia",
+      "senha": {
+        "words": [
+          1668244065,
+          1767967242,
+          168430090,
+          168430090
+        ],
+        "sigBytes": 6
+      }
     },
     {
-      "id": "arthur@hotmail.com",
-      "senha": "193849",
-      "nome": "Arthur"
+      "id": "abc@abc",
+      "nome": "teste",
+      "senha": {
+        "words": [
+          1633837837,
+          218959117,
+          218959117,
+          218959117
+        ],
+        "sigBytes": 3
+      }
     },
     {
-      "id": "art@hotmail.com",
-      "nome": "Artur",
-      "senha": "193849"
+      "id": "capi@vara",
+      "nome": "capi",
+      "senha": {
+        "words": [
+          1667330153,
+          1986097761,
+          134744072,
+          134744072
+        ],
+        "sigBytes": 8
+      }
     },
     {
       "id": "joker@hotmail.com",
-      "nome": "joker",
-      "senha": "batman"
+      "nome": "Coringa",
+      "senha": {
+        "words": [
+          1650553965,
+          1634601482,
+          168430090,
+          168430090
+        ],
+        "sigBytes": 6
+      }
     },
     {
-      "id": "teste@teste",
-      "nome": "batata",
-      "senha": "123"
+      "id": "jason@gmail.com",
+      "nome": "Jason",
+      "senha": {
+        "words": [
+          825373492,
+          202116108,
+          202116108,
+          202116108
+        ],
+        "sigBytes": 4
+      }
     },
     {
       "id": "1@1",
       "nome": "1",
-      "senha": "1"
-    },
-    {
-      "id": "1@2",
-      "nome": "1",
-      "senha": "12"
-    },
-    {
-      "id": "admin@admin",
-      "nome": "admin",
-      "senha": "admin"
-    },
-    {
-      "id": "123213@122",
-      "nome": "123",
-      "senha": "123"
-    },
-    {
-      "id": "chumb@26",
-      "nome": "123123",
-      "senha": "12"
-    },
-    {
-      "id": "chumb@261",
-      "nome": "123",
-      "senha": "12"
-    },
-    {
-      "id": "123@1",
-      "nome": "123",
-      "senha": "1"
-    },
-    {
-      "id": "1221@22",
-      "nome": "123123",
-      "senha": "1"
-    },
-    {
-      "id": "123@12",
-      "nome": "12321",
-      "senha": "1"
-    },
-    {
-      "id": "lucas@12",
-      "nome": "gfsajhdfjas",
-      "senha": "12"
-    },
-    {
-      "id": "dads@dadf",
-      "nome": "asdasd",
-      "senha": "12"
-    },
-    {
-      "id": "add@gfdgf",
-      "nome": "asdads",
-      "senha": "12"
-    },
-    {
-      "id": "dajisdji@da",
-      "nome": "12312",
-      "senha": "12"
-    },
-    {
-      "id": "3123@11",
-      "nome": "123123",
-      "senha": "123"
-    },
-    {
-      "id": "123123@11",
-      "nome": "adsda",
-      "senha": "11"
-    },
-    {
-      "id": "asjdas@dhajd",
-      "nome": "jdisajdk",
-      "senha": "123"
-    },
-    {
-      "id": "dasd@ada",
-      "nome": "asdasd",
-      "senha": "123"
-    },
-    {
-      "id": "lucas@26",
-      "nome": "bnasdbas@dbansd",
-      "senha": "12"
-    },
-    {
-      "id": "chumb@262",
-      "nome": "asdhasd",
-      "senha": "12"
-    },
-    {
-      "id": "tgftgf@FGFGFVG",
-      "nome": "hujhujhu",
-      "senha": "123"
+      "senha": {
+        "words": [
+          823070479,
+          252645135,
+          252645135,
+          252645135
+        ],
+        "sigBytes": 1
+      }
     }
   ]
 }

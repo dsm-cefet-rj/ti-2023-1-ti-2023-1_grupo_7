@@ -5,6 +5,7 @@ import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
 import { useState , useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import CryptoJS from "crypto-js";
 
 const Login = () => {
   const usuarios = useSelector(state=>state.usuarios);
@@ -19,9 +20,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(usuarios.map((u)=>u.id).includes(email)){
-      if(usuarios.filter((u)=>u.id===email)[0].senha===senha){
+      if(JSON.stringify(usuarios.filter((u)=>u.id===email)[0].senha)===JSON.stringify(CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha,email),email))){
         dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
-        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
+        navegar("/carteiras");
       }else{
         setInexistente(false);
         setIncorreto(true);
