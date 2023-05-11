@@ -1,13 +1,14 @@
 import React from "react";
 import Button from "./Button";
 import "../../styles/LoginC.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from "react";
 import Logo from "../Logo";
 import { useDispatch, useSelector } from "react-redux";
 import swal from 'sweetalert';
 import { Inter } from 'next/font/google';
 import CryptoJS from "crypto-js";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -67,68 +68,66 @@ const CadastroC = () => {
        
     }
   };
-
     return (
     <>
      <div className="effect-background"></div>
       <div className="login">
+          <Link to='/'><Image className="seta" src='/seta.svg' width={50} height={50}/></Link>
         <form onSubmit={handleSubmit}>
-      <Logo ID='login'/>
-      <label>
-        Nome:
-        <input
-          value={nome}
-          autoComplete="name"
-          onChange={(e) => setNome(e.target.value)}
-          required
-          placeholder="Digite seu nome"
-        />
-      </label>
-      <br/>
-      <br/>
-      <label>
-        Email:
-        <input
-          type="email"
-          autoComplete="username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          placeholder="Digite seu email"
-        />
-      </label>
-      <br/><br/>
-      <label>
-        Senha:
-        <input
-          type="password"
-          autoComplete="new-password"
-          value={senha1}
-          onChange={(e) => setSenha1(e.target.value)}
-          required
-          placeholder="Crie uma senha"
-        />
-      </label>
-      <br/>
-      <br/>
-      <label>
-        Senha:
-        <input
-          type="password"
-          autoComplete="new-password"
-          value={senha2}
-          onChange={(e) => setSenha2(e.target.value)}
-          required
-          placeholder="Digite de novo"
-        />
-      </label>
-      {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
-      {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
-      <br/>
-      
-      <Button type="submit" label="Cadastrar"></Button>
-
-    </form>
+          <Logo ID='login'/>
+          <label>
+            Nome:
+            <input
+              value={nome}
+              autoComplete="name"
+              onChange={(e) => setNome(e.target.value)}
+              required
+              placeholder="Digite seu nome"
+            />
+          </label>
+          <br/>
+          <br/>
+          <label>
+            Email:
+            <input
+              type="email"
+              autoComplete="username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Digite seu email"
+            />
+          </label>
+          <br/><br/>
+          <label>
+            Senha:
+            <input
+              type="password"
+              autoComplete="new-password"
+              value={senha1}
+              onChange={(e) => setSenha1(e.target.value)}
+              required
+              placeholder="Crie uma senha"
+            />
+          </label>
+          <br/>
+          <br/>
+          <label>
+            Senha:
+            <input
+              type="password"
+              autoComplete="new-password"
+              value={senha2}
+              onChange={(e) => setSenha2(e.target.value)}
+              required
+              placeholder="Digite de novo"
+            />
+          </label>
+          {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
+          {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
+          <br/>
+          <Button type="submit" label="Cadastrar"></Button>
+        </form>
     
       </div>
     </>  

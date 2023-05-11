@@ -62,6 +62,15 @@ label{
     color: black;
   }
 
+.seta{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.seta:hover{
+    filter: invert(1);
+}
 
 @keyframes background-animation {
     0%,
