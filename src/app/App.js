@@ -1,14 +1,16 @@
 "use client"
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Cadastro from './Pages/Cadastro';
 import Conta from './Pages/Conta';
 import Relatorio from './Pages/Relatorio';
 import ListaCarteiras from './Pages/ListaCarteiras';
+import Redirecionador from './Pages/Redirecionador';
 import {store} from './store';
 import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
+import { useEffect } from 'react';
 
 /*
 Listinha do que fazer:
@@ -28,12 +30,14 @@ Links:
 //carteiras é a lista de todas as carteiras existentes
 //usuários é a listagem de usuários cadastrados
 
-function App(){  
+function App(){
+
     return(
       <Provider store={store}>
         <Router>
             <Routes>
-              <Route path="/" element={<Login/>}/>
+              <Route path="/" element={<Redirecionador/>}/>
+              <Route path="/login" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
               <Route path="/ativos" element={<Home/>}/>
               <Route path="/ativos/novoativo" element={<NovoAtivo/>}/>

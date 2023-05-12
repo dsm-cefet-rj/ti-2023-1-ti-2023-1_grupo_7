@@ -3,7 +3,14 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  trailingSlash: true
+  async rewrites(){
+    return[
+      {
+        source: '/:any*',
+        destination: '/',
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

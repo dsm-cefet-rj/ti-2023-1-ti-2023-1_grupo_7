@@ -13,8 +13,7 @@ export default function ListaCarteiras() {
   const navegar = useNavigate();
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
   const carteiras = useSelector(state=>state.carteiras).filter((c)=>{return c.email===usuarioAtual.id});
-  console.log(usuarioAtual.senha.toString);
-  typeof usuarioAtual===typeof undefined?navegar("/"):null;
+  useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
   const dispatch = useDispatch();
   useEffect(() => {
     fetch('http://localhost:5000/carteiras')

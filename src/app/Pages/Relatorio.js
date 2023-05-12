@@ -1,12 +1,14 @@
 import Logo from '../components/Logo';
 import Doughnut from "../components/Doghnut";
-import React from 'react';
+import React, { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function Relatorio() {
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
-  typeof usuarioAtual===typeof undefined?navegar("/"):null;  
+  const navegar = useNavigate();
+  useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
   return (
     <main className="main">
       <DropdownMenu/>

@@ -8,7 +8,7 @@ const reducerMap={
         return novaCarteira;
     }
 }
-export default function carteiraAtualReducer(carteiraAtual=[] /*state*/, action ){
+export default function carteiraAtualReducer(carteiraAtual={} /*state*/, action ){
     const reducer = reducerMap[action.type];
     if(reducer){
         return reducer(carteiraAtual,action.payload);

@@ -1,13 +1,16 @@
 import Logo from '../components/Logo';
-import React from 'react';
+import React, { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import '../styles/Conta.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Conta() {
+  const navegar = useNavigate();
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
-  typeof usuarioAtual===typeof undefined?navegar("/"):null;  
+  console.log(usuarioAtual);
+  useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
   return (
     <main className="main">
         <Logo/>
