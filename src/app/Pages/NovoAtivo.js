@@ -48,7 +48,7 @@ export default function NovoAtivo(){
 
     return(
         <div className='dropdownAtivo'>
-            <button style={{backgroundImage: "linear-gradient(to left bottom,#0066A2, black)"}} onClick={() => setOpenModal(true)}>Novo Ativo</button>
+            <button id="novoAtivoButton" onClick={() => setOpenModal(true)}>Novo Ativo</button>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
                 {/* children */}
                 <>

@@ -44,8 +44,9 @@ const ListaAtivos = (props) => {
             </h2>
             <div className="titulo">
                 <h3 className={inter.className}>Nome</h3>
-                <h3 className={inter.className} id="preco">Valor</h3>
-                <h3 className={inter.className} id="quantidade">Quantidade</h3>
+                <h3 className={inter.className} id="centro">Valor</h3>
+                <h3 className={inter.className} id="centro">Quantidade</h3>
+                <h3 className={inter.className} id="centro">Total</h3>
             </div>
             {__getAtivos()}
             

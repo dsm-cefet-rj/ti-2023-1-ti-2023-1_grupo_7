@@ -1,20 +1,21 @@
 .ativo {
-    padding: 5%;
-    margin-bottom: 20px;
-    background-image: linear-gradient(rgb(1, 31, 71), black);
-    border: 1px solid #e7e7e742;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    width: min(70vw,500px);
-    align-items: center;
-    
-  }
-
-  .__className_ccafe3{
+   padding: 5%;
+   margin-bottom: 20px;
+   background-image: linear-gradient(rgb(1, 31, 71), black);
+   border: 1px solid #e7e7e742;
+   border-radius: 10px;
+   display: grid;
+   grid-template-columns: 130px repeat(3, 1fr);
+   grid-template-rows: 1fr;
+   width: min(70vw,500px);
+   align-items: center;
    cursor: pointer;
-  }
+}
+#carteira{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   cursor: default;
+}
 
   .titulo {
     margin: 0px;
@@ -23,7 +24,7 @@
     padding-left: 3%;
     padding-right: 3%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     width: min(70vw,527px);
     font-size: min(4vw,15px);
@@ -37,20 +38,26 @@
 
  .lista_ativo{
    overflow-y: auto;
-   height: calc(58vh - min(3vw,20px) - 130px - min(4vw,25px));
+   height: calc(58vh - min(3vw,20px) - 150px - min(4vw,30px));
    padding-right: 10px;
  }
 
-.__className_ccafe3{
-   font-size: min(3vw,20px);
+ #addButton{
+   background-image: linear-gradient(to left bottom,#0066A2, black);
+   position:fixed;
+   right:40px;
+   top:60px;
+   display:block;
+   width: 50px;
+   height: 40px;
+   font-size: x-large;
  }
-#quantidade{
+#direita{
    margin-left: auto;
    margin-right: 0;
 }
-#preco{
+#centro{
    margin: auto;
-   cursor: pointer;
 }
 #nomeLista{
    margin-bottom:20px;

@@ -23,12 +23,12 @@ function Carteira(props){
     }
     const alternate=()=>{setEdit(!edit);setNome(props.data.nome);}
     return(
-      <div className="ativo">
+      <div className="ativo" id='carteira'>
         {edit?
         (<form onSubmit={submission}><input required value={nome} onChange={(e)=>{setNome(e.target.value)}}></input><button type="submit">OK</button></form>):
         (<h2 className={inter.className} onClick={handleSelection}>{props.data.nome}</h2>)}
-        <h2 className={inter.className} id='preco'onClick={alternate}>{props.data.nome==""?null:(edit?"Cancelar":"Editar")}</h2>
-        <button className={inter.className} id='quantidade'onClick={deleteCarteira}>Excluir</button>
+        <h2 className={inter.className} id='centro'onClick={alternate}>{props.data.nome==""?null:(edit?"Cancelar":"Editar")}</h2>
+        <button className={inter.className} id='direita'onClick={deleteCarteira}>Excluir</button>
       </div>
     )
 }

@@ -31,8 +31,9 @@ function Ativo (props){
     return(
       <div className="ativo" id={getId[props.data.tipo]} onClick={deleteAtivo}>
         <h2 className={inter.className}>{props.data.nome}</h2>
-        <h2 className={inter.className} id='preco'>R${props.data.valor}</h2>
-        <h2 className={inter.className} id='quantidade'>{props.data.qnt}</h2>
+        <h2 className={inter.className} id='centro'>R${props.data.valor}</h2>
+        <h2 className={inter.className} id='centro'>{props.data.qnt}</h2>
+        <h2 className={inter.className} >R${props.data.qnt*props.data.valor}</h2>
       </div>
     )
 }

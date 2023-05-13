@@ -60,11 +60,11 @@
       animation: none;
     }
 }
-@media (prefers-color-scheme: dark) {
-    .icon img {
-        filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-    }
+
+.icon img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
 }
+
 
 @keyframes rotate {
 from {

@@ -28,7 +28,7 @@ export default function ListaCarteiras() {
   return (
     <main className="main">
       <Logo/>
-      <button style={{backgroundImage: "linear-gradient(to left bottom,#0066A2, black)", position:"fixed",right:15,top:55,display:"block"}}onClick={handleclick}>+</button>
+      <button id='addButton' onClick={handleclick}>+</button>
       <DropdownMenu/>
       <h2 className={inter.className} id='nomeLista'>
           Minhas Carteiras
