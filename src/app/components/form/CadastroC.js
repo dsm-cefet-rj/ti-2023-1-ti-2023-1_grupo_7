@@ -142,17 +142,21 @@ const CadastroC = () => {
           </label>
           <br/><br/>
           <label>
-            <p id="texto_p">Saiba como descobrir seu perfil de investidor no botão abaixo:</p>
+            
+            <p id="texto_p">Obs: Saiba como descobrir seu perfil de investidor no botão "Info" abaixo:</p>
+            
           </label>
-          <br/>
-          <Link to="/cadastro/questionario"><button id="quiz_botao">Info</button></Link>
+          
+          {/*<Link to="/cadastro/questionario"><button id="quiz_botao">Info</button></Link>*/}
+          
           {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
           {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
-          <br/>
+          <br/><br/>
           <Button type="submit" label="Cadastrar"></Button>
         </form>
     
       </div>
+      <Quiz/>
     </>  
       
     )

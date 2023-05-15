@@ -27,11 +27,34 @@
 
 .questionario{
     font-family: 'Courier New', Courier, monospace;
+    color: white;
 }
 
 .texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: auto;
+    overflow: auto;
     
-    max-width: 750px;
+   
 }
+
+#info{
+    position: fixed;
+    top: 540px;
+    z-index: 1000;
+}
+
+@media (max-width: 1023px) {  
+    #info{
+        position: fixed;
+        top: 495px;
+        z-index: 1000;
+    }
+}
+
+
 
 
