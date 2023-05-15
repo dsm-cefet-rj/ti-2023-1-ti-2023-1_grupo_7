@@ -43,14 +43,15 @@
 
 #info{
     position: fixed;
-    top: 540px;
+    top: 645px;
     z-index: 1000;
 }
 
-@media (max-width: 1023px) {  
+
+@media (max-width: 1325px) {  
     #info{
         position: fixed;
-        top: 495px;
+        top: 600px;
         z-index: 1000;
     }
 }
