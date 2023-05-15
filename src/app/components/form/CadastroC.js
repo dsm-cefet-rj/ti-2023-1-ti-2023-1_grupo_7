@@ -9,6 +9,7 @@ import swal from 'sweetalert';
 import { Inter } from 'next/font/google';
 import CryptoJS from "crypto-js";
 import Image from "next/image";
+import Quiz from "@/app/Pages/Quiz";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +23,8 @@ const CadastroC = () => {
   const [senha2, setSenha2] = useState('');
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [perfil, setPerfil] = useState('');
 
   function cadastraUsuario (hash) {
 
@@ -38,6 +41,7 @@ const CadastroC = () => {
       body: JSON.stringify({
           "id":email,
           "nome":nome,
+          "perfil":perfil,
           "senha":{...hash}
         })
     }
@@ -123,6 +127,25 @@ const CadastroC = () => {
               placeholder="Digite de novo"
             />
           </label>
+          <label>
+          {/**/}
+          </label>
+          <br/><br/>
+          <label>
+            Perfil:
+            <select onChange={(e)=>setPerfil(e.target.value)} id="selecione">
+              <option>Selecione</option>
+              <option>Conservador</option>
+              <option>Moderado</option>
+              <option>Arrojado</option>
+            </select>
+          </label>
+          <br/><br/>
+          <label>
+            <p id="texto_p">Saiba como descobrir seu perfil de investidor no botão abaixo:</p>
+          </label>
+          <br/>
+          <Link to="/cadastro/questionario"><button id="quiz_botao">Info</button></Link>
           {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
           {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
           <br/>

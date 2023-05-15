@@ -72,6 +72,15 @@ label{
     filter: invert(1);
 }
 
+#selecione{
+    color: grey;
+}
+
+#texto_p{
+    
+    font-size: small;
+}
+
 @keyframes background-animation {
     0%,
     100%{

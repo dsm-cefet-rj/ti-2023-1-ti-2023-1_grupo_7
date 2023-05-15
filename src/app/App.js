@@ -11,6 +11,7 @@ import {store} from './store';
 import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
 import { useEffect } from 'react';
+import Quiz from './Pages/Quiz';
 
 /*
 Listinha do que fazer:
@@ -39,6 +40,7 @@ function App(){
               <Route path="/" element={<Redirecionador/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
+              <Route path="/cadastro/questionario" element={<Quiz/>}/>
               <Route path="/ativos" element={<Home/>}/>
               <Route path="/ativos/novoativo" element={<NovoAtivo/>}/>
               <Route path="/conta" element={<Conta/>}/>

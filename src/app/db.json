@@ -194,6 +194,7 @@
     {
       "id": "jason@gmail.com",
       "nome": "Jason",
+      "perfil": "Moderado",
       "senha": {
         "words": [
           825373492,
@@ -207,6 +208,47 @@
     {
       "id": "1@1",
       "nome": "1",
+      "senha": {
+        "words": [
+          823070479,
+          252645135,
+          252645135,
+          252645135
+        ],
+        "sigBytes": 1
+      }
+    },
+    {
+      "id": "a@a",
+      "nome": "Lucas",
+      "senha": {
+        "words": [
+          825373453,
+          218959117,
+          218959117,
+          218959117
+        ],
+        "sigBytes": 3
+      }
+    },
+    {
+      "id": "aaaa@aa",
+      "nome": "Lucas",
+      "perfil": "Conservador",
+      "senha": {
+        "words": [
+          825363982,
+          235802126,
+          235802126,
+          235802126
+        ],
+        "sigBytes": 2
+      }
+    },
+    {
+      "id": "eae@qq",
+      "nome": "Lucas",
+      "perfil": "Arrojado",
       "senha": {
         "words": [
           823070479,
