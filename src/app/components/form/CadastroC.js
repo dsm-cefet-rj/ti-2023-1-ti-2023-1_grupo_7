@@ -143,7 +143,7 @@ const CadastroC = () => {
           <br/><br/>
           <label>
             
-            <p id="texto_p">Obs: Saiba como descobrir seu perfil de investidor no botão "Info"</p>
+            <p id="texto_p">Obs: Saiba como descobrir seu perfil de investidor no botão <Image src="/info.svg" width={15} height={15}/></p>
             
           </label>
         
