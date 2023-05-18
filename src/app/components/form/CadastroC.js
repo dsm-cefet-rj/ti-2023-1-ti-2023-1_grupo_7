@@ -151,12 +151,13 @@ const CadastroC = () => {
           
           {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
           {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
-          <br/><br/>
+         
+          <Quiz/><br/><br/>
           <Button type="submit" label="Cadastrar"></Button>
         </form>
-    
+        
       </div>
-      <Quiz/>
+      
     </>  
       
     )
