@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import '../styles/Quiz.css';
 import Logo from "../components/Logo";
 import ModalCadastro from "../components/ModalCadastro";
+import Image from "next/image";
 
 export default function Quiz() {
 
@@ -13,11 +14,12 @@ export default function Quiz() {
       return (
       
            <>
-            <button id="info" onClick={() => setOpenModal(true)}>Info</button>
+            <Image className="sobre_botao" src="/info.svg" width={30} height={30} onClick={() => setOpenModal(true)}/>
+
             <ModalCadastro isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
             <div className="questionario">
                   
-                        <h1>Teste de Personalidade</h1><br/>
+                        <h1>Perfil de Investimento</h1><br/>
                         
                         
                       <h3>1. Perfil de investidor conservador</h3><br/>

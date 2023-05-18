@@ -22,7 +22,8 @@ const MODAL_STYLE = {
     paddingRight:'50px',
     paddingTop:'50px',
     borderRadius:'10px',
-    color:'black'
+    color:'black',
+    overflowX:'hidden'
 }
 
 export default function ModalCadastro({isOpen, children, setModalOpen}){
