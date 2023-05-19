@@ -272,6 +272,20 @@
         ],
         "sigBytes": 2
       }
+    },
+    {
+      "id": "l@l",
+      "nome": "Lucas",
+      "perfil": "Conservador",
+      "senha": {
+        "words": [
+          825363982,
+          235802126,
+          235802126,
+          235802126
+        ],
+        "sigBytes": 2
+      }
     }
   ]
 }
