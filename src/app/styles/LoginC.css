@@ -104,7 +104,7 @@ label{
     }
 }
 
-@media(max-width: 2000px){
+@media(max-width: 1600px){
     .login{
         margin-top: 95px;
         margin-left: 235px;
