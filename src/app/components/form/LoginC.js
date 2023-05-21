@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import { useState , useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CryptoJS from "crypto-js";
+import { updateUsuarioAtual } from "@/app/slices/UsuarioAtualSlice";
 
 const Login = () => {
   const usuarios = useSelector(state=>state.usuarios);
@@ -21,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     if(usuarios.map((u)=>u.id).includes(email)){
       if(JSON.stringify(usuarios.filter((u)=>u.id===email)[0].senha)===JSON.stringify(CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha,email),email))){
-        dispatch({type:"atualizar_usuarioAtual",payload:(usuarios[usuarios.map((u)=>u.id).indexOf(email)])})
+        dispatch(updateUsuarioAtual(usuarios[usuarios.map((u)=>u.id).indexOf(email)]))
         navegar("/carteiras");
       }else{
         setInexistente(false);

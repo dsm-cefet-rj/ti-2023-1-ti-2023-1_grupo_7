@@ -10,6 +10,7 @@ import { Inter } from 'next/font/google';
 import CryptoJS from "crypto-js";
 import Image from "next/image";
 import Quiz from "@/app/Pages/Quiz";
+import { updateUsuarioAtual } from "@/app/slices/UsuarioAtualSlice";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -55,7 +56,7 @@ const CadastroC = () => {
       if(senha1===senha2){
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
-        dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":{...hash}}});
+        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"senha":{...hash}}));
         navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
         swal({
           title:"Usuário cadastrado!",

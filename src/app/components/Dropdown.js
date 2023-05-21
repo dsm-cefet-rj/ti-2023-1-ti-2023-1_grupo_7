@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Dropdown.css';
 import { useDispatch } from 'react-redux';
+import { updateCarteiraAtual } from '../slices/CarteiraAtualSlice';
 
 function DropdownMenu() {
     const [isOpen,setIsOpen]=useState(false);
@@ -15,7 +16,7 @@ function DropdownMenu() {
             <ul>
                 <Link to = '/conta'><li>Minha conta</li></Link>
                 <Link to = '/relatorio'><li>Relatórios</li></Link>
-                <Link to = '/carteiras' onClick={()=>{dispatch({type:"atualizar_carteiraAtual",payload:[]})}}><li>Carteiras</li></Link>
+                <Link to = '/carteiras' onClick={()=>{dispatch(updateCarteiraAtual([]))}}><li>Carteiras</li></Link>
                 <Link to='/'><li style={{color:'#A50F00'}}>Sair</li></Link>
             </ul>
             )
