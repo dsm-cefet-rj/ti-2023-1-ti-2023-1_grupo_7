@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateCarteiraAtual } from "../slices/CarteiraAtualSlice";
-import { updateCarteira , deleteCarteira } from "../slices/CarteirasSlice";
+import { updateCarteiraServer , deleteCarteiraServer } from "../slices/CarteirasSlice";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,12 +19,12 @@ function Carteira(props){
     }
 
     function submission(){
-      dispatch(updateCarteira({id:props.data.id,nome:nome,email:props.data.email,ativos:props.data.ativos}));
+      dispatch(updateCarteiraServer({id:props.data.id,nome:nome,email:props.data.email,ativos:props.data.ativos}));
       setEdit(false);
     }
 
     function handleDeleteCarteira(){
-      dispatch(deleteCarteira(props.data.id));
+      dispatch(deleteCarteiraServer(props.data.id));
     }
 
     const alternate=()=>{setEdit(!edit);setNome(props.data.nome);}

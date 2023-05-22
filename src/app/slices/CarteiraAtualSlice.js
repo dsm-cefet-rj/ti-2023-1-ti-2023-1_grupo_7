@@ -1,22 +1,20 @@
 import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import { fetchCarteiras, updateCarteira } from "./CarteirasSlice";
+import { fetchCarteiras, updateCarteiraServer } from "./CarteirasSlice";
 
 const updateCarteiraAtualReducer = (carteiraAtual,novaCarteira)=>{return novaCarteira}
 
 const colocaAtivoCarteiraReducer = (carteiraAtual,payload)=>{
     let novaCarteira = {id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([payload.ativo])};
-    updateCarteira(novaCarteira);
     return novaCarteira}
 
 const removeAtivoCarteiraReducer = (carteiraAtual,id)=>{
     let novaCarteira = {id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.filter((a)=>a.id!==id.ativo)};
-    updateCarteira(novaCarteira);
     return novaCarteira;
 }
 
-export const fetchCarteiraAtual = createAsyncThunk('carteiras/fetchCarteiraAtual', 
-    async () => {
-        return await (await fetch('http://localhost:5000/carteiras')).json();
+export const fetchCarteiraAtual = createAsyncThunk('carteiras/fetchCarteiraAtual',
+    async () => {
+        return await (await fetch('http://localhost:5000/carteiras')).json();
 });
 
 function fullfillCarteiraAtualReducer(carteiraAtualState, carteiraAtualFetched){

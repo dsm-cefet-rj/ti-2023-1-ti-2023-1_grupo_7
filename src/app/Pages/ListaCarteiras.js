@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Carteira from '../components/Carteira';
 import { useEffect, useState } from 'react';
 import DropdownMenu from '../components/Dropdown';
-import { addCarteira, loadCarteira } from '../slices/CarteirasSlice';
+import { addCarteiraServer, loadCarteira } from '../slices/CarteirasSlice';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +28,7 @@ export default function ListaCarteiras() {
   }
 
   const handleclick = () => {
-    dispatch(addCarteira({email:usuarioAtual.id,nome:"",ativos:[]}));
+    dispatch(addCarteiraServer({email:usuarioAtual.id,nome:"",ativos:[]}));
   };
 
   return (

@@ -43,6 +43,47 @@ const removeAtivoCarteiraReducer = (carteiras,id)=>{
   return carteirasUpdated;
 }*/
 
+export const deleteCarteiraServer = createAsyncThunk('carteiras/deleteCarteiraServer', async (idCarteira) => {
+  let response = await fetch('http://localhost:5000/carteiras/' + idCarteira, {method: 'DELETE'});
+  if(response.ok){
+      return idCarteira;
+  }else{
+      throw new Error("Erro ao excluir o carteira");
+  }
+});
+
+export const addCarteiraServer = createAsyncThunk('carteiras/addCarteiraServer', async (carteira) => {
+  let response = await fetch('http://localhost:5000/carteiras' , 
+                              {
+                                  method: 'POST', 
+                                  headers: {
+                                      'Content-Type': 'application/json;charset=utf-8'
+                                  },
+                                  body: JSON.stringify(carteira)
+                              });
+  if(response.ok){
+      return carteira;
+  }else{
+      throw new Error("Erro ao incluir o carteira");
+  }
+});
+
+export const updateCarteiraServer = createAsyncThunk('carteiras/updateCarteiraServer', async (carteira) => {
+  let response = await fetch('http://localhost:5000/carteiras/' + carteira.id , 
+                              {
+                                  method: 'PUT', 
+                                  headers: {
+                                      'Content-Type': 'application/json;charset=utf-8'
+                                  },
+                                  body: JSON.stringify(carteira)
+                              });
+  if(response.ok){
+      return carteira;
+  }else{
+      throw new Error("Erro ao atualizar o carteira");
+  }
+});
+
 export const fetchCarteiras = createAsyncThunk('carteiras/fetchCarteiras',
 async () => {
     return await (await fetch('http://localhost:5000/carteiras')).json();
@@ -64,7 +105,10 @@ export const carteirasSlice = createSlice({
       removeAtivoCarteira:(state,action) => removeAtivoCarteiraReducer(state,action.payload)*/
   },
   extraReducers:{
-    [fetchCarteiras.fulfilled]: (state,action)=>fullfillCarteirasReducer(state, action.payload)
+    [fetchCarteiras.fulfilled]: (state,action)=>fullfillCarteirasReducer(state, action.payload),
+    [deleteCarteiraServer.fulfilled]: (state,action)=>deleteCarteiraReducer(state, action.payload),
+    [addCarteiraServer.fulfilled]: (state,action)=>addCarteiraReducer(state, action.payload),
+    [updateCarteiraServer.fulfilled]: (state,action)=>updateCarteiraReducer(state, action.payload),
   }
 })
 

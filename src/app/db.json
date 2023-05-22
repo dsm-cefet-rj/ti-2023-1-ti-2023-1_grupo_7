@@ -136,6 +136,18 @@
           "qnt": 2
         }
       ]
+    },
+    {
+      "id": 5,
+      "nome": "teste",
+      "email": "jason@gmail.com",
+      "ativos": []
+    },
+    {
+      "id": 6,
+      "nome": "nova carteira",
+      "email": "jason@gmail.com",
+      "ativos": []
     }
   ],
   "usuarios": [
