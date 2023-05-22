@@ -56,7 +56,7 @@ const CadastroC = () => {
       if(senha1===senha2){
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
-        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"senha":{...hash}}));
+        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":perfil,"senha":{...hash}}));
         navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
         swal({
           title:"Usuário cadastrado!",

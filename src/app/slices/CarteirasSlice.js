@@ -64,7 +64,7 @@ export const carteirasSlice = createSlice({
       removeAtivoCarteira:(state,action) => removeAtivoCarteiraReducer(state,action.payload)*/
   },
   extraReducers:{
-    [fetchCarteiras.fulfilled]: (state,action)=>fullfillCarteirasReducer(state = action.payload)
+    [fetchCarteiras.fulfilled]: (state,action)=>fullfillCarteirasReducer(state, action.payload)
   }
 })
 

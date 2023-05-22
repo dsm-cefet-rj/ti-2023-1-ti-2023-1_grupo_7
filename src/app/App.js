@@ -34,8 +34,8 @@ Links:
 //usuários é a listagem de usuários cadastrados
 
 store.dispatch(fetchUsuarios());
-store.dispatch(fetchCarteiras());
 store.dispatch(fetchAtivos());
+store.dispatch(fetchCarteiras());
 
 function App(){
 

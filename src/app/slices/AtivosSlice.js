@@ -23,6 +23,9 @@ async () => {
     return await (await fetch('http://localhost:5000/ativos')).json();
 });
 
+function fullfillAtivosReducer(carteirasState, carteirasFetched){
+    return carteirasFetched;
+}
 
 export const ativosSlice = createSlice({
     name:'ativos',
@@ -31,6 +34,9 @@ export const ativosSlice = createSlice({
         addAtivo: (state,action) => addAtivoReducer(state,action.payload),
         updateAtivo: (state,action) => updateAtivoReducer(state,action.payload),
         deleteAtivo: (state,action) => deleteAtivoReducer(state,action.payload)
+    },
+    extraReducers:{
+      [fetchAtivos.fulfilled]: (state,action)=>fullfillAtivosReducer(state, action.payload)
     }
 })
 

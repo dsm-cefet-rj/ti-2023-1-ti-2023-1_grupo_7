@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 import { loadUsuario } from "../slices/UsuariosSlice";
 
 export default function LogIn(){
-    const dispatch=useDispatch();
+    /*const dispatch=useDispatch();
     useEffect(() => {
         fetch('http://localhost:5000/usuarios')
           .then(T => T.json())
-          .then(data=>{dispatch(loadUsuario(data));});},[useLocation]);//isso pode ser substituído por async thunk
+          .then(data=>{dispatch(loadUsuario(data));});},[useLocation]);//isso pode ser substituído por async thunk*/
     return(
        <main className="main">
         <Login/>

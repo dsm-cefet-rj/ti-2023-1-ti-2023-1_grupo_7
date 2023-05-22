@@ -37,7 +37,7 @@ export const usuariosSlice = createSlice({
         loadUsuario: (state,action) => loadUsuarioReducer(state,action.payload)
     },
     extraReducers:{
-        [fetchUsuarios.fulfilled]: (state,action)=>fullfillUsuariosReducer(state = action.payload),
+        [fetchUsuarios.fulfilled]: (state,action)=>fullfillUsuariosReducer(state, action.payload),
     }
 })
 
