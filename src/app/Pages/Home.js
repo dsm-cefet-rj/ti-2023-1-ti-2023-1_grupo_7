@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import NovoAtivo from './NovoAtivo';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { colocaAtivoCarteira } from '../slices/CarteiraAtualSlice';
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
       .then(T => T.json())
       .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);*/
   const addAtivo = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
+    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}))
   }
   return (
     <main className="main">

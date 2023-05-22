@@ -16,15 +16,12 @@ import Quiz from './Pages/Quiz';
 /*
 Listinha do que fazer:
   -Interagir com o banco de dados usando Redux async thunk
-  -Interfaces (login do admin com ferramenta de CRUD dos ativos no mercado)
-  -Perfil de investimento
+  -Quiz do perfil de investimento
   -Relatórios
-  -Corrigir o erro 404 (requer backend)
   -fazer o backend
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
-  -https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually <--possível solução pro erro 404
 */
 
 //ativos é a lista de ativos disponíveis no mercado

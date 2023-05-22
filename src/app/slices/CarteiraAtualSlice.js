@@ -1,4 +1,34 @@
-const reducerMap={
+import { createSlice } from "@reduxjs/toolkit";
+import { updateCarteira } from "./CarteirasSlice";
+
+const updateCarteiraAtualReducer = (carteiraAtual,novaCarteira)=>{return novaCarteira}
+
+const colocaAtivoCarteiraReducer = (carteiraAtual,payload)=>{
+    let novaCarteira = {id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([payload.ativo])};
+    updateCarteira(novaCarteira);
+    return novaCarteira}
+
+const removeAtivoCarteiraReducer = (carteiraAtual,id)=>{
+    let novaCarteira = {id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.filter((a)=>a.id!==id.ativo)};
+    updateCarteira(novaCarteira);
+    return novaCarteira;
+}
+
+export const carteiraAtualSlice = createSlice({
+    name:'carteiraAtual',
+    initialState: [],
+    reducers:{
+        updateCarteiraAtual: (state,action) => updateCarteiraAtualReducer(state,action.payload),
+        colocaAtivoCarteira: (state,action) => colocaAtivoCarteiraReducer(state,action.payload),
+        removeAtivoCarteira: (state,action) => removeAtivoCarteiraReducer(state,action.payload)
+    }
+})
+
+export const {updateCarteiraAtual,colocaAtivoCarteira,removeAtivoCarteira} =  carteiraAtualSlice.actions
+
+export default carteiraAtualSlice.reducer
+
+/*const reducerMap={
     "atualizar_carteiraAtual":(carteiraAtual,novaCarteira)=>{return novaCarteira},
     "coloca_ativo_na_carteira":(carteiraAtual,payload)=>{
         let novaCarteira = {id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([payload.ativo])};
@@ -8,11 +38,11 @@ const reducerMap={
         return novaCarteira;
     }
 }
-export default function carteiraAtualReducer(carteiraAtual={} /*state*/, action ){
+export default function carteiraAtualReducer(carteiraAtual={}, action ){
     const reducer = reducerMap[action.type];
     if(reducer){
         return reducer(carteiraAtual,action.payload);
     }else{
         return carteiraAtual;
     }
-}
+}*/

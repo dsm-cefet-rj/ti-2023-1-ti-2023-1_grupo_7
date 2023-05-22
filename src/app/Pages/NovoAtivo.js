@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 //import '../styles/DropdownAtivo.css';
 import '../styles/NovoAtivo.css';
 import Modal from "../components/Modal";
+import { addAtivo } from "../slices/AtivosSlice";
+import { colocaAtivoCarteira } from "../slices/CarteiraAtualSlice";
 
 export default function NovoAtivo(){
 
@@ -23,13 +25,13 @@ export default function NovoAtivo(){
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
 
-    function addAtivo(){
+    function handleAddAtivo(){
         carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:quantidade}]);
-        dispatch({type:"add_ativo", payload:{tipo:tipo,nome:nome,valor:valor}});
+        dispatch(addAtivo({tipo:tipo,nome:nome,valor:valor}));
     }
 
     const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
+    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}))
   }
 
     const handleSubmit = (e) => {

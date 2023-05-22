@@ -14,10 +14,10 @@ const ListaAtivos = (props) => {
     const dispatch = useDispatch();
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
-    useEffect(() => {
+    /*useEffect(() => {
         fetch('http://localhost:5000/ativos')
           .then(T => T.json())
-          .then(data=>{dispatch({type:"load_ativo",payload:{array:data,carteiraAtual:carteiraAtual}});});},[carteiraAtual]);
+          .then(data=>{dispatch({type:"load_ativo",payload:{array:data,carteiraAtual:carteiraAtual}});});},[carteiraAtual]);*/
     
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?

@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import '../styles/DropdownAtivo.css';
 import Button from './form/Button';
-import carteiraAtualReducer from '../slices/CarteiraAtualSlice';
+import carteiraAtualReducer, { colocaAtivoCarteira } from '../slices/CarteiraAtualSlice';
+import { addAtivo } from '../slices/AtivosSlice'
 
 function DropdownAtivo(props) {
     const usuario = useLocation().state;
@@ -22,16 +23,16 @@ function DropdownAtivo(props) {
     nextID.sort().reverse();
 
     const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
+    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}))
   }
 
     function toggle(){
         setIsOpen(!isOpen);
     }
 
-    function addAtivo(){
+    function handleAddAtivo(){
         carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:quantidade}]);
-        dispatch({type:"add_ativo", payload:{tipo:tipo,nome:nome,valor:valor}});
+        dispatch(addAtivo({tipo:tipo,nome:nome,valor:valor}));
     }
 
     const handleSubmit = (e) => {

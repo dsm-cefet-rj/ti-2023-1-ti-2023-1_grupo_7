@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from "react-redux";
+import { removeAtivoCarteira, updateCarteiraAtual } from "../slices/CarteiraAtualSlice";
 
 const inter = Inter({ subsets: ['latin'] });
 /*const data = (
@@ -32,14 +33,13 @@ function Ativo (props){
     setIsOpen(!isOpen);
   }
   function deleteAtivo(){
-    dispatch({type:"remove_ativo_da_carteira",payload:{ativo:props.data.id,carteira:carteiraAtual.id}});
+    dispatch(removeAtivoCarteira({ativo:props.data.id,carteira:carteiraAtual.id}));
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
     let novosAtivos = carteiraAtual.ativos.slice();
     novosAtivos.splice(carteiraAtual.ativos.map((a)=>a.id).indexOf(props.data.id),1,{id:props.data.id,qnt:qnt});
-    dispatch({type:"atualizar_carteiraAtual",
-    payload:{id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}});
+    dispatch(updateCarteiraAtual({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     setEdit(false);
   }
   const renderMenu = ()=>{
