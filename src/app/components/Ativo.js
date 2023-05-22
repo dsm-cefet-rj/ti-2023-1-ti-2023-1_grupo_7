@@ -3,6 +3,7 @@ import { BsFillBarChartLineFill } from "react-icons/bs";
 import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from "react-redux";
 import { removeAtivoCarteira, updateCarteiraAtual } from "../slices/CarteiraAtualSlice";
+import { updateCarteiraServer } from "../slices/CarteirasSlice";
 
 const inter = Inter({ subsets: ['latin'] });
 /*const data = (
@@ -34,6 +35,7 @@ function Ativo (props){
   }
   function deleteAtivo(){
     dispatch(removeAtivoCarteira({ativo:props.data.id,carteira:carteiraAtual.id}));
+    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.filter((a)=>a.id!==props.data.id)}));
   }
   const handleSubmit=(e)=>{
     e.preventDefault();

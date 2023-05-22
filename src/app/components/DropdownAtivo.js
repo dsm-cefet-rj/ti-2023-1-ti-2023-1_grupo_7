@@ -5,6 +5,7 @@ import '../styles/DropdownAtivo.css';
 import Button from './form/Button';
 import carteiraAtualReducer, { colocaAtivoCarteira } from '../slices/CarteiraAtualSlice';
 import { addAtivo } from '../slices/AtivosSlice'
+import { updateCarteiraServer } from '../slices/CarteirasSlice';
 
 function DropdownAtivo(props) {
     const usuario = useLocation().state;
@@ -23,7 +24,8 @@ function DropdownAtivo(props) {
     nextID.sort().reverse();
 
     const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}))
+    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}));
+    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([{id:IDativo,qnt:quantidade}])}));
   }
 
     function toggle(){

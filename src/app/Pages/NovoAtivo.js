@@ -8,6 +8,7 @@ import '../styles/NovoAtivo.css';
 import Modal from "../components/Modal";
 import { addAtivo } from "../slices/AtivosSlice";
 import { colocaAtivoCarteira } from "../slices/CarteiraAtualSlice";
+import { updateCarteiraServer } from "../slices/CarteirasSlice";
 
 export default function NovoAtivo(){
 
@@ -31,7 +32,8 @@ export default function NovoAtivo(){
     }
 
     const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}))
+    dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}));
+    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([{id:IDativo,qnt:quantidade}])}));
   }
 
     const handleSubmit = (e) => {
