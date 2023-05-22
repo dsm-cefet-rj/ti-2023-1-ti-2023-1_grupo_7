@@ -10,11 +10,28 @@
    width: min(70vw,500px);
    align-items: center;
    cursor: pointer;
+   font-size: min(4vw,15px);
 }
+
+.doug{
+   width: auto;
+   height: auto;
+   margin-bottom: 20px;
+   margin-left: 250px;
+   margin-top: 170px;
+   margin-right: auto;
+   display: inline-block;
+}
+
 #carteira{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    cursor: default;
+}
+
+.esquerda{
+   margin-right: auto;
+   margin-left: 0;
 }
 
   .titulo {
@@ -24,10 +41,11 @@
     padding-left: 3%;
     padding-right: 3%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 120px repeat(3, 1fr);
     grid-template-rows: 1fr;
     width: min(70vw,527px);
     font-size: min(4vw,15px);
+    
   }
 
  .logo{
@@ -64,36 +82,90 @@
    margin-left: auto;
    margin-right: 0;
 }
+
 #centro{
    margin: auto;
 }
+
+#centro_2{
+   margin: auto;
+}
+
 #nomeLista{
+   margin-top: 20px;
    margin-bottom:20px;
    width:60vw;
    text-align: center;
-   font-size: min(4vw,25px);
-   
+   font-size: min(4vw,25px);   
 }
+
 #rendaFixa{
    background-image: linear-gradient(rgb(148, 3, 3), black);
 }
+
 #fundoImobiliario{
    background-image: linear-gradient(rgb(228, 206, 12), black);
 }
+
 #provento{
    background-image: linear-gradient(rgb(2, 83, 42), black);
 }
+
 #placeHolder{
    font-size: min(5vw,50px);
    text-align: center;
    margin: auto;
 }
+
 #carteiras{
    height: calc(100vh - 150px - min(4vw,25px));
 }
+
 /* Mobile and Tablet */
-@media (max-width: 1023px) {
+@media (max-width: 700px) {
+   .ativo {
+      padding: 5%;
+      margin-bottom: 20px;
+      background-image: linear-gradient(rgb(1, 31, 71), black);
+      border: 1px solid #e7e7e742;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 70px repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      width: min(70vw,500px);
+      align-items: center;
+      cursor: pointer;
+      font-size: min(4vw,15px);
+   }
+
+   #centro_2 {
+      margin: auto;
+      font-size: min(4vw,12px);
+    }
+
+    .doug{
+      width: auto;
+      height: auto;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+    .titulo {
+      margin: 0px;
+      padding-bottom: 20px;
+      padding-top: 1vh;
+      padding-left: 3%;
+      padding-right: 3%;
+      display: grid;
+      grid-template-columns: 80px repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      width: min(70vw,527px);
+      font-size: min(4vw,15px);
+    }
 }
+
+
   
 
   
