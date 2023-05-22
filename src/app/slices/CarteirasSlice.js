@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+const initialUsuarios = [];
+
 const addCarteiraReducer = (carteiras,novaCarteira)=>{
   //cria um novo array com os ids das carteiras e usa reduce para ao invés de acumular sempre manter o maior valor e então soma 1
   let proxId = 1 + carteiras.map(c => c.id).reduce((x, y) => Math.max(x,y));
@@ -41,14 +43,18 @@ const removeAtivoCarteiraReducer = (carteiras,id)=>{
   return carteirasUpdated;
 }*/
 
-export const fetchCarteiras = createAsyncThunk('ativos/fetchAtivos',
+export const fetchCarteiras = createAsyncThunk('carteiras/fetchCarteiras',
 async () => {
-    return await (await fetch('http://localhost:5000/carteira')).json();
+    return await (await fetch('http://localhost:5000/carteiras')).json();
 });
+
+function fullfillCarteirasReducer(carteirasState, carteirasFetched){
+  return carteirasFetched;
+}
 
 export const carteirasSlice = createSlice({
   name:'carteiras',
-  initialState: [],
+  initialState: initialUsuarios,
   reducers:{
       addCarteira: (state,action) => addCarteiraReducer(state,action.payload),
       updateCarteira: (state,action) => updateCarteiraReducer(state,action.payload),
@@ -58,7 +64,7 @@ export const carteirasSlice = createSlice({
       removeAtivoCarteira:(state,action) => removeAtivoCarteiraReducer(state,action.payload)*/
   },
   extraReducers:{
-    [fetchCarteiras.fulfilled]: (state,action)=>{state = action.payload}
+    [fetchCarteiras.fulfilled]: (state,action)=>fullfillCarteirasReducer(state = action.payload)
   }
 })
 

@@ -18,7 +18,7 @@ const deleteAtivoReducer = (ativos,id)=>{
     //filtra o ativo q tem o id igual ao payload
     return ativos.filter((a) => a.id !== id);}
 
-export const fetchProjetos = createAsyncThunk('ativos/fetchAtivos',
+export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
 async () => {
     return await (await fetch('http://localhost:5000/ativos')).json();
 });

@@ -12,18 +12,23 @@ function Carteira(props){
     const dispatch = useDispatch();
     const [edit,setEdit] = useState(props.data.nome==""?true:false);
     const [nome,setNome] = useState(props.data.nome);
+
     const handleSelection = ()=>{
       dispatch(updateCarteiraAtual(props.data));
       navegar("/ativos");
     }
+
     function submission(){
       dispatch(updateCarteira({id:props.data.id,nome:nome,email:props.data.email,ativos:props.data.ativos}));
       setEdit(false);
     }
+
     function handleDeleteCarteira(){
       dispatch(deleteCarteira(props.data.id));
     }
+
     const alternate=()=>{setEdit(!edit);setNome(props.data.nome);}
+    
     return(
       <div className="ativo" id='carteira'>
         {edit?

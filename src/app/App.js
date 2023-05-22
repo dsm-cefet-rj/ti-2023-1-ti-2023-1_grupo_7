@@ -12,6 +12,11 @@ import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
 import { useEffect } from 'react';
 import Quiz from './Pages/Quiz';
+import { fetchCarteiras } from './slices/CarteirasSlice';
+import { fetchAtivos } from './slices/AtivosSlice';
+import { fetchCarteiraAtual } from './slices/CarteiraAtualSlice';
+import { fetchUsuarios } from './slices/UsuariosSlice';
+import { fetchUsuarioAtual } from './slices/UsuarioAtualSlice';
 
 /*
 Listinha do que fazer:
@@ -27,6 +32,10 @@ Links:
 //ativos é a lista de ativos disponíveis no mercado
 //carteiras é a lista de todas as carteiras existentes
 //usuários é a listagem de usuários cadastrados
+
+store.dispatch(fetchUsuarios());
+store.dispatch(fetchCarteiras());
+store.dispatch(fetchAtivos());
 
 function App(){
 

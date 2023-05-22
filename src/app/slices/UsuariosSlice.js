@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const addUsuarioReducer = (usuarios,novoUsuario)=>{
     return usuarios.concat([{...novoUsuario}]);}
@@ -18,6 +18,15 @@ const deleteUsuarioReducer = (usuarios,id)=>{
 
 const loadUsuarioReducer = (usuarios,array)=>{return array}
 
+export const fetchUsuarios = createAsyncThunk('usuarios/fetchUsuarios', 
+    async () => {
+        return await (await fetch('http://localhost:5000/usuarios')).json();
+});
+
+function fullfillUsuariosReducer(usuariosState, usuariosFetched){
+    return usuariosFetched;
+}
+
 export const usuariosSlice = createSlice({
     name:'usuarios',
     initialState: [],
@@ -26,6 +35,9 @@ export const usuariosSlice = createSlice({
         updateUsuario: (state,action) => updateUsuarioReducer(state,action.payload),
         deleteUsuario: (state,action) => deleteUsuarioReducer(state,action.payload),
         loadUsuario: (state,action) => loadUsuarioReducer(state,action.payload)
+    },
+    extraReducers:{
+        [fetchUsuarios.fulfilled]: (state,action)=>fullfillUsuariosReducer(state = action.payload),
     }
 })
 
