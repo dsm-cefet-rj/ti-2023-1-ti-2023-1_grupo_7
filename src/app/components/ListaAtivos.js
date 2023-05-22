@@ -1,8 +1,8 @@
-import {React, useEffect} from "react";
+import { React } from "react";
 import '../styles/ListaAtivos.css';
 import { Inter } from 'next/font/google';
 import Ativo from "./Ativo";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,13 +11,9 @@ const ListaAtivos = (props) => {
 
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
     const ativos = useSelector(state=>state.ativos).filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
-    const dispatch = useDispatch();
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
-    /*useEffect(() => {
-        fetch('http://localhost:5000/ativos')
-          .then(T => T.json())
-          .then(data=>{dispatch({type:"load_ativo",payload:{array:data,carteiraAtual:carteiraAtual}});});},[carteiraAtual]);*/
+    
     
     function __getAtivos(){
         return typeof props.tipo===typeof undefined?

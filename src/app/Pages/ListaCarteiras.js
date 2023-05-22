@@ -1,12 +1,12 @@
 import Logo from '../components/Logo';
 import '../styles/ListaAtivos.css';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from 'react-redux';
 import Carteira from '../components/Carteira';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
-import { addCarteiraServer, loadCarteira } from '../slices/CarteirasSlice';
+import { addCarteiraServer } from '../slices/CarteirasSlice';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,11 +18,6 @@ export default function ListaCarteiras() {
   
   const dispatch = useDispatch();
   
-  /*useEffect(() => {
-    fetch("http://localhost:5000/carteiras")
-      .then(T => T.json())
-      .then(data=>{dispatch(loadCarteira(data));});},[useLocation]);//trocar pra async*/
-
   function __getCarteiras(){
     return(<div className="lista" id='carteiras'>{carteiras.map((element,i)=><Carteira key={i} data={element}/>)}</div>)
   }

@@ -3,7 +3,7 @@ import Button from "./Button";
 import "../../styles/LoginC.css"
 import { Link , useNavigate } from 'react-router-dom';
 import Logo from "../Logo";
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CryptoJS from "crypto-js";
 import { updateUsuarioAtual } from "@/app/slices/UsuarioAtualSlice";

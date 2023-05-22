@@ -148,6 +148,27 @@
       "nome": "nova carteira",
       "email": "jason@gmail.com",
       "ativos": []
+    },
+    {
+      "id": 7,
+      "nome": "investimentos",
+      "email": "jpcovello@hotmail.com",
+      "ativos": []
+    },
+    {
+      "id": 8,
+      "nome": "considerações",
+      "email": "jpcovello@hotmail.com",
+      "ativos": [
+        {
+          "id": 2,
+          "qnt": 12
+        },
+        {
+          "id": 5,
+          "qnt": 5
+        }
+      ]
     }
   ],
   "usuarios": [
@@ -297,6 +318,20 @@
           235802126
         ],
         "sigBytes": 2
+      }
+    },
+    {
+      "id": "jpcovello@hotmail.com",
+      "nome": "Covello",
+      "perfil": "Moderado",
+      "senha": {
+        "words": [
+          1936027240,
+          1628113675,
+          185273099,
+          185273099
+        ],
+        "sigBytes": 5
       }
     }
   ]

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'; 
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Dropdown.css';
 import { useDispatch } from 'react-redux';
 import { updateCarteiraAtual } from '../slices/CarteiraAtualSlice';

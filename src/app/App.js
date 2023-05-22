@@ -10,17 +10,15 @@ import Redirecionador from './Pages/Redirecionador';
 import {store} from './store';
 import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
-import { useEffect } from 'react';
 import Quiz from './Pages/Quiz';
 import { fetchCarteiras } from './slices/CarteirasSlice';
 import { fetchAtivos } from './slices/AtivosSlice';
-import { fetchCarteiraAtual } from './slices/CarteiraAtualSlice';
 import { fetchUsuarios } from './slices/UsuariosSlice';
 import { fetchUsuarioAtual } from './slices/UsuarioAtualSlice';
+import { fetchCarteiraAtual } from './slices/CarteiraAtualSlice';
 
 /*
 Listinha do que fazer:
-  -Interagir com o banco de dados usando Redux async thunk
   -Quiz do perfil de investimento
   -Relatórios
   -fazer o backend

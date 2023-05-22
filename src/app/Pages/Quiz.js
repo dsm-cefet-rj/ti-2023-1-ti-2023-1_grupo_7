@@ -1,9 +1,6 @@
 import React from "react";
-import Modal from "../components/Modal";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import '../styles/Quiz.css';
-import Logo from "../components/Logo";
 import ModalCadastro from "../components/ModalCadastro";
 import Image from "next/image";
 

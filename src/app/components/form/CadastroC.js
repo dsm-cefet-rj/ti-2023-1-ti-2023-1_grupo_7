@@ -24,7 +24,7 @@ const CadastroC = () => {
   const [senha2, setSenha2] = useState('');
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  //const [openModal, setOpenModal] = useState(false);
   const [perfil, setPerfil] = useState('');
 
   function cadastraUsuario (hash) {
@@ -57,7 +57,7 @@ const CadastroC = () => {
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
         dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":perfil,"senha":{...hash}}));
-        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
+        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor (ou não caso seja definido no próprio cadastro)
         swal({
           title:"Usuário cadastrado!",
           text: "",

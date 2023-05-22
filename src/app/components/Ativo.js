@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BsFillBarChartLineFill } from "react-icons/bs";
 import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from "react-redux";
 import { removeAtivoCarteira, updateCarteiraAtual } from "../slices/CarteiraAtualSlice";
@@ -42,6 +41,7 @@ function Ativo (props){
     let novosAtivos = carteiraAtual.ativos.slice();
     novosAtivos.splice(carteiraAtual.ativos.map((a)=>a.id).indexOf(props.data.id),1,{id:props.data.id,qnt:qnt});
     dispatch(updateCarteiraAtual({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
+    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     setEdit(false);
   }
   const renderMenu = ()=>{
@@ -56,7 +56,7 @@ function Ativo (props){
       <div className="ativo" id={getId[props.data.tipo]} onClick={toggle}>
         <h2 className={inter.className} id='esquerda'>{props.data.nome}</h2>
         <h2 className={inter.className} id='centro'>R${props.data.valor}</h2>
-        {edit?/*OBS: a alteração está sendo aplicada apenas na carteiraAtual e não se reflete na lista de carteiras, isso pd levar à desincronia do Banco de Dados futuramente*/
+        {edit?
         (<form onSubmit={handleSubmit}><input required value={qnt} onChange={(e)=>{setQnt(+e.target.value)}} type="number" min={1}></input><button type="submit">OK</button></form>):
         (<h2 className={inter.className} id='centro'>{props.data.qnt}</h2>)}
         <h2 className={inter.className} id='direita'>R${props.data.qnt*props.data.valor}</h2>
