@@ -18,7 +18,7 @@ function DropdownMenu() {
                 <Link to = '/conta'><li>Minha conta</li></Link>
                 <Link to = '/relatorio'><li>Relatórios</li></Link>
                 <Link to = '/carteiras' onClick={()=>{dispatch(updateCarteiraAtual({}))}}><li>Carteiras</li></Link>
-                <Link to='/'><li style={{color:'#A50F00'}} onClick={dispatch(fetchUsuarios())}>Sair</li></Link>
+                <Link to='/'><li style={{color:'#A50F00'}} onClick={()=>{dispatch(fetchUsuarios())}}>Sair</li></Link>
             </ul>
             )
         }else{
