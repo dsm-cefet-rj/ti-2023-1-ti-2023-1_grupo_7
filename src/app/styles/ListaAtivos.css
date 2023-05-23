@@ -56,7 +56,7 @@
 
  .lista_ativo{
    overflow-y: auto;
-   height: calc(58vh - min(3vw,20px) - 150px - min(4vw,30px));
+   height: calc(63vh - min(3vw,20px) - 150px - min(4vw,30px));
    padding-right: 10px;
  }
 
