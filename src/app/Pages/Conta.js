@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Conta() {
   const navegar = useNavigate();
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
-  console.log(usuarioAtual);
   useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
   return (
     <main className="main">

@@ -11,7 +11,24 @@
    align-items: center;
    cursor: pointer;
    font-size: min(4vw,15px);
+   color: white;
 }
+
+ .ativoBusca{
+   grid-template-columns: repeat(2, 1fr);
+   padding: 5%;
+   margin-bottom: 20px;
+   background-image: linear-gradient(rgb(1, 31, 71), black);
+   border: 1px solid #e7e7e742;
+   border-radius: 10px;
+   display: grid;
+   grid-template-rows: 1fr;
+   width: min(70vw,500px);
+   align-items: center;
+   cursor: pointer;
+   font-size: min(4vw,15px);
+   color: white;
+ }
 
 .doug{
    width: auto;
@@ -53,12 +70,12 @@
     width: 50px;
  }
 
-
  .lista_ativo{
    overflow-y: auto;
    height: calc(63vh - min(3vw,20px) - 150px - min(4vw,30px));
    padding-right: 10px;
  }
+
 
  #addButton{
    background-image: linear-gradient(to left bottom,#0066A2, black);
@@ -72,6 +89,7 @@
  }
 
 #editMenu{
+   background-image: linear-gradient(rgba(1, 31, 71, 0), black);
    grid-template-columns: repeat(2, 1fr);
    width: min(50vw,400px);
    text-align: center;

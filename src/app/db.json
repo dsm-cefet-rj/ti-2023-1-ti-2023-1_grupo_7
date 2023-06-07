@@ -147,7 +147,28 @@
       "id": 6,
       "nome": "nova carteira",
       "email": "jason@gmail.com",
-      "ativos": []
+      "ativos": [
+        {
+          "id": 1,
+          "qnt": 1
+        },
+        {
+          "id": 3,
+          "qnt": 14
+        },
+        {
+          "id": 6,
+          "qnt": 5
+        },
+        {
+          "id": 8,
+          "qnt": 2
+        },
+        {
+          "id": 0,
+          "qnt": 0
+        }
+      ]
     },
     {
       "id": 7,

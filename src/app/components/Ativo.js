@@ -53,7 +53,7 @@ function Ativo (props){
     null;
   }
     return(
-      <div className="ativo" id={getId[props.data.tipo]} onClick={toggle}>
+      <div className="ativo" id={getId[props.data.tipo]} onClick={()=>{return edit?null:toggle()}}>
         <h2 className={inter.className} id='esquerda'>{props.data.nome}</h2>
         <h2 className={inter.className} id='centro'>R${props.data.valor}</h2>
         {edit?
