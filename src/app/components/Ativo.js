@@ -43,6 +43,7 @@ function Ativo (props){
     dispatch(updateCarteiraAtual({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     setEdit(false);
+    setIsOpen(false);
   }
   const renderMenu = ()=>{
     return isOpen?

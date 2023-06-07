@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -38,17 +38,13 @@ export default function NovoAtivo(){
 
     return(
         <div className='dropdownAtivo'>
-            <button id="novoAtivoButton" onClick={() => setOpenModal(true)}>Novo Ativo</button>
+            <button id="novoAtivoButton" onClick={() => {setOpenModal(true);setId('')}}>Novo Ativo</button>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
                 {/* children */}
                 <>
-                {(<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:1}} select={()=>setId(element.id)}/>)}</div>)}
+                {(<div className="lista_ativo">{ativos.filter((a)=>{return id === '' ?true:a.id===id}).map((element,i)=><Ativo key={i} data={{...element,qnt:1}} select={()=>setId(element.id)}/>)}</div>)}
                 <form id="formulario2"onSubmit={handleSubmit}>
                     <br/>
-            <label>
-                Id: 
-                <input type="number" className="input_" name="id" min={1} max={8} value={id} onChange={(e) => setId(e.target.value)}   />
-            </label>
             <br/>
             <br/>
             <label>
