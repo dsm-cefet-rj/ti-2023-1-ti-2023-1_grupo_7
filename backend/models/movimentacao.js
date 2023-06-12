@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-const ativoSchema = new Schema({
+const normalize = require('normalize-mongoose');
+  
+const movimentacaoSchema = new Schema({
   ticker:{
     type: String,
     required: true,
@@ -22,6 +23,10 @@ const ativoSchema = new Schema({
     type: Number,
     required: true,
   },
+  valor_investido:{
+    type: Number,
+    required: false,
+  },
   saldo_atual:{
     type: Number,
     required: false,
@@ -35,4 +40,9 @@ const ativoSchema = new Schema({
     required: false,
   }
 })
-module.exports = ativoSchema;
+
+movimentacaoSchema.plugin(normalize);
+
+var movimentacoes = mongoose.model('ativos', movimentacaoSchema);
+
+module.exports = movimentacaoSchema;

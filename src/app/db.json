@@ -216,6 +216,19 @@
         ],
         "sigBytes": 1
       }
+    },
+    {
+      "id": "teste@email.com",
+      "nome": "Yuri",
+      "senha": {
+        "words": [
+          825373492,
+          892733962,
+          168430090,
+          168430090
+        ],
+        "sigBytes": 6
+      }
     }
   ]
 }
