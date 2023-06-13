@@ -1,82 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-//import '../styles/DropdownAtivo.css';
 import '../styles/NovoAtivo.css';
 import Modal from "../components/Modal";
+import { colocaAtivoCarteira } from "../slices/CarteiraAtualSlice";
+import { updateCarteiraServer } from "../slices/CarteirasSlice";
+import Ativo from "../components/AtivoBusca";
 
 export default function NovoAtivo(){
 
-    const usuario = useLocation().state;
-
-    //const ativos = useSelector(state=>state.ativos).filter((a)=>{return props.filtro.map(c=>c.id).includes(a.id)});
     const dispatch = useDispatch();
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
+    const ativos = useSelector(state=>state.ativos);
 
-    const [valor, setValor] = useState('');
-    const [tipo, setTipo] = useState('');
     const [id, setId] = useState('');
     const [quantidade, setQtd] = useState('');
+    const [varios,setVarios] = useState(false);
 
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
 
-    function addAtivo(){
-        carteiraAtual.ativos.concat([{id:nextID[0]+1,qnt:quantidade}]);
-        dispatch({type:"add_ativo", payload:{tipo:tipo,nome:nome,valor:valor}});
-    }
-
     const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-    dispatch({type:"coloca_ativo_na_carteira",payload:{id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}})
-  }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        //addAtivo();
-        setId('');
-        setQtd('');
-        //setTipo('');
-        //setValor('');
-        addAtivo_(+id, +quantidade);
+        dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}));
+        dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([{id:IDativo,qnt:quantidade}])}));
     }
 
     const [openModal, setOpenModal] = useState(false);
 
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setId('');
+        setQtd('');
+        addAtivo_(+id, +quantidade);
+        varios?null:setOpenModal(false);
+    }
 
     return(
         <div className='dropdownAtivo'>
-            <button id="novoAtivoButton" onClick={() => setOpenModal(true)}>Novo Ativo</button>
+            <button id="novoAtivoButton" onClick={() => {setOpenModal(true);setId('')}}>Novo Ativo</button>
             <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
                 {/* children */}
                 <>
+                {(<div className="lista_ativo">{ativos.filter((a)=>{return id === '' ?true:a.id===id}).map((element,i)=><Ativo key={i} data={{...element,qnt:1}} select={()=>setId(element.id)}/>)}</div>)}
                 <form id="formulario2"onSubmit={handleSubmit}>
-            <label>
-                Id: 
-                <input type="number" className="input_" name="id" min={1} max={8} value={id} onChange={(e) => setId(e.target.value)}   />
-            </label>
+                    <br/>
             <br/>
-            {/*<br/>
-            <label>
-                Tipo: 
-                <select  name="tipo" className="input_" value={tipo} onChange={(e) => setTipo(e.target.value)} >
-                    <option>Selecione</option>
-                    <option>Ação</option>
-                    <option>Fundo Imobiliário</option>
-                    <option>Renda Fixa</option>
-                    <option>Provento</option>
-                </select>
-            </label>
-            <br/>
-    <br/>
-            <label>
-                Valor: 
-                <input type="text" className="input_" name="valor" value={valor} onChange={(e) => setValor(e.target.value) }   />
-            </label>
-            <br/>
-    <br/>*/}
             <br/>
             <label>
                 Quantidade: 
@@ -84,7 +53,12 @@ export default function NovoAtivo(){
             </label>
             <br/>
             <br/>
-            <input type="submit" className="salvar" value="Salvar"/>
+            <label>
+                Adicionar vários?
+                <input type="checkbox" className="input_" value={varios} onChange={() => setVarios(!varios) }   />
+            </label>
+            <br/>
+            <input type="submit" className="salvar" value="Salvar"     />
             </form>
             </>
             </Modal>

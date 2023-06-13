@@ -1,5 +1,6 @@
 import Logo from '../components/Logo';
 import Doughnut from "../components/Doghnut";
+import { BsFillBarChartLineFill } from "react-icons/bs";
 import React, { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
 import { useSelector } from 'react-redux';

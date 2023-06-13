@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
+import '../styles/ListaAtivos.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -50,7 +51,7 @@ export default function Aplication() {
     ],
   };
   return( 
-  <div style={{width: 'auto',height:'auto',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
+  <div style={{width: 'auto',height:'25vh',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
     <Doughnut data={data} updateMode='resize' redraw={false}/>
   </div>
   );

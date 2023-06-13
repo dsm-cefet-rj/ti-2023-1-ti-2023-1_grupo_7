@@ -1,0 +1,59 @@
+
+.titulo_{
+    text-align: center;
+}
+
+.main_{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: auto;
+  min-height: 100vh;
+  overflow: auto;
+  
+}
+
+.sobre_botao{
+    cursor: pointer;
+}
+
+#botao_voltar{
+    align-items: center;
+    text-align: center;
+
+}
+
+.voltar{
+    align-items: center;
+    text-align: center;
+}
+
+.questionario{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: auto;
+    overflow: auto;
+    
+   
+}
+
+#info{
+    
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+

@@ -1,11 +1,12 @@
 import Logo from '../components/Logo';
 import '../styles/ListaAtivos.css';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Inter } from 'next/font/google';
 import { useDispatch, useSelector } from 'react-redux';
 import Carteira from '../components/Carteira';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
+import { addCarteiraServer } from '../slices/CarteirasSlice';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,17 +15,17 @@ export default function ListaCarteiras() {
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
   const carteiras = useSelector(state=>state.carteiras).filter((c)=>{return c.email===usuarioAtual.id});
   useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
+  
   const dispatch = useDispatch();
-  useEffect(() => {
-    fetch('http://localhost:5000/carteiras')
-      .then(T => T.json())
-      .then(data=>{dispatch({type:"load_carteira",payload:data});});},[useLocation]);
+  
   function __getCarteiras(){
     return(<div className="lista" id='carteiras'>{carteiras.map((element,i)=><Carteira key={i} data={element}/>)}</div>)
   }
+
   const handleclick = () => {
-    dispatch({type:"add_carteira",payload:{email:usuarioAtual.id,nome:"",ativos:[]}});
+    dispatch(addCarteiraServer({email:usuarioAtual.id,nome:"",ativos:[]}));
   };
+
   return (
     <main className="main">
       <Logo/>

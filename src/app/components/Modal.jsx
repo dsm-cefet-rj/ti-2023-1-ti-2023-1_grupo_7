@@ -29,7 +29,7 @@ export default function Modal({isOpen, children, setModalOpen}){
                 <div id="modal" style={MODAL_STYLE}>
                     {children}
                     <br/>
-                    <button id="fechar" onClick={setModalOpen}>Fechar</button>
+                    <button id="fechar" onClick={setModalOpen}>Voltar</button>
                 </div>
             </div>
         )

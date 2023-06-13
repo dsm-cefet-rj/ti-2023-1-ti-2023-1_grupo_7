@@ -1,10 +1,12 @@
 .input_{
     background-color: #0066A2;
     color: white;
+    margin-left: 4px;
 }
 
 #formulario2{
     color: white;
+    margin: auto;
 }
 
 li{
@@ -41,7 +43,19 @@ li{
     margin-top: 10px
 }
 
-
+.addVarios{
+    background: #0066A2;
+    cursor: pointer;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 25px;
+	width: 140px;
+	font: 15px arial,sans-serif;
+	text-shadow: none;
+    border-radius: 20px;
+    margin-top: 10px
+}
 
 /* Mobile and Tablet */
 @media (max-width: 1023px) {  

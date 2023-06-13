@@ -10,25 +10,30 @@ import Redirecionador from './Pages/Redirecionador';
 import {store} from './store';
 import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
-import { useEffect } from 'react';
+import Quiz from './Pages/Quiz';
+import { fetchCarteiras } from './slices/CarteirasSlice';
+import { fetchAtivos } from './slices/AtivosSlice';
+import { fetchUsuarios } from './slices/UsuariosSlice';
+import { fetchUsuarioAtual } from './slices/UsuarioAtualSlice';
+import { fetchCarteiraAtual } from './slices/CarteiraAtualSlice';
 
 /*
 Listinha do que fazer:
-  -Interagir com o banco de dados usando Redux async thunk
-  -Interfaces (login do admin com ferramenta de CRUD dos ativos no mercado)
-  -Perfil de investimento
+  -Quiz do perfil de investimento
   -Relatórios
-  -Corrigir o erro 404 (requer backend)
   -fazer o backend
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
-  -https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually <--possível solução pro erro 404
 */
 
 //ativos é a lista de ativos disponíveis no mercado
 //carteiras é a lista de todas as carteiras existentes
 //usuários é a listagem de usuários cadastrados
+
+store.dispatch(fetchUsuarios());
+store.dispatch(fetchAtivos());
+store.dispatch(fetchCarteiras());
 
 function App(){
 
@@ -39,6 +44,7 @@ function App(){
               <Route path="/" element={<Redirecionador/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
+              <Route path="/cadastro/questionario" element={<Quiz/>}/>
               <Route path="/ativos" element={<Home/>}/>
               <Route path="/ativos/novoativo" element={<NovoAtivo/>}/>
               <Route path="/conta" element={<Conta/>}/>

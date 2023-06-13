@@ -9,6 +9,8 @@ import swal from 'sweetalert';
 import { Inter } from 'next/font/google';
 import CryptoJS from "crypto-js";
 import Image from "next/image";
+import Quiz from "@/app/Pages/Quiz";
+import { updateUsuarioAtual } from "@/app/slices/UsuarioAtualSlice";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +24,8 @@ const CadastroC = () => {
   const [senha2, setSenha2] = useState('');
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
+  //const [openModal, setOpenModal] = useState(false);
+  const [perfil, setPerfil] = useState('');
 
   function cadastraUsuario (hash) {
 
@@ -38,6 +42,7 @@ const CadastroC = () => {
       body: JSON.stringify({
           "id":email,
           "nome":nome,
+          "perfil":perfil,
           "senha":{...hash}
         })
     }
@@ -51,8 +56,8 @@ const CadastroC = () => {
       if(senha1===senha2){
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
-        dispatch({type:"atualizar_usuarioAtual",payload:{"id":email,"nome":nome,"senha":{...hash}}});
-        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor
+        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":perfil,"senha":{...hash}}));
+        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor (ou não caso seja definido no próprio cadastro)
         swal({
           title:"Usuário cadastrado!",
           text: "",
@@ -123,12 +128,39 @@ const CadastroC = () => {
               placeholder="Digite de novo"
             />
           </label>
+          <label>
+          {/**/}
+          </label>
+          <br/><br/>
+          <label>
+            Perfil:
+            <select onChange={(e)=>setPerfil(e.target.value)} id="selecione">
+              <option>Selecione</option>
+              <option>Conservador</option>
+              <option>Moderado</option>
+              <option>Arrojado</option>
+            </select>
+          </label>
+          <br/><br/>
+          <label>
+            
+            <p id="texto_p">Obs: Saiba como descobrir seu perfil de investidor no botão <Image src="/info.svg" width={15} height={15}/></p>
+            
+          </label>
+        
+          
+          {/*<Link to="/cadastro/questionario"><button id="quiz_botao">Info</button></Link>*/}
+          
           {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
           {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
-          <br/>
+         
+         
           <Button type="submit" label="Cadastrar"></Button>
         </form>
-    
+        
+      </div>
+      <div className="quiz">
+      <Quiz/>
       </div>
     </>  
       
