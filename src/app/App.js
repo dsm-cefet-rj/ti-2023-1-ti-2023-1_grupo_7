@@ -10,18 +10,13 @@ import Redirecionador from './Pages/Redirecionador';
 import {store} from './store';
 import { Provider } from 'react-redux';
 import NovoAtivo from './Pages/NovoAtivo';
-import Quiz from './Pages/Quiz';
 import { fetchCarteiras } from './slices/CarteirasSlice';
 import { fetchAtivos } from './slices/AtivosSlice';
 import { fetchUsuarios } from './slices/UsuariosSlice';
-import { fetchUsuarioAtual } from './slices/UsuarioAtualSlice';
-import { fetchCarteiraAtual } from './slices/CarteiraAtualSlice';
 
 /*
 Listinha do que fazer:
-  -Quiz do perfil de investimento
   -Relatórios
-  -fazer o backend
 
 Links:
   -https://github.com/diogosmendonca/pragmapm
@@ -44,7 +39,6 @@ function App(){
               <Route path="/" element={<Redirecionador/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/cadastro" element={<Cadastro/>}/>
-              <Route path="/cadastro/questionario" element={<Quiz/>}/>
               <Route path="/ativos" element={<Home/>}/>
               <Route path="/ativos/novoativo" element={<NovoAtivo/>}/>
               <Route path="/conta" element={<Conta/>}/>

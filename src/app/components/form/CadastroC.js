@@ -9,8 +9,8 @@ import swal from 'sweetalert';
 import { Inter } from 'next/font/google';
 import CryptoJS from "crypto-js";
 import Image from "next/image";
-import Quiz from "@/app/Pages/Quiz";
 import { updateUsuarioAtual } from "@/app/slices/UsuarioAtualSlice";
+import QuizC from "./Quiz";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,8 +24,9 @@ const CadastroC = () => {
   const [senha2, setSenha2] = useState('');
   const [existe,setExiste] = useState(false);
   const [diferente,setDiferente] = useState(false);
-  //const [openModal, setOpenModal] = useState(false);
-  const [perfil, setPerfil] = useState('');
+  const [Q1,setQ1] = useState('');
+  const [Q2,setQ2] = useState('');
+  const [Q3,setQ3] = useState('');
 
   function cadastraUsuario (hash) {
 
@@ -42,7 +43,7 @@ const CadastroC = () => {
       body: JSON.stringify({
           "id":email,
           "nome":nome,
-          "perfil":perfil,
+          "perfil":((+Q1)+(+Q2)+(+Q3))<6?'Conservador':((+Q1)+(+Q2)+(+Q3))<12?'Moderado':'Arrojado',
           "senha":{...hash}
         })
     }
@@ -56,7 +57,7 @@ const CadastroC = () => {
       if(senha1===senha2){
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
-        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":perfil,"senha":{...hash}}));
+        dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":((+Q1)+(+Q2)+(+Q3))<6?'Conservador':((+Q1)+(+Q2)+(+Q3))<12?'Moderado':'Arrojado',"senha":{...hash}}));
         navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor (ou não caso seja definido no próprio cadastro)
         swal({
           title:"Usuário cadastrado!",
@@ -77,7 +78,7 @@ const CadastroC = () => {
     <>
      <div className="effect-background"></div>
       <div className="login">
-          <Link to='/'><Image className="seta" src='/seta.svg' width={50} height={50}/></Link>
+        <Link to='/'><Image className="seta" alt='seta' src='/seta.svg' width={50} height={50}/></Link>
         <form onSubmit={handleSubmit}>
           <Logo ID='login'/>
           <label>
@@ -128,39 +129,21 @@ const CadastroC = () => {
               placeholder="Digite de novo"
             />
           </label>
-          <label>
-          {/**/}
-          </label>
           <br/><br/>
-          <label>
-            Perfil:
-            <select onChange={(e)=>setPerfil(e.target.value)} id="selecione">
-              <option>Selecione</option>
-              <option>Conservador</option>
-              <option>Moderado</option>
-              <option>Arrojado</option>
-            </select>
-          </label>
-          <br/><br/>
-          <label>
-            
-            <p id="texto_p">Obs: Saiba como descobrir seu perfil de investidor no botão <Image src="/info.svg" width={15} height={15}/></p>
-            
-          </label>
-        
-          
-          {/*<Link to="/cadastro/questionario"><button id="quiz_botao">Info</button></Link>*/}
+          <p className="texto">O quanto você valoriza aumentar seu patrimônio?<br/>{' (5: muito 1: pouco)'}</p><br/>
+          <QuizC name='Q1' setValue={setQ1}/>
+          <br/>
+          <p className="texto">Quanto risco você está disposto a correr?<br/>{' (5: muito 1: pouco)'}</p><br/>
+          <QuizC name='Q2' setValue={setQ2}/>
+          <br/>
+          <p className="texto">Qual a escala de capital que gostaria de administrar?<br/>{' (5: grande (empresa ou empreendedor) 1: pouco (pequenos investimentos pessoais))'}</p><br/>
+          <QuizC name='Q3' setValue={setQ3}/>
           
           {existe?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>esse email já está cadastrado</p>:<br/>}
           {diferente?<p style={{color:"red",backgroundColor:"#00000030",width:120,margin:"auto",borderRadius:5}}>as senhas estão diferente</p>:null}
          
-         
           <Button type="submit" label="Cadastrar"></Button>
         </form>
-        
-      </div>
-      <div className="quiz">
-      <Quiz/>
       </div>
     </>  
       
