@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 const normalize = require('normalize-mongoose');
   
 const cotAtivo = new Schema({
-  ticker:{
-    type: String,
-    required: true,
-  },
-  data:{
+  nome:{
     type: String,
     required: true,
   },

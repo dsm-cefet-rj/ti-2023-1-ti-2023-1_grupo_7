@@ -8,7 +8,7 @@ var usersRouter = require('./routes/users');
 
 const mongoose = require('mongoose');
 
-const url = ''
+const url = 'mongodb://localhost:27017/YJL';
 const connect = mongoose.connect(url);
 
 connect.then((db) => {
@@ -26,5 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/movimentacoes', movimentacoesRouter);
+app.use('/carteiras', carteirasRouter);
 
 module.exports = app;

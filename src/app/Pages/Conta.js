@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import Logo from '../components/Logo';
 import React, { useEffect } from 'react';
 import DropdownMenu from '../components/Dropdown';
@@ -5,6 +6,11 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import '../styles/Conta.css'
 import { useNavigate } from 'react-router-dom';
+=======
+import Logo from "../components/Logo";
+import { Link } from "react-router-dom";
+import React from "react";
+>>>>>>> Stashed changes
 
 export default function Conta() {
   const navegar = useNavigate();
@@ -12,6 +18,7 @@ export default function Conta() {
   useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
   return (
     <main className="main">
+<<<<<<< Updated upstream
         <Logo/>
         <DropdownMenu/>
         <div className='dadosUsuario'>
@@ -22,6 +29,12 @@ export default function Conta() {
             <h2>Perfil de investidor: {typeof usuarioAtual.perfil === typeof undefined? "Ainda não definido":usuarioAtual.perfil}</h2>
           </div>
         </div>
+=======
+      <Link to="/inicio">
+        <div>Voltar</div>
+      </Link>
+      <Logo />
+>>>>>>> Stashed changes
     </main>
-  )
+  );
 }

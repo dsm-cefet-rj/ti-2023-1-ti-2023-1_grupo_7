@@ -136,6 +136,21 @@
           "qnt": 2
         }
       ]
+    },
+    {
+      "id": 5,
+      "nome": "Teste",
+      "email": "teste1@email.com",
+      "ativos": [
+        {
+          "id": 1,
+          "qnt": 10
+        },
+        {
+          "id": 5,
+          "qnt": 10
+        }
+      ]
     }
   ],
   "usuarios": [
@@ -220,6 +235,20 @@
     {
       "id": "teste@email.com",
       "nome": "Yuri",
+      "senha": {
+        "words": [
+          825373492,
+          892733962,
+          168430090,
+          168430090
+        ],
+        "sigBytes": 6
+      }
+    },
+    {
+      "id": "teste1@email.com",
+      "nome": "Yuri",
+      "perfil": "Conservador",
       "senha": {
         "words": [
           825373492,
