@@ -136,21 +136,6 @@
           "qnt": 2
         }
       ]
-    },
-    {
-      "id": 5,
-      "nome": "Teste",
-      "email": "teste1@email.com",
-      "ativos": [
-        {
-          "id": 1,
-          "qnt": 10
-        },
-        {
-          "id": 5,
-          "qnt": 10
-        }
-      ]
     }
   ],
   "usuarios": [
@@ -246,17 +231,45 @@
       }
     },
     {
-      "id": "teste1@email.com",
-      "nome": "Yuri",
+      "id": "6@3",
+      "nome": "adjfp",
       "perfil": "Conservador",
       "senha": {
         "words": [
-          825373492,
-          892733962,
-          168430090,
-          168430090
+          909315598,
+          235802126,
+          235802126,
+          235802126
         ],
-        "sigBytes": 6
+        "sigBytes": 2
+      }
+    },
+    {
+      "id": "hjk@dry",
+      "nome": "teste",
+      "perfil": "Moderado",
+      "senha": {
+        "words": [
+          823070479,
+          252645135,
+          252645135,
+          252645135
+        ],
+        "sigBytes": 1
+      }
+    },
+    {
+      "id": "yed@yug",
+      "nome": "gyu",
+      "perfil": "Arrojado",
+      "senha": {
+        "words": [
+          839847695,
+          252645135,
+          252645135,
+          252645135
+        ],
+        "sigBytes": 1
       }
     }
   ]

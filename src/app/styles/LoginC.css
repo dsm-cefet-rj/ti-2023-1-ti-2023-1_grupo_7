@@ -8,7 +8,7 @@
     margin-left: 235px;
     margin-right: 235px;
     margin-bottom: 10px;
-    height: 500px;
+    height: 650px;
     width: 350px;
     text-align: center;
     display: grid;
@@ -110,8 +110,6 @@ label{
         margin-left: 235px;
         margin-right: 235px;
         margin-bottom: 10px;
-        height: 500px;
-        width: 350px;
         text-align: center;
         display: grid;
         place-items: center;

@@ -49,7 +49,7 @@ export default function NovoAtivo(){
             <br/>
             <label>
                 Quantidade: 
-                <input type="number" className="input_" name="valor" min={1} value={quantidade} onChange={(e) => setQtd(e.target.value) }   />
+                <input type="number" className="input_" name="valor" min={1} value={quantidade} onChange={(e) => setQtd(e.target.value)}   />
             </label>
             <br/>
             <br/>
