@@ -39,7 +39,7 @@ const CadastroC = () => {
 
     const options = {
       method: 'POST',
-      headers: {"Content-Type":"application/json"},
+      headers: {"Content-Type":"application/json","Access-Control-Allow-Origin":"http://localhost:3000"},
       body: JSON.stringify({
           "id":email,
           "nome":nome,
@@ -58,11 +58,11 @@ const CadastroC = () => {
         const hash=CryptoJS.AES.decrypt(CryptoJS.AES.encrypt(senha1,email),email);       
         cadastraUsuario(hash);
         dispatch(updateUsuarioAtual({"id":email,"nome":nome,"perfil":((+Q1)+(+Q2)+(+Q3))<6?'Conservador':((+Q1)+(+Q2)+(+Q3))<12?'Moderado':'Arrojado',"senha":{...hash}}));
-        navegar("/carteiras");//isso vai ser mudado pra levar pro perfil onde definirá o perfil de investidor (ou não caso seja definido no próprio cadastro)
+        /*navegar("/carteiras");
         swal({
           title:"Usuário cadastrado!",
           text: "",
-          icon:"success"})
+          icon:"success"})*/
       }else{
       setExiste(false);
       setDiferente(true);

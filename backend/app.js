@@ -5,6 +5,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var movimentacoesRouter = require('./routes/movimentacao');
+var carteirasRouter = require('./routes/carteira');
 
 const mongoose = require('mongoose');
 

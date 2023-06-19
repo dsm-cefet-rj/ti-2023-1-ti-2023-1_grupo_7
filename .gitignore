@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# impede que acidelmente seja usado NPM
+.package-lock.json
