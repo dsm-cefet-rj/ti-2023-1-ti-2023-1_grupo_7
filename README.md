@@ -6,16 +6,30 @@ Uma plataforma web de monitoramento de investimentos que tem por objetivo auxili
 
 ## Rodando localmente
 
+**Front-end:**
+
 Instale as dependências
 
 ```bash
   yarn
 ```
 
-Inicie o servidor
+Inicie o servidor de desenvolvimento
 
 ```bash
   yarn dev
+```
+
+Inicie a construção de arquivos estáticos
+
+```bash
+  yarn build
+```
+
+Inicie a execução dos arquivos estáticos
+
+```bash
+  yarn start
 ```
 
 Inicie o JSON SERVER
@@ -24,16 +38,25 @@ Inicie o JSON SERVER
   yarn server
 ```
 
+**Back-end:**
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o backend
+
+```bash
+  npm start
+```
 
 ## Roadmap
 
 - Fazer integração com back-end
 
 - Manter dados no servidor (já usando o back-end)
-
-- Correção de bug em “router”
-
-- Fazer melhorias conforme o feedback da equipe de gerência e do professor
 
 - Implementar relatórios
 
