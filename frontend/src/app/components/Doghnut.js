@@ -6,28 +6,29 @@ import '../styles/ListaAtivos.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function __getTotal(array,quantidades,tipo){
+function __getTotal(ativos,ativosNaCarteira,tipo){
   let accumulator = 0;
-  for (let i = 0; i < array.length; i++) {
-      const element = array[i];
-      if (element.tipo===tipo){
-          accumulator+=element.valor*quantidades.filter((q)=>q.id===element.id).map((x)=>x.qnt)[0];
+  for (let i = 0; i < ativosNaCarteira.length; i++) {
+      let compra = ativosNaCarteira[i];
+      let ativoDaCompra = ativos[ativos.map((a)=>a.id).indexOf(compra.id_ativo)];
+      if (ativoDaCompra.tipo===tipo){
+        accumulator+=ativoDaCompra.valor*compra.qnt;
       }
   }
   return accumulator;
 }
-function __getData(array,quantidades){
+function __getData(ativos,ativosNaCarteira){
   const valores = [];
-  valores.push(__getTotal(array,quantidades,"Renda Fixa"));
-  valores.push(__getTotal(array,quantidades,"Ação"));
-  valores.push(__getTotal(array,quantidades,"Fundo Imobiliário"));
-  valores.push(__getTotal(array,quantidades,"Provento"));
+  valores.push(__getTotal(ativos,ativosNaCarteira,"Renda Fixa"));
+  valores.push(__getTotal(ativos,ativosNaCarteira,"Ação"));
+  valores.push(__getTotal(ativos,ativosNaCarteira,"Fundo Imobiliário"));
+  valores.push(__getTotal(ativos,ativosNaCarteira,"Provento"));
   return valores;
 }
 
 export default function Aplication() {
   const carteiraAtual = useSelector(state=>state.carteiraAtual);
-  const ativos = useSelector(state=>state.ativos).filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
+  const ativos = useSelector(state=>state.ativos);//.filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [

@@ -10,15 +10,15 @@ const inter = Inter({ subsets: ['latin'] })
 const ListaAtivos = (props) => {
 
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
-    const ativos = useSelector(state=>state.ativos).filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
+    const ativos = useSelector(state=>state.ativos).filter((a)=>{return carteiraAtual.ativos.map(c=>c.id_ativo).includes(a.id)});
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
     
     
     function __getAtivos(){
-        return typeof props.tipo===typeof undefined?
-        (<div className="lista_ativo">{ativos.map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}}/>)}</div>):
-        (<div className="lista_ativo">{ativos.filter((element)=>{return element.tipo===props.tipo}).map((element,i)=><Ativo key={i} data={{...element,qnt:carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(element.id)].qnt}}/>)}</div>);
+       return typeof props.tipo===typeof undefined?//data={id,tipo,nome,valor,qnt}
+       (<div className="lista_ativo">{carteiraAtual.ativos.map((compra,i)=><Ativo key={i} data={{...ativos.filter((a)=>a.id===compra.id_ativo)[0],qnt:compra.qnt,id_compra:compra.id}}/>)}</div>):
+       (<div className="lista_ativo">{carteiraAtual.ativos.map((compra,i)=>ativos[ativos.map((a)=>a.id).indexOf(compra.id_ativo)].tipo===props.tipo?<Ativo key={i} data={{...ativos.filter((a)=>a.id===compra.id_ativo)[0],qnt:compra.qnt,id_compra:compra.id}}/>:null)}</div>)
     }
 
 

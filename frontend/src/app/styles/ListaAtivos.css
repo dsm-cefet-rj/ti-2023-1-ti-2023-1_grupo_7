@@ -46,6 +46,10 @@
    cursor: default;
 }
 
+#clicavel{
+   cursor:pointer;
+}
+
 .esquerda{
    margin-right: auto;
    margin-left: 0;
@@ -103,6 +107,7 @@
 
 #centro{
    margin: auto;
+   cursor: pointer;
 }
 
 #centro_2{

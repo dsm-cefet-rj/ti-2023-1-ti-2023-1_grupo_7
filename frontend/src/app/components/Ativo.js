@@ -33,13 +33,14 @@ function Ativo (props){
     setIsOpen(!isOpen);
   }
   function deleteAtivo(){
-    dispatch(removeAtivoCarteira({ativo:props.data.id,carteira:carteiraAtual.id}));
-    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.filter((a)=>a.id!==props.data.id)}));
+    dispatch(removeAtivoCarteira({ativo:props.data.id_compra,carteira:carteiraAtual.id}));
+    dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.filter((a)=>a.id!==props.data.id_compra)}));
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
     let novosAtivos = carteiraAtual.ativos.slice();
-    novosAtivos.splice(carteiraAtual.ativos.map((a)=>a.id).indexOf(props.data.id),1,{id:props.data.id,qnt:qnt});
+    let ativoEscolhido = carteiraAtual.ativos[carteiraAtual.ativos.map((a)=>a.id).indexOf(props.data.id_compra)];
+    novosAtivos.splice(carteiraAtual.ativos.map((a)=>a.id).indexOf(props.data.id_compra),1,{id:ativoEscolhido.id,id_ativo:ativoEscolhido.id_ativo,qnt:qnt,dia:ativoEscolhido.dia,mes:ativoEscolhido.mes,ano:ativoEscolhido.ano});
     dispatch(updateCarteiraAtual({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:novosAtivos}));
     setEdit(false);

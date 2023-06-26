@@ -13,6 +13,7 @@ export default function NovoAtivo(){
     const dispatch = useDispatch();
     const carteiraAtual = useSelector(state=>state.carteiraAtual);
     const ativos = useSelector(state=>state.ativos);
+    const data = new Date();
 
     const [id, setId] = useState('');
     const [quantidade, setQtd] = useState('');
@@ -21,9 +22,12 @@ export default function NovoAtivo(){
     const nextID = useSelector(state=>state.ativos).map((a)=>a.id);
     nextID.sort().reverse();
 
-    const addAtivo_ = (IDativo,quantidade)=>{/*essa função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
-        dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:{id:IDativo,qnt:quantidade}}));
-        dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([{id:IDativo,qnt:quantidade}])}));
+/*esta função permite adicionar o ativo pelo seu id e quantidade informados na carteira atual assim como na respectiva carteira na lista de carteiras*/
+    const addAtivo_ = (IDativo,quantidade)=>{
+
+        let novo_ativo = {id:carteiraAtual.ativos.map((a)=>a.id).reduce((x, y) => Math.max(x,y))+1,id_ativo:IDativo,qnt:quantidade,dia:data.getDate(),mes:data.getMonth()+1,ano:data.getFullYear()};
+        dispatch(colocaAtivoCarteira({id:carteiraAtual.id,ativo:novo_ativo}));
+        dispatch(updateCarteiraServer({id:carteiraAtual.id,nome:carteiraAtual.nome,email:carteiraAtual.email,ativos:carteiraAtual.ativos.concat([novo_ativo])}));
     }
 
     const [openModal, setOpenModal] = useState(false);

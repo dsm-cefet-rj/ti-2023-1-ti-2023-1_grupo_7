@@ -33,7 +33,7 @@ function Carteira(props){
       <div className="ativo" id='carteira'>
         {edit?
         (<form onSubmit={submission}><input required value={nome} onChange={(e)=>{setNome(e.target.value)}}></input><button type="submit">OK</button></form>):
-        (<h2 className={inter.className} onClick={handleSelection}>{props.data.nome}</h2>)}
+        (<h2 className={inter.className} id="clicavel" onClick={handleSelection}>{props.data.nome}</h2>)}
         <h2 className={inter.className} id='centro'onClick={alternate}>{props.data.nome==""?null:(edit?"Cancelar":"Editar")}</h2>
         <button className={inter.className} id='direita'onClick={handleDeleteCarteira}>Excluir</button>
       </div>
