@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import '../styles/Distribuicao.css'
 
 export default (props)=>{
     const ativos = useSelector(state=>state.ativos);
@@ -13,7 +14,6 @@ export default (props)=>{
             }
             return accumulator;
         }
-        console.log(props.ativos);
         for (let i = 0; i < props.ativos.length; i++) {
             let compra = props.ativos[i];
             let ativoDaCompra = ativos[ativos.map((a)=>a.id).indexOf(compra.id_ativo)];
@@ -24,13 +24,13 @@ export default (props)=>{
         return accumulator;
       }
     return(
-        <>
-            <br/>
-            <h2>Relatorio de distribuição de investimentos</h2><br/>
-            <h5>{(__getTotal("Ação")/__getTotal()).toFixed(4)*100}% Ações</h5>
-            <h5>{(__getTotal("Renda Fixa")/__getTotal()).toFixed(4)*100}% Renda Fixa</h5>
-            <h5>{(__getTotal("Fundo Imobiliário")/__getTotal()).toFixed(4)*100}% Fundos Imobiliários</h5>
-            <h5>{(__getTotal("Provento")/__getTotal()).toFixed(4)*100}% Proventos</h5>
-        </>
-    )
+    <>
+        <br/><h2 style={{fontFamily:"Arial"}}>Relatorio de distribuição de investimentos</h2><br/>
+        <div className="dist" style={{display:"grid"}}>
+            <h3>{(__getTotal("Ação")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Ações</h3>
+            <h3>{(__getTotal("Renda Fixa")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Renda Fixa</h3>
+            <h3>{(__getTotal("Fundo Imobiliário")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Fundos Imobiliários</h3>
+            <h3>{(__getTotal("Provento")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Proventos</h3>
+        </div>
+    </>)
 }

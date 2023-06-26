@@ -26,9 +26,9 @@ function __getData(ativos,ativosNaCarteira){
   return valores;
 }
 
-export default function Aplication() {
+export default function Application() {
   const carteiraAtual = useSelector(state=>state.carteiraAtual);
-  const ativos = useSelector(state=>state.ativos);//.filter((a)=>{return carteiraAtual.ativos.map(c=>c.id).includes(a.id)});
+  const ativos = useSelector(state=>state.ativos);
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [

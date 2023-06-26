@@ -1,0 +1,8 @@
+.dist{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    font-family:Arial;
+}
+.direita{
+    text-align: right;
+}

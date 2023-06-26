@@ -1,7 +1,5 @@
-import { elements } from 'chart.js';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { usuarioAtualSlice } from '../slices/UsuarioAtualSlice';
 
 const Multiselect = (props) => {
   const carteiras = useSelector(state=>state.carteiras);
@@ -15,7 +13,7 @@ const Multiselect = (props) => {
 
   return (
     <div>
-      <label>Selecione uma carteira:</label>
+      <label style={{fontFamily:"Arial"}}>Selecione uma carteira: </label>
       <select value={props.carteiraSelecionada} onChange={handleSelectChange}>
         <option value="">-- Nada selecionado --</option>
         {__getOpcoes()}
