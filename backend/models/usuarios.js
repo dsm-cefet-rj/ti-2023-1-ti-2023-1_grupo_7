@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Schemas = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const dishSchema = new Schema({
+const usuarioSchema = new Schema({
     id:{
         type: String,
         required: true,
@@ -14,8 +14,12 @@ const dishSchema = new Schema({
         type: String,
         required: false,
     },
-    senha:{
-        type: JSON,
+    senha:{// a senha vai ser complicada por causa da criptografia recomendo pedir ajuda pro Nicolas e se ele perguntar o algoritmo tá em cadastroC, e sim eu sei que é ruim ter criptografia no front
+        type: [{}],
         required: true,
     }
 })
+
+var Usuarios = mongoose.model('Usuarios',usuarioSchema);
+
+module.exports = Usuarios;

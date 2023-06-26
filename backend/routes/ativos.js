@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+/* variável com listagem de ativos */
 let ativos = [
     {
       "id": 1,

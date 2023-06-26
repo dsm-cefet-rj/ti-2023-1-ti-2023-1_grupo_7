@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const bodyParser = require('body-parser');
+const Usuarios = require('../models/usuarios');
 
-/* GET users listing. */
+router.use(bodyParser.json());
+
+/* variável com listagem de usuários */
 let usuarios = [
   {
     "id": "cobaia@cobaia",
@@ -144,7 +148,25 @@ let usuarios = [
     }
   }
 ]
+
 router.route('/')
+
+
+router.route('/')
+//Implementação para mongoose, se descomentar comente o outro get
+/*
+
+.get((req,res,next)=>{
+  Usuarios.find({})
+  .then((usuariosBanco)=>{
+    res.statusCode = 200;
+    res.setHeader('Content-Type','application/json');
+    res.json(usuariosBanco);;
+  }, (err) => next(err))
+  .catch((err) => next(err));
+})
+
+*/
 .get(function(req, res, next) {
   res.set('Access-control-allow-origin','*');
   res.set('Access-control-allow-headers','Content-Type');

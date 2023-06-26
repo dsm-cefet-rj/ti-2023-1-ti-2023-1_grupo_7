@@ -7,46 +7,56 @@ Uma plataforma web de monitoramento de investimentos que tem por objetivo auxili
 ## Rodando localmente
 
 **Front-end:**
+Primeiro acesse a pasta 
 
-Instale as dependências
+```bash
+ cd ./frontend
+```
+
+Então instale as dependências
 
 ```bash
   yarn
 ```
 
-Inicie o servidor de desenvolvimento
+Inicie o servidor de desenvolvimento com
 
 ```bash
   yarn dev
 ```
 
-Inicie a construção de arquivos estáticos
+ou inicie a construção de arquivos estáticos, usando
 
 ```bash
   yarn build
 ```
 
-Inicie a execução dos arquivos estáticos
+Inicie a execução dos arquivos estáticos com
 
 ```bash
   yarn start
 ```
 
-Inicie o JSON SERVER
+Para fins de teste pode-se iniciar o JSON SERVER para cumprir o papel de backend de testes usando
 
 ```bash
   yarn server
 ```
 
 **Back-end:**
-
-Instale as dependências
+Primeiro acesse a pasta 
 
 ```bash
-  npm install
+ cd ./backend
 ```
 
-Inicie o backend
+Então, instale as dependências
+
+```bash
+  npm i
+```
+
+E inicie o backend com
 
 ```bash
   npm start
@@ -54,11 +64,7 @@ Inicie o backend
 
 ## Roadmap
 
-- Fazer integração com back-end
-
-- Manter dados no servidor (já usando o back-end)
-
-- Implementar relatórios
+- Manter dados no servidor com MongoDB
 
 
 ## Autores
@@ -72,7 +78,7 @@ Inicie o backend
 
 ## Stack utilizada
 
-**Front-end:** React, Redux
+**Front-end:** React, Redux, Next.js
 
-**Back-end:** Node.js
+**Back-end:** Node.js, Express, MongoDB, mongoose
 
