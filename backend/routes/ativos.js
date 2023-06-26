@@ -68,7 +68,8 @@ res.statusCode = 200;
 res.setHeader('Content-Type','application/json');
 res.json(ativos);
 })
-router.route('/:id').delete((req,res,next) =>{
+router.route('/:id')
+.delete((req,res,next) =>{
 res.set('Access-control-allow-origin','*');
 res.set('Access-control-allow-headers','content-type');
 ativos  = ativos.filter(function(value,index,arr){
@@ -77,6 +78,16 @@ ativos  = ativos.filter(function(value,index,arr){
 res.statusCode = 200;
 res.setHeader('Content-Type','application/json');
 res.json(ativos);
+})
+.put((req,res,next)=>{
+  res.set('Access-control-allow-origin','*');
+  res.set('Access-control-allow-headers','content-type');
+  let index = ativos.map((c)=>c.id).indexOf(req.params.id);
+  ativos.splice(index,1,req.body)
+
+  res.statusCode = 200;
+  res.setHeader('Content-Type','application/json');
+  res.json(ativos);
 })
 
 module.exports = router;

@@ -6,6 +6,7 @@ let usuarios = [
   {
     "id": "cobaia@cobaia",
     "nome": "cobaia",
+    "perfil": "Arrojado",
     "senha": {
       "words": [
         1668244065,
@@ -19,6 +20,7 @@ let usuarios = [
   {
     "id": "abc@abc",
     "nome": "teste",
+    "perfil": "Arrojado",
     "senha": {
       "words": [
         1633837837,
@@ -32,6 +34,7 @@ let usuarios = [
   {
     "id": "capi@vara",
     "nome": "capi",
+    "perfil": "Conservador",
     "senha": {
       "words": [
         1667330153,
@@ -45,6 +48,7 @@ let usuarios = [
   {
     "id": "joker@hotmail.com",
     "nome": "Coringa",
+    "perfil": "Arrojado",
     "senha": {
       "words": [
         1650553965,
@@ -58,6 +62,7 @@ let usuarios = [
   {
     "id": "jason@gmail.com",
     "nome": "Jason",
+    "perfil": "Moderado",
     "senha": {
       "words": [
         825373492,
@@ -71,6 +76,7 @@ let usuarios = [
   {
     "id": "1@1",
     "nome": "1",
+    "perfil": "Conservador",
     "senha": {
       "words": [
         823070479,
@@ -84,6 +90,7 @@ let usuarios = [
   {
     "id": "teste@email.com",
     "nome": "Yuri",
+    "perfil": "Arrojado",
     "senha": {
       "words": [
         825373492,
