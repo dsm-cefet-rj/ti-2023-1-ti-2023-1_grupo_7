@@ -162,6 +162,7 @@
     {
       "id": "cobaia@cobaia",
       "nome": "cobaia",
+      "perfil": "Arrojado",
       "senha": {
         "words": [
           1668244065,
@@ -175,6 +176,7 @@
     {
       "id": "abc@abc",
       "nome": "teste",
+      "perfil": "Arrojado",
       "senha": {
         "words": [
           1633837837,
@@ -188,6 +190,7 @@
     {
       "id": "capi@vara",
       "nome": "capi",
+      "perfil": "Conservador",
       "senha": {
         "words": [
           1667330153,
@@ -201,6 +204,7 @@
     {
       "id": "joker@hotmail.com",
       "nome": "Coringa",
+      "perfil": "Arrojado",
       "senha": {
         "words": [
           1650553965,
@@ -214,6 +218,7 @@
     {
       "id": "jason@gmail.com",
       "nome": "Jason",
+      "perfil": "Moderado",
       "senha": {
         "words": [
           825373492,
@@ -227,6 +232,7 @@
     {
       "id": "1@1",
       "nome": "1",
+      "perfil": "Conservador",
       "senha": {
         "words": [
           823070479,
@@ -240,6 +246,7 @@
     {
       "id": "teste@email.com",
       "nome": "Yuri",
+      "perfil": "Arrojado",
       "senha": {
         "words": [
           825373492,

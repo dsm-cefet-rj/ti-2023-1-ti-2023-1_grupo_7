@@ -13,7 +13,7 @@ export default function Relatorio() {
   const usuarioAtual = useSelector(state=>state.usuarioAtual);
   const carteiras  = useSelector(state=>state.carteiras);
   const navegar = useNavigate();
-  useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"?navegar("/"):null;},[]);
+  useEffect(()=>{JSON.stringify(usuarioAtual)==="{}"||JSON.stringify(usuarioAtual).startsWith("[")?navegar("/"):null;},[]);
   
   const [carteiraSelecionada, setCarteiraSelecionada] = useState("");
 

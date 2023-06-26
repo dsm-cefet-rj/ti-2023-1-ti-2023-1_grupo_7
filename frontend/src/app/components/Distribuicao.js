@@ -25,7 +25,7 @@ export default (props)=>{
       }
     return(
     <>
-        <br/><h2 style={{fontFamily:"Arial"}}>Relatorio de distribuição de investimentos</h2><br/>
+        <br/><h2 style={{fontFamily:"Arial"}}>Relatório de distribuição de investimentos</h2><br/>
         <div className="dist" style={{display:"grid"}}>
             <h3>{(__getTotal("Ação")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Ações</h3>
             <h3>{(__getTotal("Renda Fixa")/__getTotal()).toFixed(4)*100}%</h3> <h3 className="direita">Renda Fixa</h3>

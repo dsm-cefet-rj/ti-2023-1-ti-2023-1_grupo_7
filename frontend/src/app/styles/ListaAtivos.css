@@ -55,19 +55,27 @@
    margin-left: 0;
 }
 
-  .titulo {
-    margin: 0px;
-    padding-bottom: 20px;
-    padding-top: 1vh;
-    padding-left: 3%;
-    padding-right: 3%;
-    display: grid;
-    grid-template-columns: 120px repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    width: min(70vw,527px);
-    font-size: min(4vw,15px);
-    
-  }
+.rosca{
+   width: min(527px,70vw);
+   height: 15vh;
+   margin-bottom: 20;
+   margin-left: 'auto';
+   margin-right: 'auto';
+}
+
+.titulo {
+   margin: 0px;
+   padding-bottom: 20px;
+   padding-top: 1vh;
+   padding-left: 3%;
+   padding-right: 3%;
+   display: grid;
+   grid-template-columns: 120px repeat(3, 1fr);
+   grid-template-rows: 1fr;
+   width: min(70vw,527px);
+   font-size: min(4vw,15px);
+   
+}
 
  .logo{
     height: 50px;
@@ -76,7 +84,7 @@
 
  .lista_ativo{
    overflow-y: auto;
-   height: calc(63vh - min(3vw,20px) - 150px - min(4vw,30px));
+   height: calc(73vh - min(3vw,20px) - 150px - min(4vw,30px));
    padding-right: 10px;
  }
 

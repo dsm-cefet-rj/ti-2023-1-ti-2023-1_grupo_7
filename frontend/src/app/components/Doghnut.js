@@ -29,6 +29,21 @@ function __getData(ativos,ativosNaCarteira){
 export default function Application() {
   const carteiraAtual = useSelector(state=>state.carteiraAtual);
   const ativos = useSelector(state=>state.ativos);
+  const options ={
+    maintainAspectRatio:false,
+    responsive: true,
+    plugins: {
+      emptyDoughnut: {
+        color: 'rgba(255, 128, 0, 1)',
+        width: 2,
+        radiusDecrease: 20
+      },
+      legend: {
+        position:"left",
+        padding:20
+      }
+    }
+  }
   const data = {
     labels: ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Proventos'],
     datasets: [
@@ -52,8 +67,8 @@ export default function Application() {
     ],
   };
   return( 
-  <div style={{width: 'auto',height:'25vh',marginBottom: 20, marginLeft: 'auto', marginRight: 'auto'}}>
-    <Doughnut data={data} updateMode='resize' redraw={false}/>
+  <div className='rosca'>
+    <Doughnut data={data} options={options} updateMode='resize' redraw={false}/>
   </div>
   );
 }
